@@ -1,0 +1,13 @@
+---
+layout: layouts/home.njk
+---
+
+<h1>Trang chủ</h1>
+<p>
+  Chào mừng bạn tới với
+  <b>{{ metadata.title }}</b>, một trang blog và cũng như là một trang tài liệu về công nghệ của mình để chia sẻ kiến thức
+    kĩ thuật liên quan tới SRE, DevOps và một số thứ khác.
+</p>
+<p>Hiện tại do chưa có gì nên ở dưới đây sẽ chỉ có dumb text.</p>
+{% set postslist = collections.posts %}
+{% include "postslist.njk" %}

@@ -1,0 +1,22 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - post
+    - posts
+    - tagList
+  addAllPagesToCollections: true
+layout: layouts/home.njk
+eleventyComputed:
+  title: Gắn thẻ “{{ tag }}”
+permalink: /tags/{{ tag | slugify }}/
+---
+
+<h1>Gắn thẻ "{{ tag }}"</h1>
+{% set postslist = collections[ tag ] %}
+{% include "postslist.njk" %}
+<p>Xem
+  <a href="/tags/">các thẻ</a></p>
