@@ -1,5 +1,4 @@
 name: Build Eleventy
-
 on:
   push:
     branches:
