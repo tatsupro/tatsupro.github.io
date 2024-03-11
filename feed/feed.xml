@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="en">
+	<title>Tats Technical Stuffs</title>
+	<subtitle>Tats Technical Stuffs writing about technical stuffs.</subtitle>
+	<link href="https://tatsupro.github.io/feed/feed.xml" rel="self"/>
+	<link href="https://tatsupro.github.io/"/>
+	<updated>2018-09-30T00:00:00Z</updated>
+	<id>https://tatsupro.github.io</id>
+	<author>
+		<name>Tatsu</name>
+		<email>hoanglong.letter@gmail.com</email>
+	</author>
+	
+	<entry>
+		<title>Đây là bài viết thứ tư của tôi!</title>
+		<link href="https://tatsupro.github.io/blog/fourthpost/"/>
+		<updated>2018-09-30T00:00:00Z</updated>
+		<id>https://tatsupro.github.io/blog/fourthpost/</id>
+		<content type="html">&lt;p&gt;Tận dụng các khung agile để cung cấp một bản tóm tắt mạnh mẽ cho các tổng quan cấp cao. Các cách tiếp cận lặp đi lặp lại đối với chiến lược của công ty thúc đẩy tư duy hợp tác để tiếp tục đề xuất giá trị tổng thể. Hữu cơ phát triển thế giới quan toàn diện về sự đổi mới đột phá thông qua sự đa dạng và trao quyền tại nơi làm việc.&lt;/p&gt;
+&lt;p&gt;Mang đến các chiến lược sinh tồn cùng có lợi để đảm bảo sự thống trị chủ động. Vào cuối ngày, trong tương lai, một bình thường mới đã phát triển từ thế hệ X đang trên đường băng hướng tới một giải pháp đám mây được sắp xếp hợp lý. Nội dung do người dùng tạo trong thời gian thực sẽ có nhiều điểm tiếp xúc để chia sẻ.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://tatsupro.github.io/img/IdthKOzqFA-350.avif 350w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://tatsupro.github.io/img/IdthKOzqFA-350.webp 350w&quot;&gt;&lt;img alt=&quot;Một phụ huynh possum và hai đứa trẻ possum treo trên quả bóng màu đỏ mang tính biểu tượng&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://tatsupro.github.io/img/IdthKOzqFA-350.png&quot; width=&quot;350&quot; height=&quot;685&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;h2 id=&quot;phan-tieu-de&quot; tabindex=&quot;-1&quot;&gt;Phần tiêu đề &lt;a class=&quot;header-anchor&quot; href=&quot;https://tatsupro.github.io/blog/fourthpost/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Tận dụng trái cây treo thấp để xác định hoạt động giá trị gia tăng của sân bóng để thử nghiệm beta. Ghi đè phân chia kỹ thuật số với các nhấp chuột bổ sung từ DevOps. Ngâm công nghệ nano dọc theo đường cao tốc thông tin sẽ đóng vòng lặp chỉ tập trung vào dòng dưới cùng.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Đây là bài viết thứ ba của tôi.</title>
+		<link href="https://tatsupro.github.io/blog/thirdpost/"/>
+		<updated>2018-08-24T00:00:00Z</updated>
+		<id>https://tatsupro.github.io/blog/thirdpost/</id>
+		<content type="html">&lt;p&gt;Tận dụng các khung agile để cung cấp một bản tóm tắt mạnh mẽ cho các tổng quan cấp cao. Các cách tiếp cận lặp đi lặp lại đối với chiến lược của công ty thúc đẩy tư duy hợp tác để tiếp tục đề xuất giá trị tổng thể. Hữu cơ phát triển thế giới quan toàn diện về sự đổi mới đột phá thông qua sự đa dạng và trao quyền tại nơi làm việc.&lt;/p&gt;
+&lt;h2 id=&quot;ma&quot; tabindex=&quot;-1&quot;&gt;Mã &lt;a class=&quot;header-anchor&quot; href=&quot;https://tatsupro.github.io/blog/thirdpost/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;styled-voi-cu-phap&quot; tabindex=&quot;-1&quot;&gt;Styled (Với Cú pháp) &lt;a class=&quot;header-anchor&quot; href=&quot;https://tatsupro.github.io/blog/thirdpost/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Mang đến các chiến lược sinh tồn cùng có lợi để đảm bảo sự thống trị chủ động. Vào cuối ngày, trong tương lai, một bình thường mới đã phát triển từ thế hệ X đang trên đường băng hướng tới một giải pháp đám mây được sắp xếp hợp lý. Nội dung do người dùng tạo trong thời gian thực sẽ có nhiều điểm tiếp xúc để chia sẻ.&lt;/p&gt;
+&lt;pre class=&quot;language-js&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// this is a command&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;myCommand&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; counter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	counter&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// Test with a line break above this line.&lt;/span&gt;
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;Test&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;khong-theo-kieu&quot; tabindex=&quot;-1&quot;&gt;Không theo kiểu &lt;a class=&quot;header-anchor&quot; href=&quot;https://tatsupro.github.io/blog/thirdpost/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Mang đến các chiến lược sinh tồn cùng có lợi để đảm bảo sự thống trị chủ động. Vào cuối ngày, trong tương lai, một bình thường mới đã phát triển từ thế hệ X đang trên đường băng hướng tới một giải pháp đám mây được sắp xếp hợp lý. Nội dung do người dùng tạo trong thời gian thực sẽ có nhiều điểm tiếp xúc để chia sẻ.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// this is a command
+function myCommand() {
+	let counter = 0;
+	counter++;
+}
+
+// Test with a line break above this line.
+console.log(&#39;Test&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;tieu-de-phan&quot; tabindex=&quot;-1&quot;&gt;Tiêu Đề Phần &lt;a class=&quot;header-anchor&quot; href=&quot;https://tatsupro.github.io/blog/thirdpost/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Tận dụng trái cây treo thấp để xác định hoạt động giá trị gia tăng của sân bóng để thử nghiệm beta. Ghi đè phân chia kỹ thuật số bằng các nhấp chuột bổ sung Từ DevOps. Ngâm công nghệ nano dọc theo đường cao tốc thông tin sẽ đóng vòng lặp chỉ tập trung vào dòng dưới cùng.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Đây là bài viết thứ hai của tôi với một tiêu đề dài hơn nhiều.</title>
+		<link href="https://tatsupro.github.io/blog/secondpost/"/>
+		<updated>2018-07-04T00:00:00Z</updated>
+		<id>https://tatsupro.github.io/blog/secondpost/</id>
+		<content type="html">&lt;p&gt;Tận dụng các khung agile để cung cấp một bản tóm tắt mạnh mẽ cho các tổng quan cấp cao. Các cách tiếp cận lặp đi lặp lại đối với chiến lược của công ty thúc đẩy tư duy hợp tác để tiếp tục đề xuất giá trị tổng thể. Hữu cơ phát triển thế giới quan toàn diện về sự đổi mới đột phá thông qua sự đa dạng và trao quyền tại nơi làm việc.&lt;/p&gt;
+&lt;h2 id=&quot;phan-tieu-de&quot; tabindex=&quot;-1&quot;&gt;Phần tiêu đề &lt;a class=&quot;header-anchor&quot; href=&quot;https://tatsupro.github.io/blog/secondpost/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://tatsupro.github.io/blog/firstpost/&quot;&gt;Bài viết đầu tiên&lt;/a&gt;
+&lt;a href=&quot;https://tatsupro.github.io/blog/thirdpost/&quot;&gt;Bài thứ ba&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Mang đến các chiến lược sinh tồn cùng có lợi để đảm bảo sự thống trị chủ động. Vào cuối ngày, trong tương lai, một bình thường mới đã phát triển từ thế hệ X đang trên đường băng hướng tới một giải pháp đám mây được sắp xếp hợp lý. Nội dung do người dùng tạo trong thời gian thực sẽ có nhiều điểm tiếp xúc để chia sẻ.&lt;/p&gt;
+&lt;p&gt;Tận dụng trái cây treo thấp để xác định hoạt động giá trị gia tăng của sân bóng để thử nghiệm beta. Ghi đè phân chia kỹ thuật số với các nhấp chuột bổ sung từ DevOps. Ngâm công nghệ nano dọc theo đường cao tốc thông tin sẽ đóng vòng lặp chỉ tập trung vào dòng dưới cùng.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Đây là bài viết đầu tiên của tôi.</title>
+		<link href="https://tatsupro.github.io/blog/firstpost/"/>
+		<updated>2018-05-01T00:00:00Z</updated>
+		<id>https://tatsupro.github.io/blog/firstpost/</id>
+		<content type="html">&lt;p&gt;Tận dụng các khung agile để cung cấp một bản tóm tắt mạnh mẽ cho các tổng quan cấp cao. Các cách tiếp cận lặp đi lặp lại đối với chiến lược của công ty thúc đẩy tư duy hợp tác để tiếp tục đề xuất giá trị tổng thể. Hữu cơ phát triển thế giới quan toàn diện về sự đổi mới đột phá thông qua sự đa dạng và trao quyền tại nơi làm việc.&lt;/p&gt;
+&lt;p&gt;Mang đến các chiến lược sinh tồn cùng có lợi để đảm bảo sự thống trị chủ động. Vào cuối ngày, trong tương lai, một bình thường mới đã phát triển từ thế hệ X đang trên đường băng hướng tới một giải pháp đám mây được sắp xếp hợp lý. Nội dung do người dùng tạo trong thời gian thực sẽ có nhiều điểm tiếp xúc để chia sẻ.&lt;/p&gt;
+&lt;h2 id=&quot;phan-tieu-de&quot; tabindex=&quot;-1&quot;&gt;Phần tiêu đề &lt;a class=&quot;header-anchor&quot; href=&quot;https://tatsupro.github.io/blog/firstpost/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Tận dụng trái cây treo thấp để xác định hoạt động giá trị gia tăng của sân bóng để thử nghiệm beta. Ghi đè phân chia kỹ thuật số với các nhấp chuột bổ sung từ DevOps. Ngâm công nghệ nano dọc theo đường cao tốc thông tin sẽ đóng vòng lặp chỉ tập trung vào dòng dưới cùng.&lt;/p&gt;
+&lt;pre class=&quot;language-diff-js&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-diff-js&quot;&gt;&lt;span class=&quot;token unchanged language-js&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;// this is a command&lt;/span&gt;
+&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;myCommand&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&quot;token inserted-sign inserted language-js&quot;&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;  &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; counter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&quot;token deleted-sign deleted language-js&quot;&gt;&lt;span class=&quot;token prefix deleted&quot;&gt;-&lt;/span&gt;  &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; counter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&quot;token unchanged language-js&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;  counter&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/span&gt;
+&lt;span class=&quot;token unchanged language-js&quot;&gt;&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;// Test with a line break above this line.&lt;/span&gt;
+&lt;span class=&quot;token prefix unchanged&quot;&gt; &lt;/span&gt;console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;Test&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+</content>
+	</entry>
+</feed>
