@@ -3,7 +3,7 @@ title: Cloud
 layout: "layouts/home.njk"
 eleventyNavigation:
   key: Cloud
-  order: 1
+  order: 2
 ---
 
 # Cloud 

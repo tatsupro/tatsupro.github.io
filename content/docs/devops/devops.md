@@ -3,7 +3,7 @@ layout: "layouts/home.njk"
 eleventyNavigation:
   key: DevOps
   title: SRE & DevOps
-  order: 2
+  order: 3
 ---
 
 # DevOps

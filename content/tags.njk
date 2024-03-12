@@ -17,6 +17,6 @@ permalink: /tags/{{ tag | slugify }}/
 
 <h1>Gắn thẻ "{{ tag }}"</h1>
 {% set postslist = collections[ tag ] %}
-{% include "postslist.njk" %}
+{% include "components/postslist.njk" %}
 <p>Xem
   <a href="/tags/">các thẻ</a></p>
