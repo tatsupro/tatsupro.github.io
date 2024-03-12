@@ -1,15 +1,4 @@
 <aside>
     <h2>Mục lục</h2>
-    <ul>
-        <li>Cloud</li>
-        <li>SRE & DevOps</li>
-        <ul>
-            <li>Docker</li>
-            <li>Kubernetes</li>
-            <li>GitLab</li>
-            <li>ArgoCD</li>
-        </ul>
-        <li>Linux</li>
-        <li>Tools</li>
-    </ul>
+    {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
 </aside>
