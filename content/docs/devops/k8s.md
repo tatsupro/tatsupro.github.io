@@ -1,8 +1,7 @@
 ---
-layout: "layouts/home.njk"
+title: Kubernetes
+layout: "layouts/docs.njk"
 eleventyNavigation:
   key: Kubernetes
   parent: DevOps
 ---
-
-# Kubernetes

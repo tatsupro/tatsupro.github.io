@@ -1,12 +1,10 @@
 ---
 title: Cloud
-layout: "layouts/home.njk"
+layout: "layouts/docs.njk"
 eleventyNavigation:
   key: Cloud
   order: 2
 ---
-
-# Cloud
 
 Đám mây là một danh từ chẳng liên quan gì ở đây dùng để chỉ **máy tính cho thuê trên Internet**. Người ta bắt đầu quan tâm tới sự tồn tại của nó khi Amazon phát hiện ra họ không thể chỉ làm một trang thương mại điện tử bán lẻ đống đồ Tàu kiếm ăn qua ngày vì đó là 1 mô hình kinh doanh vi mô cạnh tranh cực kì gắt gao. May mắn mỉm cười với Amazon khi họ phát hiện ra mô hình kinh doanh Điện toán đám mây lại là một mô hình kinh doanh bòn rút ví tiền của các doanh nghiệp khác vô cùng hiệu quả và giúp cho Jeff Bezos luôn là 1 trong số những tỉ phú giàu nhất thế giới, vậy nên từ đó các gã khổng lổ bắt đầu sử dụng nguồn lực của mình để đổi lấy cho bạn là người dùng cuối sự tiện lợi trong việc đốt tiền (sẽ được giải thích kĩ hơn ở đoạn tới).
 

@@ -1,12 +1,10 @@
 ---
 title: GitOps
-layout: "layouts/home.njk"
+layout: "layouts/docs.njk"
 eleventyNavigation:
   key: GitOps
   parent: DevOps
 ---
-
-# GitOps
 
 Chỉ là một tiêu đề khó hiểu cho việc sử dụng VCS làm 1 nơi thống nhất để quản lý source code và mấy file manifest của Kubernetes. Có thể bạn đang thắc mắc: **Tại sao có cả Kubernetes?**
 
