@@ -8,19 +8,161 @@
         <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
         <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Tats Technical Stuffs">
         <link rel="alternate" href="/feed/feed.json" type="application/json" title="Tats Technical Stuffs">
-        <style>@font-face {
-  font-display: swap;
+        <style>/* roboto-mono-100 - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 100;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-100.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-100.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-100italic - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: italic;
+  font-weight: 100;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-100italic.woff2")
+      format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-100italic.ttf")
+      format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-200 - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 200;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-200.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-200.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-200italic - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: italic;
+  font-weight: 200;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-200italic.woff2")
+      format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-200italic.ttf")
+      format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-300 - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-300.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-300.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-300italic - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: italic;
+  font-weight: 300;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-300italic.woff2")
+      format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-300italic.ttf")
+      format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-regular - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: "Roboto Mono";
   font-style: normal;
   font-weight: 400;
-  src: url("/font/roboto-mono-v23-latin_vietnamese-regular.eot");
-  src: url("/font/roboto-mono-v23-latin_vietnamese-regular.eot?#iefix")
-      format("embedded-opentype"),
-    url("/font/roboto-mono-v23-latin_vietnamese-regular.woff2") format("woff2"),
-    url("/font/roboto-mono-v23-latin_vietnamese-regular.woff") format("woff"),
-    url("/font/roboto-mono-v23-latin_vietnamese-regular.ttf") format("truetype"),
-    url("/font/roboto-mono-v23-latin_vietnamese-regular.svg#RobotoMono")
-      format("svg");
+  src: url("/font/roboto-mono-v23-latin_vietnamese-regular.woff2")
+      format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-regular.ttf")
+      format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-italic - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: italic;
+  font-weight: 400;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-italic.woff2")
+      format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-italic.ttf")
+      format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-500 - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-500.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-500.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-500italic - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: italic;
+  font-weight: 500;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-500italic.woff2")
+      format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-500italic.ttf")
+      format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-600 - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-600.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-600.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-600italic - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: italic;
+  font-weight: 600;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-600italic.woff2")
+      format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-600italic.ttf")
+      format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-700 - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-700.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-700.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-700italic - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: italic;
+  font-weight: 700;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-700italic.woff2")
+      format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-700italic.ttf")
+      format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }
 
 :root {
@@ -149,6 +291,10 @@ pre {
   border-radius: 0.25rem;
   background-color: var(--primary-text-color);
   color: #fff;
+}
+code {
+  background-color: var(--primary-text-color);
+  color: #fff;
 }</style>
     </head>
     <body>
@@ -219,6 +365,7 @@ pre {
 <li><a href="/docs/cloud/">Cloud</a></li>
 <li><a href="/docs/devops/">SRE & DevOps</a><ul><li><a href="/docs/devops/cicd/">CI/CD</a></li>
 <li><a href="/docs/devops/docker/">Docker</a></li>
+<li><a href="/docs/devops/git/">Git</a></li>
 <li><a href="/docs/devops/gitops/">GitOps</a><ul><li><a href="/docs/devops/argocd/">ArgoCD</a></li></ul></li>
 <li><a href="/docs/devops/k8s/">Kubernetes</a></li>
 <li><a href="/docs/devops/linux/">Linux</a></li></ul></li>

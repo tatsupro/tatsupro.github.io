@@ -8,19 +8,161 @@
         <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
         <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Tats Technical Stuffs">
         <link rel="alternate" href="/feed/feed.json" type="application/json" title="Tats Technical Stuffs">
-        <style>@font-face {
-  font-display: swap;
+        <style>/* roboto-mono-100 - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 100;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-100.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-100.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-100italic - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: italic;
+  font-weight: 100;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-100italic.woff2")
+      format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-100italic.ttf")
+      format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-200 - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 200;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-200.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-200.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-200italic - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: italic;
+  font-weight: 200;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-200italic.woff2")
+      format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-200italic.ttf")
+      format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-300 - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-300.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-300.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-300italic - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: italic;
+  font-weight: 300;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-300italic.woff2")
+      format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-300italic.ttf")
+      format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-regular - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: "Roboto Mono";
   font-style: normal;
   font-weight: 400;
-  src: url("/font/roboto-mono-v23-latin_vietnamese-regular.eot");
-  src: url("/font/roboto-mono-v23-latin_vietnamese-regular.eot?#iefix")
-      format("embedded-opentype"),
-    url("/font/roboto-mono-v23-latin_vietnamese-regular.woff2") format("woff2"),
-    url("/font/roboto-mono-v23-latin_vietnamese-regular.woff") format("woff"),
-    url("/font/roboto-mono-v23-latin_vietnamese-regular.ttf") format("truetype"),
-    url("/font/roboto-mono-v23-latin_vietnamese-regular.svg#RobotoMono")
-      format("svg");
+  src: url("/font/roboto-mono-v23-latin_vietnamese-regular.woff2")
+      format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-regular.ttf")
+      format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-italic - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: italic;
+  font-weight: 400;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-italic.woff2")
+      format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-italic.ttf")
+      format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-500 - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-500.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-500.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-500italic - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: italic;
+  font-weight: 500;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-500italic.woff2")
+      format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-500italic.ttf")
+      format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-600 - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-600.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-600.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-600italic - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: italic;
+  font-weight: 600;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-600italic.woff2")
+      format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-600italic.ttf")
+      format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-700 - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-700.woff2") format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-700.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* roboto-mono-700italic - latin_vietnamese */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto Mono";
+  font-style: italic;
+  font-weight: 700;
+  src: url("/font/roboto-mono-v23-latin_vietnamese-700italic.woff2")
+      format("woff2"),
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+      url("/font/roboto-mono-v23-latin_vietnamese-700italic.ttf")
+      format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }
 
 :root {
@@ -149,6 +291,10 @@ pre {
   border-radius: 0.25rem;
   background-color: var(--primary-text-color);
   color: #fff;
+}
+code {
+  background-color: var(--primary-text-color);
+  color: #fff;
 }</style>
     </head>
     <body>
@@ -164,10 +310,13 @@ pre {
             <main>
                 
 <h1 id="cloud" tabindex="-1">Cloud <a class="header-anchor" href="#cloud">#</a></h1>
-<p>Đám mây là một danh từ chẳng liên quan gì ở đây dùng để chỉ máy tính cho thuê trên Internet. Người ta bắt đầu quan tâm tới sự tồn tại của nó khi Amazon phát hiện ra họ không thể chỉ làm một trang bán hàng Trung Quốc kiếm ăn qua ngày. May mắn mỉm cười với Amazon khi họ phát hiện ra mô hình kinh doanh Điện toán đám mây lại là một mô hình kinh doanh gặt hái và bòn rút ví tiền của các doanh nghiệp khác vô cùng tốt, vậy nên từ đó các gã khổng lổ bắt đầu sử dụng nguồn lực của mình để đổi lấy cho bạn là người dùng cuối sự tiện lợi trong việc đốt tiền.</p>
+<p>Đám mây là một danh từ chẳng liên quan gì ở đây dùng để chỉ <strong>máy tính cho thuê trên Internet</strong>. Người ta bắt đầu quan tâm tới sự tồn tại của nó khi Amazon phát hiện ra họ không thể chỉ làm một trang thương mại điện tử bán lẻ đống đồ Tàu kiếm ăn qua ngày vì đó là 1 mô hình kinh doanh vi mô cạnh tranh cực kì gắt gao. May mắn mỉm cười với Amazon khi họ phát hiện ra mô hình kinh doanh Điện toán đám mây lại là một mô hình kinh doanh bòn rút ví tiền của các doanh nghiệp khác vô cùng hiệu quả và giúp cho Jeff Bezos luôn là 1 trong số những tỉ phú giàu nhất thế giới, vậy nên từ đó các gã khổng lổ bắt đầu sử dụng nguồn lực của mình để đổi lấy cho bạn là người dùng cuối sự tiện lợi trong việc đốt tiền.</p>
+<p>Bạn đã từng dùng qua Cloud theo cách nào đó như khi bạn dùng Google Drive lưu đống file của bạn trên máy tính của người khác, đăng ảnh hay video lên YouTube hoặc Facebook đó cũng là máy tính của người khác. Đó là những dịch vụ đơn giản và tiện lợi để đánh đổi lấy quyền làm chủ thông tin, bảo mật, quyền riêng tư và thông tin cá nhân của bạn mà máy tính của người khác đem lại cho bạn. Còn đối với dân IT chúng ta đều biết việc tự mua máy móc và đấu dây mạng để vận hành hệ thống cần nhiều nhân lực và tiền của. Vậy nên Amazon Web Services, Microsoft Azure và Google Cloud đến để bảo bạn chúng tôi sẽ làm những phần khó thay bạn và những gì doanh nghiệp bạn cần đánh đổi là tiền và <strong>lòng tin</strong>. Với hầu hết các doanh nghiệp dường như không gặp khó khăn gì trong việc giao thông tin về tài sản trí tuệ, thông tin khách hàng được chạy và lưu trên trên hạ tầng máy móc của một bên nào đó khác vậy nên đó là lý do chúng ta quan tâm tới Cloud.</p>
+<p>Như bạn có thể thấy lý do lớn nhất bạn trả tiền cho Cloud là sự tiện lợi (đại khái). Nhờ công nghệ VM và Container thì họ cho bạn máy tính (đại khái) và Interface đơn giản hóa những chi tiết kĩ thuật phức tạp phía sau để bạn tương tác với hạ tầng của họ (có thể bằng Console, CLI Tool, API hay dạo gần đây là Terraform) cho bạn khả năng provision, config nhanh chóng và hiệu quả. Nhưng trước hết để ngăn bạn mơ mộng quá xa thì có 1 điều chúng ta phải chỉ ra rằng dù cloud có thể giúp bạn dễ dàng tạo hạ tầng máy móc nhanh chóng nhưng sau tất cả thì Interface vẫn như c*t. Vậy nên chúng ta mới cần thuê tụi Infra là người thực sự hiểu những dịch vụ này để tạo và vận hành nó hoặc như vậy thì mới có những dịch vụ như Vercel hay Netlify, dù đó cũng chỉ là AWS behind the scene mà bạn phải trả nhiều tiền hơn để đổi lại giao diện màu mè và trải nghiệm người dùng tốt hơn.</p>
 <p>Data Center - đau đớn = AWS <br>
 AWS - đau đớn = Vercel</p>
-
+<p>Trả tiền để đổi lấy sự tiện lợi và trả nhiều hơn gấp 2 hoặc gấp 3 để đổi lấy sự tiện lợi thật sự.</p>
+<!-- , dù bản thân các công ty này có thể tự dựng hạ tầng để đổi lại cho người dùng giá cả hợp lý hơn. -->
 
             </main>
 			<aside>
@@ -176,6 +325,7 @@ AWS - đau đớn = Vercel</p>
 <li><a href="/docs/cloud/">Cloud</a></li>
 <li><a href="/docs/devops/">SRE & DevOps</a><ul><li><a href="/docs/devops/cicd/">CI/CD</a></li>
 <li><a href="/docs/devops/docker/">Docker</a></li>
+<li><a href="/docs/devops/git/">Git</a></li>
 <li><a href="/docs/devops/gitops/">GitOps</a><ul><li><a href="/docs/devops/argocd/">ArgoCD</a></li></ul></li>
 <li><a href="/docs/devops/k8s/">Kubernetes</a></li>
 <li><a href="/docs/devops/linux/">Linux</a></li></ul></li>
