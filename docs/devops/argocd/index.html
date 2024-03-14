@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>DevOps</title>
+        <title>ArgoCD</title>
         <meta name="description" content="Tats Technical Stuffs writing about technical stuffs.">
         <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
         <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Tats Technical Stuffs">
@@ -192,6 +192,9 @@ h3 {
 ul {
   list-style-type: square;
 }
+img {
+  width: 100%;
+}
 
 /* Layout */
 .main-wrapper {
@@ -309,10 +312,13 @@ code {
         <div class="main-wrapper">
             <main>
                 
-<h1>DevOps</h1>
+<h1>ArgoCD</h1>
 <hr />
 
 <article>
+<p>Argo<strong>CD</strong> là <a href="/docs/devops/gitops/">GitOps</a> tool để automate deploy (nhìn vào chữ <strong>CD</strong> bên cạnh tên nó đi bro) và sync changes ở Kubernetes với những gì được define ở Git. Người ta thường dùng nó để phòng trường hợp điển hình như khi có ông Ops bất kì thay đổi resource của app trên k8s mà khác so với những gì ghi trong file manifest được lưu cùng source code.</p>
+<p><img src="/img/argocd-sync-flow.png" alt=""></p>
+<p>Vì dựa trên ý tưởng của Git nên ngoài việc đảm bảo Infra có state đã được define thì Argo kế thừa những tinh hoa của Git dành cho Infra như tạo, khôi phục, revert change của config hoặc resource trong 1 state nhất định (cảm giác như save game vậy).</p>
     
 </article>
 
@@ -326,7 +332,9 @@ code {
 <li><a href="/docs/devops/git/">Git</a></li>
 <li><a href="/docs/devops/gitops/">GitOps</a><ul><li><a href="/docs/devops/argocd/">ArgoCD</a></li></ul></li>
 <li><a href="/docs/devops/k8s/">Kubernetes</a></li>
-<li><a href="/docs/devops/linux/">Linux</a></li></ul></li>
+<li><a href="/docs/devops/linux/">Linux</a></li>
+<li><a href="/docs/devops/monitoring/">Monitoring</a></li>
+<li><a href="/docs/devops/network/">Network</a></li></ul></li>
 <li><a href="/docs/tools/">Tools</a></li></ul>
 </aside>
         </div>
