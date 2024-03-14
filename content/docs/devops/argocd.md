@@ -3,9 +3,11 @@ title: ArgoCD
 layout: "layouts/docs.njk"
 eleventyNavigation:
   key: ArgoCD
-  parent: GitOps 
+  parent: GitOps
 ---
 
-ArgoCD là GitOps Tool mà có nhiệm vụ chính là đảm bảo app state trên Kubernetes đúng với những gì được config trong code lưu trên Git, resource tạo ra trên Kubernetes đúng với file manifest lưu trên Git.
+Argo**CD** là [GitOps](/docs/devops/gitops/) tool để automate deploy (nhìn vào chữ **CD** bên cạnh tên nó đi bro) và sync changes ở Kubernetes với những gì được define ở Git. Người ta thường dùng nó để phòng trường hợp điển hình như khi có ông Ops bất kì thay đổi resource của app trên k8s mà khác so với những gì ghi trong file manifest được lưu cùng source code.
 
-Vấn đề là sau khi tạo resource xong thì để đảm bảo
+![](/img/argocd-sync-flow.png)
+
+Vì dựa trên ý tưởng của Git nên ngoài việc đảm bảo Infra có state đã được define thì Argo kế thừa những tinh hoa của Git dành cho Infra như tạo, khôi phục, revert change của config hoặc resource trong 1 state nhất định (cảm giác như save game vậy).
