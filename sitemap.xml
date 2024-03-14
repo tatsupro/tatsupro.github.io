@@ -62,6 +62,11 @@
 	</url>
 	
 	<url>
+		<loc>https://tatsupro.github.io/docs/devops/helm/</loc>
+		<lastmod>2024-03-14</lastmod>
+	</url>
+	
+	<url>
 		<loc>https://tatsupro.github.io/docs/devops/k8s/</loc>
 		<lastmod>2024-03-14</lastmod>
 	</url>
@@ -97,7 +102,12 @@
 	</url>
 	
 	<url>
-		<loc>https://tatsupro.github.io/tags/the-khac/</loc>
+		<loc>https://tatsupro.github.io/tags/the-2/</loc>
+		<lastmod>2024-03-14</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://tatsupro.github.io/tags/bai-co-2-the/</loc>
 		<lastmod>2024-03-14</lastmod>
 	</url>
 	
@@ -112,12 +122,7 @@
 	</url>
 	
 	<url>
-		<loc>https://tatsupro.github.io/tags/the-2/</loc>
-		<lastmod>2024-03-14</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://tatsupro.github.io/tags/bai-co-2-the/</loc>
+		<loc>https://tatsupro.github.io/tags/the-khac/</loc>
 		<lastmod>2024-03-14</lastmod>
 	</url>
 </urlset>
