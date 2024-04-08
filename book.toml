@@ -1,0 +1,9 @@
+[book]
+authors = ["Tatsu"]
+language = "vi"
+multilingual = false
+src = "src"
+title = "Tats Technical Stuffs"
+
+[output.html.print]
+enable = false
