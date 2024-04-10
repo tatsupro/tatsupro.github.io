@@ -1,6 +1,6 @@
 # yabai
 
-Titling Window Manager cho MacOS.
+Titling Window Manager cho MacOS. Lý do chúng ta cần yabai là vì Window Manager mặc định bị đần.
 
 ## Cài đặt
 
@@ -37,4 +37,16 @@ skhd --start-service
 
 Sau đó vào Settings theo hướng dẫn và allow cho cả 2 chương trình trên.
 
-Trước khi chạy cần config
+Trước khi chạy cần config, cái này có thể tùy chỉnh nhưng nếu bạn cần nhanh 1 cái thì có thể dùng của tôi: [yabai](https://github.com/tatsupro/dotfiles/blob/main/.config/yabai/yabairc), [skhd](https://github.com/tatsupro/dotfiles/blob/main/.config/skhd/skhdrc).
+
+3. **<u>Khởi động yabai và skhd</u>**
+
+```sh
+yabai --start-service
+skhd --start-service
+```
+## Liên kết ngoài
+
+- Mã nguồn: [GitHub](https://github.com/koekeishiya/yabai)
+- SKHD: [GitHub](https://github.com/koekeishiya/skhd)
+- [Wiki của yabai](https://github.com/koekeishiya/yabai/wiki)
