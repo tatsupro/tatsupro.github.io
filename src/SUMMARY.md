@@ -1,6 +1,6 @@
 # Summary
 
-[Giới thiệu](introduction.md)
+[Giới thiệu](intro.md)
 
 - [Cloud](cloud/index.md)
 - [DevOps](devops/index.md)
@@ -10,13 +10,14 @@
 - [Container](container/index.md)
   - [Docker](container/docker.md)
   - [Kubernetes](container/k8s.md)
+    - [kubectl](container/kubectl.md)
     - [Helm](container/helm.md)
 - [Terraform](terraform/index.md)
 - [Monitoring](monitor/index.md)
 - [Network](network/index.md)
 - [Linux](linux/index.md)
 - [Dotfiles](dotfiles/index.md)
-- [Tools](tools/index.md)
+- [Tools]()
   - [Text Editor](tools/index.md)
     - [Neovim](tools/neovim.md)
     - [VSCodium](tools/vscodium.md)
@@ -25,4 +26,5 @@
     - [dwm](tools/dwm.md)
   - [LF File Manager](tools/lf.md)
   - [Fuzzy Finder](tools/fzf.md)
+  - [Unix Shell](tools/shell.md)
   - [Git](tools/git.md)

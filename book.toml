@@ -3,7 +3,7 @@ authors = ["Tatsu"]
 language = "vi"
 multilingual = false
 src = "src"
-title = "Tats Technical Stuffs"
+title = "Tats Technical Documents"
 
 [output.html.print]
 enable = false
