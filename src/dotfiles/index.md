@@ -14,17 +14,15 @@ Thông thường các ứng dụng cho người dùng hay lưu trữ config ở 
 
 ### Các chương trình có trong dotfiles này
 
-- **zsh**: Tương tác với máy tính qua dòng lệnh, xem chi tiết ở đây
-  - PowerLevel10k
-  - Fast Syntax Highlighting
-  - Auto Suggestions
-- **neovim**
-- **lf**
-- **git**
-- **fzf**
-- **docker** và **docker compose**
-- **kubectl** và **kubectx**
-- **terraform**
+- [**zsh**](/tools/shell.html#zsh): Tương tác với máy tính qua dòng lệnh.
+  - Xem danh sách các plugin [ở đây](/tools/shell.html#các-plugins).
+- [**neovim**](/tools/neovim.html): Text Editor dạng dòng lệnh.
+- [**lf**](/tools/lf.html): Trình duyệt và quản lý file dạng dòng lệnh.
+- [**git**](/tools/git.html): Version Control Tool
+- [**fzf**](/tools/fzf.html): Để tìm nhiều thứ và tương tác qua dòng lệnh.
+- [**docker** và **docker compose**](/container/docker.html): Container Tool.
+- [**kubectl** và **kubectx**](/container/kubectl.html): Kubernetes Tool.
+- [**terraform**](/terraform/index.html): Infra as Code Tool.
 
 ## Liên kết ngoài
 
