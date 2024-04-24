@@ -17,7 +17,7 @@ Mảng là cấu trúc dữ liệu chứa một loạt những phần tử có c
 
 ### Linked List
 
-![[Pasted image 20230615102855.png]]
+![](/assets/data-structure-1.png)
 
 Gần giống mảng, nhưng thay vì để dữ liệu cạnh nhau trên bộ nhớ thì danh sách liên kết đơn sẽ lưu các phần tử thành các node: mỗi node chứa dữ liệu và con trỏ tới dữ liệu tiếp theo.
 
@@ -26,7 +26,7 @@ Gần giống mảng, nhưng thay vì để dữ liệu cạnh nhau trên bộ n
 
 ### Stack và Queue
 
-![[Pasted image 20230615105159.png]]
+![](/assets/data-structure-2.png)
 
 Stack giống như một ngăn xếp, thêm dữ liệu mới vào ngăn xếp được gọi là push và bỏ dữ liệu ra khỏi ngăn xếp gọi là pop. Dữ liệu thêm và bỏ theo thứ tự FILO (First in Last Out), thằng nào vào trước thì bỏ ra sau hoặc LIFO (First in Last Out) thằng nào vào sau thì ra trước.
 Queue giống như một hàng đợi, dữ liệu được thêm và bỏ theo thứ tự FIFO (First in First Out) thằng nào vào trước thì ra trước hoặc vào sau thì ra sau.
@@ -35,7 +35,7 @@ Queue giống như một hàng đợi, dữ liệu được thêm và bỏ theo 
 
 ### Hash Table
 
-![[Pasted image 20230616110853.png]]
+![](/assets/data-structure-3.png)
 
 - Độ phức tạp khi thêm phần tử mới: O(1).
 - Độ phức tạp khi tìm kiếm phần tử (trong trường hợp bình thường): O(1).
@@ -47,17 +47,18 @@ Hash Table lưu trữ dữ liệu dưới dạng Key-Value để khi cần tìm 
 
 ### Set
 
-![[Pasted image 20230616113747.png]]
+![](/assets/data-structure-4.png)
+
 Set là một tập hợp dữ liệu không trùng nhau, under the hood thì Set có thể sử dụng Hash (Set) hoặc Tree (Set) để biểu diễn dữ liệu.
 
 ### Graph
 
-![[Pasted image 20230616112930.png]]
+![](/assets/data-structure-5.png)
 
 Đồ thị là tập hợp các node nối với nhau bởi các cạnh, đồ thị có thể có hướng hoặc không hướng. Trên thực tế thì thường áp dụng vào làm bản đồ.
 
 ### Tree
 
-![[Pasted image 20230616113333.png]]
+![](/assets/data-structure-6.png)
 
 Đồ thị dạng cây chỉ có một node cha và rất nhiều node con, các node con có thể có nhiều node con nữa.

@@ -1,5 +1,9 @@
 # Google Cloud
 
+GCP là nền tảng điện toán đám mây cung cấp nhiều dịch vụ/sản phẩm khác nhau. Nó là 1 tập hợp các tài nguyên ảo như máy tính hoặc ổ cứng chạy trên cơ sở hạ tầng của Google.
+
+![](/assets/gcp-0.png)
+
 ## Compute Engine
 
 **<u>VMs, GPUs, TPUs, Disks.</u>**
@@ -119,3 +123,25 @@ Policy là 1 tập hợp các binding, audit config và metadata.
 ![](/assets/gcp-17.png)
 
 ![](/assets/gcp-18.png)
+
+# Tư liệu
+
+## Tài liệu chính thức
+
+- [Google Cloud Website](https://cloud.google.com/)
+- [Official Documentation](https://cloud.google.com/docs)
+- [Google Cloud Get Started Guide](https://cloud.google.com/docs/get-started/)
+- [Compare AWS and Azure services to Google Cloud](https://cloud.google.com/free/docs/map-aws-google-cloud-platform)
+
+## YouTube Courses
+
+- [Freecodecamp - Google Cloud Associate Cloud Engineer Course](https://www.youtube.com/watch?v=jpno8FSqpc8&t=58628s)
+- [Edureka - Google Cloud Platform Full Course](https://www.youtube.com/watch?v=IUU6OR8yHCc)
+
+## Coursera Courses
+
+- [Coursera Complete Course for Google Cloud](https://www.coursera.org/professional-certificates/cloud-engineering-gcp#courses)
+
+## Mấy chỗ khác
+
+- [5 Tips to Become a Google Cloud Certified Professional Architect](https://thenewstack.io/5-tips-to-become-a-google-cloud-certified-professional-architect/)

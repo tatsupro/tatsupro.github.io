@@ -2,6 +2,26 @@
 
 > ⚠️ Trang còn sơ sài, cần cập nhật
 
+Algorithms are the ideas behind computer programs to _**solve a general, specified problem**_.
+An algorithmic problem is specified by _**describing the set of instances**_ it must work on, and what desired properties _**the output must have**_.
+
+## Big O Notation
+
+Có thể hiểu là sự tương quan giữa thời lượng của thuật toán và độ lớn của dữ liệu. Thông thường người ta hay sử dụng biểu đồ như thế này (Big O Notation) để biểu thị độ phức tạp của thuật toán:
+
+![](/assets/algo-1.png)
+
+Ví dụ:
+
+- **O(1)**: Dù dữ liệu có nhiều lên tới mức nào thì thời gian chạy vẫn không tăng.
+- **O(n)**: Dữ liệu càng nhiều thì tốc độ càng chậm.
+
+_Có nhiều loại notations khác ngoài Big-O (Big Theta Notation, Big Omega Notation), đề cập tới để biết chứ không cần tìm hiểu._
+
+### Common Runtimes
+
+...
+
 ## Thuật toán sắp xếp
 
 ### Selection Sort
@@ -55,9 +75,19 @@ def selection_sort(arr):
     return arr
 ```
 
+### Merge Sort
+
+![](/assets/algo-2.gif)
+
+### Quick Sort
+
+![](/assets/algo-3.gif)
+
 ## Thuật toán tìm kiếm
 
 ### Tìm kiếm nhị phân
+
+![](/assets/algo-4.gif)
 
 **Yêu cầu**
 
@@ -243,3 +273,21 @@ def find_second_largest(numbers):
     # Trả về số lớn nhất thứ hai
     return second_max_number
 ```
+
+### Breadth First Search
+
+![](/assets/algo-5.gif)
+
+### Depth First Search
+
+![](/assets/algo-6.gif)
+
+## Memoization
+
+![](/assets/algo-7.png)
+
+## Phép toán thao tác bit (Bitwise operation)
+
+## Đệ quy (Recursion)
+
+![](/assets/algo-8.png)

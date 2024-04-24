@@ -109,7 +109,7 @@ VALUES
 );
 ```
 
-![[Pasted image 20230613110643.png]]
+![](/assets/sql.png)
 
 ### INNER JOIN
 
