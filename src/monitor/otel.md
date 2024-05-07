@@ -1,14 +1,8 @@
-# LAB - Tích hợp OpenTelemetry và Tempo local
+# OpenTelemetry
 
-## Cách thức tích hợp
+## Triển khai tích hợp
 
-**1. Setup Spring Boot App**
-
-Dùng [Spring Initializr](https://start.spring.io/) hoặc lệnh sau:
-
-```bash
-mkdir lab-otel-tempo && cd lab-otel-tempo
-```
+### Java Agent (Manual Instrumentation)
 
 ```bash
 curl https://start.spring.io/starter.tgz \
@@ -48,12 +42,3 @@ Thêm `opentelemetry-collector` vào `pom.xml`:
   </dependencies>
 </project>
 ```
-
-
-
-[github](https://github.com/tatsupro/lab-otel-tempo/commit/3126c2caee485926474c5cde998bc029afbf4e74)
-
-## Liên kết ngoài
-
-- [OpenTelemetry - Java](https://opentelemetry.io/docs/languages/java)
-- [Medium - Comprehensive Observability in Spring Boot using OpenTelemetry, Prometheus, Grafana, Tempo, and Loki](https://medium.com/@ahmadalammar/comprehensive-observability-in-spring-boot-using-opentelemetry-prometheus-grafana-tempo-and-067196eee539)
