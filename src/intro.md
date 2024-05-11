@@ -1,12 +1,12 @@
 # Bonjour!
 
-Trang tài liệu chia sẻ kiến thức kĩ thuật.
+Trang viết về những thứ liên quan tới công nghệ hoặc kĩ thuật. <!-- nơi duy nhất người ta được viết docs với giọng bố đời -->
 
 <!-- Cuộc sống có nhiều niềm vui hơn nếu bạn không phải là người muốn học hết tất cả đống này. Cuộc đời tôi sẽ tốt đẹp hơn nếu ngày nào đó tôi dừng viết mấy thứ kiểu này. -->
 
 ## Bắt dầu
 
-Đây là nơi mình viết những thứ liên quan tới kĩ thuật, để bắt đầu thì mọi người có thể dùng thanh tìm kiếm hoặc menu để lướt xem trên trang này. Đôi khi nội dung có thể nằm ngoài phạm vi hoặc không liên quan mật thiết tới máy tính hoặc internet, vậy nên mình xin giới thiệu sơ qua nội dung trang để giúp cho mọi người tiếp cận dễ dàng hơn.
+Để bắt đầu thì mọi người có thể dùng thanh tìm kiếm hoặc menu để lướt xem trên trang này. Đôi khi nội dung có thể nằm ngoài phạm vi hoặc không liên quan mật thiết tới máy tính hoặc internet, vậy nên mình xin giới thiệu sơ qua nội dung trang để giúp cho mọi người tiếp cận dễ dàng hơn.
 
 1. Các nội dung liên quan tới phần mềm:
    - [DevOps](/devops/index.md), [Cloud](/cloud/index.md), v.v.
@@ -15,7 +15,7 @@ Trang tài liệu chia sẻ kiến thức kĩ thuật.
    - Lập trình (cũng lâu chưa động tới nên phần này mình sẽ không chú trọng)
    - Mạng máy tính (sắp ra mắt)
 2. [Gợi ý](/recommendation/index.md) hoặc hướng dẫn [thi cử](/get-certified/index.md)
-3. Chủ đề phi kĩ thuật nhưng rất quan trọng: Vấn đề ảnh hưởng tới [văn hóa xã hội](/social/index.md).
+3. Chủ đề phi kĩ thuật: [văn hóa xã hội](/social/index.md).
 
 Mục tiêu của mình không phải là viết một trang wiki hay tài liệu theo hình thức mà chỉ cung cấp đủ thông tin để giúp cho chính bản thân mình và cũng hy vọng người đọc có đủ kiến thức để tiếp tục tìm tòi và thành thạo thêm.
 
@@ -23,7 +23,7 @@ Mục tiêu của mình không phải là viết một trang wiki hay tài liệ
 
 Nội dung của trang được cấp kèm giấy phép Creative Commons Attribution-NonCommercial-ShareAlike 4.0. Người sử dụng được phép phân phối lại với điều kiện:
 
-- Ghi danh tường minh tác giả (cụ thể là _Nguyễn Hoàng Long từ Tats Technical Documents_<!-- nơi duy nhất người ta được viết docs với giọng bố đời -->), trích lại liên kết tới [giấy phép gốc](https://github.com/tatsupro/tatsupro.github.io/blob/main/LICENSE), thông báo lại khi có thay đổi.
+- Ghi danh tường minh tác giả, trích lại liên kết tới [giấy phép gốc](https://github.com/tatsupro/tatsupro.github.io/blob/main/LICENSE), thông báo lại khi có thay đổi.
 - Không được sử dụng cho mục đích thương mại.
 - Tuyệt đối không được thay đổi giấy phép dưới bất kì hình thức nào.
 

@@ -1,5 +1,7 @@
 # Văn hóa & xã hội
 
+> Ghi chú: Phần này đang viết dở và mình đang bị mơ hồ về nội dung trang nên cũng viết rất lan man và không đúng trọng tâm. Sẽ sửa lại sau.
+
 Chúng ta không thể nói về công nghệ mà không nói tới những ảnh hưởng tới xã hội của nó vì rất ít trong số chúng ta vì sự ưu việt của máy móc mà quên đi những vấn đề mà máy móc tạo ra cho xã hội dù là trước đó hay sau này.
 
 ## Các chủ đề
