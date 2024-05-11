@@ -6,4 +6,4 @@ src = "src"
 title = "Tats Technical Documents"
 
 [output.html.print]
-enable = false
+enable = true

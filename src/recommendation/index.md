@@ -23,8 +23,9 @@ Tư liệu học vốn có rất nhiều và dễ tìm trên Internet để họ
 13. [free-for.dev](https://free-for.dev) tổng hợp đồ miễn phí để dùng
 14. [Arch Wiki](https://wiki.archlinux.org) cùng với [Arch manual pages](https://man.archlinux.org) là nguồn tư liệu không chỉ hữu dụng với người dùng Arch mà còn cho cả những thứ liên quan Linux nói chung.
 15. [InstallGentoo Wiki](https://wiki.installgentoo.com) là một trang wiki được tạo ra với mục đích cung cấp đủ kiến thức và hướng dẫn cho người muốn xả thân vào mấy cuộc tranh luận vô nghĩa trên imageboard `/g/` của 4chan.
+16. [Areweyet](https://wiki.mozilla.org/Areweyet) là một loạt trang theo dõi trạng thái phát triển phần mềm của Rust ở một lĩnh vực nào đó (Đôi khi cũng không phải về Rust).
 
-## Công cụ
+<!-- ## Công cụ -->
 
 ## Trôn
 
