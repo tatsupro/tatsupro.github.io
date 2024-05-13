@@ -3,7 +3,7 @@ authors = ["Tatsu"]
 language = "vi"
 multilingual = false
 src = "src"
-title = "Tats GoPro"
+title = "Tats Go Pro"
 
 [output.html.print]
 enable = true
