@@ -44,6 +44,14 @@ Sau đây là danh sách các sản phẩm và dịch vụ hay sử dụng từ 
 
 Bọn IT đụt mắt cận chưa bao giờ biết cách đặt tên cho đúng, tên các service như trên chỉ để phục vụ mục đích marketing.
 
+## So sánh
+
+Đối với 3 IaaS sơ qua thì đều có điểm chung là web UI tệ để người dùng sử dụng và quản lý, đó là lý do [Terraform](/terraform/index.md) ra đời. Còn điểm khác nhau thì:
+
+- AWS chi phí đắt đỏ nhưng hệ thống ổn định hơn, bản thân Amazon cũng chạy trên AWS và do đây là dịch vụ có nhiều người sử dụng nhất nên hỗ trợ cũng tốt hơn.
+- Vì mối quan hệ hợp tác giữa Microsoft và OpenAI nên người ta dùng Azure để sử dụng OpenAI Service để truy cập vào GPT, ChatGPT hoặc DALL-E.
+- Google Cloud có chi phí rẻ nhất trong số này, ưu điểm chính là AI và GKE (tất nhiên vì Google là công ty đứng đằng sau Kubernetes).
+
 ## Tranh cãi
 
 Ừm chẳng có gì là tốt đẹp cả, tự vận hành cơ sở hạ tầng tuy tốn kém tiền của và yêu cầu nhiều nhân lực hơn nhưng được lợi ích lâu dài. Một khi sử dụng cloud thì số phận của bạn thuộc về một bên khác và bạn chẳng làm được gì nhiều với đồ ăn liền.
