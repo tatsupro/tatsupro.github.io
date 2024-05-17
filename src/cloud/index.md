@@ -1,16 +1,49 @@
 # Cloud
 
-Máy tính của người khác trên Internet.
+**Máy tính của người khác trên Internet**. Theo cách truyền thống, dữ liệu và chương trình của người dùng được lưu và chạy trên máy tính thuộc sở hữu của cá nhân hoặc tổ chức đó. Sau này khi công nghệ điện toán và mạng máy tính phát triển thì về cơ bản 2 cái trên chạy và lưu trên máy tính của cloud service provider.
 
-<!-- Đám mây là một danh từ chẳng liên quan gì ở đây dùng để chỉ **máy tính cho thuê trên Internet**. Người ta bắt đầu quan tâm tới sự tồn tại của nó khi Amazon phát hiện ra họ không thể chỉ làm một trang thương mại điện tử bán lẻ đống đồ Tàu kiếm ăn qua ngày vì đó là 1 mô hình kinh doanh vi mô cạnh tranh cực kì gắt gao. May mắn mỉm cười với Amazon khi họ phát hiện ra mô hình kinh doanh Điện toán đám mây lại là một mô hình kinh doanh bòn rút ví tiền của các doanh nghiệp khác vô cùng hiệu quả và giúp cho Jeff Bezos luôn là 1 trong số những tỉ phú giàu nhất thế giới, vậy nên từ đó các gã khổng lổ bắt đầu sử dụng nguồn lực của mình để đổi lấy cho bạn là người dùng cuối sự tiện lợi trong việc đốt tiền (sẽ được giải thích kĩ hơn ở đoạn tới).
+Một số <u>thể loại cLoUd</u> có thể kể đến như:
 
-Bạn đã từng dùng qua Cloud theo cách nào đó như khi bạn dùng Google Drive lưu đống file của bạn trên máy tính của người khác, đăng ảnh hay video lên YouTube hoặc Facebook đó cũng là máy tính của người khác. Đó là những dịch vụ đơn giản và tiện lợi để đánh đổi lấy quyền làm chủ thông tin, bảo mật, quyền riêng tư và thông tin cá nhân của bạn mà máy tính của người khác đem lại cho bạn. Còn đối với dân IT chúng ta đều biết việc tự mua máy móc và đấu dây mạng để vận hành hệ thống cần nhiều nhân lực và tiền của. Vậy nên Amazon Web Services, Microsoft Azure và Google Cloud đến để bảo bạn chúng tôi sẽ làm những phần khó thay bạn và những gì doanh nghiệp bạn cần đánh đổi là tiền và **lòng tin**. Với hầu hết các doanh nghiệp dường như không gặp khó khăn gì trong việc giao thông tin về tài sản trí tuệ, thông tin khách hàng được chạy và lưu trên trên hạ tầng máy móc của một bên nào đó khác vậy nên đó là lý do chúng ta quan tâm tới Cloud.
+1. Hoàn toàn phụ thuộc vào bên khác (thường là những gã khổng lồ luôn nhăm nhe lấy tiền trong ví của bạn)
+2. cỜ-lAo tự cung tự cấp
+3. Xài kết hợp cả hai
+4. Hoặc đơn giản nhất là không dùng :&rpar;
 
-Như bạn có thể thấy lý do lớn nhất bạn trả tiền cho Cloud là sự tiện lợi (đại khái). Nhờ công nghệ VM và Container thì họ cho bạn máy tính (đại khái) và Interface đơn giản hóa những chi tiết kĩ thuật phức tạp phía sau để bạn tương tác với hạ tầng của họ (có thể bằng Console, CLI Tool, API hay dạo gần đây là Terraform) cho bạn khả năng provision, config nhanh chóng và hiệu quả. Nhưng trước hết để ngăn bạn mơ mộng quá xa thì có 1 điều chúng ta phải chỉ ra rằng mặc dù Cloud có thể giúp bạn dễ dàng tạo hạ tầng máy móc nhanh chóng nhưng sau tất cả thì Interface vẫn như c\*t. Vậy nên chúng ta mới cần thuê tụi Infra là người thực sự hiểu những dịch vụ này để tạo và vận hành nó hoặc như vậy thì mới có những dịch vụ như Vercel hay Netlify, dù đó cũng chỉ là AWS behind the scene mà bạn phải trả nhiều tiền hơn để đổi lại giao diện màu mè và trải nghiệm người dùng tốt hơn.
+Các dịch vụ điện toán đám mây thường rơi vào 3 <u>thể loại dịch vụ</u> sau:
 
-Data Center - đau đớn = AWS \
-AWS - đau đớn = Vercel
+1. **SaaS (Software as a service)** là các dịch vụ mọi người thường thấy như Gmail, Google Drive (Workspace), OneDrive (365), Dropbox, iCloud, v.v. mà người dùng chỉ cần biết kiến thức tin học phổ thông để sử dụng.
+2. **PaaS (Platform as a service)** là dịch vụ mà người dùng bình thường không dùng. Khách hàng chính của các loại dịch vụ này là người mà cần một nền tảng để vận hành ứng dụng mà họ phát triển trên đó mà không cần động tới phần phức tạp của cơ sở hạ tầng (như Firebase, Netlify, Heroku, v.v.)
+3. **IaaS (Infrastructure as a service)** là lý do doanh nghiệp của bạn cần đội "Cloud Engineer" sử dụng để cung cấp hạ tầng thiết bị hoặc máy tính từ xa dưới dạng trừu tượng nào đó. Đây là thể loại dịch vụ tuy phức tạp nhưng giúp cho bạn hoàn toàn kiểm soát cơ sở hạ tầng đảm bảo tài nguyên sử dụng cho bạn. 3 dịch vụ phổ biến nhất là Amazon Web Services (AWS), Google Cloud Platform (GCP) và Microsoft Azure.
 
-**Trả tiền để đổi lấy sự tiện lợi và trả nhiều hơn gấp 2 hoặc gấp 3 để đổi lấy sự tiện lợi thật sự.** -->
+## Danh sách sản phẩm và dịch vụ IaaS phổ biến
 
-<!-- , dù bản thân các công ty này có thể tự dựng hạ tầng để đổi lại cho người dùng giá cả hợp lý hơn. -->
+Sau đây là danh sách các sản phẩm và dịch vụ hay sử dụng từ 3 cloud provider phổ biến nhất.
+
+> **ℹ️ Tip:** Dịch vụ tuy có nhiều nhưng quan trọng nhất cũng chỉ là VM hoặc Kubernetes. Các dịch vụ khác chỉ xoay quanh hỗ trợ 2 cái này.
+
+| Tên dịch vụ                    | AWS                                       | Azure                                      | GCP                            |
+| ------------------------------ | ----------------------------------------- | ------------------------------------------ | ------------------------------ |
+| Máy ảo (VM - Virtual Machine)  | Elastic Compute Cloud (EC2)               | Virtual Machine                            | Compute Engine                 |
+| Kubernetes                     | Elastic Kubernetes Service (EKS)          | Azure Kubernetes Service (AKS)             | Google Kubernetes Engine (GKE) |
+| Serverless                     | Lambda                                    | Azure Functions                            | Cloud Functions                |
+| Lưu trữ (Storage)              | Simple Storage Service (S3)               | Blob Storage                               | Cloud Storage                  |
+| Ổ cứng (Disk)                  | Elastic Block Store                       | Managed Disk                               | Persistent Disk                |
+| VPC - Virtual Private Cloud    | Virtual Private Cloud                     | Virtual Network                            | Virtual Private Cloud          |
+| DNS - Domain Name System       | Route 53                                  | DNS                                        | Cloud DNS                      |
+| Load Balancer                  | Elastic Load Balancing                    | Load Balancer                              | Cloud Load Balancing           |
+| Tường lửa (Firewall)           | Web Application Firewall                  | Web Application Firewall                   | Cloud Armor                    |
+| SQL                            | RDS                                       | SQL Database                               | Cloud SQL                      |
+| NoSQL                          | DynamoDB                                  | Cosmos DB                                  | Firebase Database              |
+| Dataware house                 | Redshift                                  | Synapse Analytics                          | BigQuery                       |
+| Message queue                  | Simple Queuing Service                    | Storage Queues                             | Pub/Sub                        |
+| Monitor                        | CloudWatch                                | Monitor                                    | Cloud Monitoring               |
+| Identity Service               | IAM                                       | Microsoft Entra ID                         | Cloud Identity                 |
+| Key management                 | KMS                                       | Key Vault                                  | Cloud KMS                      |
+| Secret                         | Secrets Manager                           | Key Vault                                  | Secret Manager                 |
+| Package & Container Repository | Elastic Container Registry & CodeArtifact | Azure Container Registry & Azure Artifacts | Artifact Registry              |
+
+Bọn IT đụt mắt cận chưa bao giờ biết cách đặt tên cho đúng, tên các service như trên chỉ để phục vụ mục đích marketing.
+
+## Tranh cãi
+
+Ừm chẳng có gì là tốt đẹp cả, tự vận hành cơ sở hạ tầng tuy tốn kém tiền của và yêu cầu nhiều nhân lực hơn nhưng được lợi ích lâu dài. Một khi sử dụng cloud thì số phận của bạn thuộc về một bên khác và bạn chẳng làm được gì nhiều với đồ ăn liền.
