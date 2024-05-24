@@ -16,17 +16,17 @@ _Vì không quan trọng bạn hiểu đúng hoặc sai, hay thậm chí không 
    - **Shell Script** và lý do vì mục thứ 2: Unix (nó là một phần của OS) và [GitLab](/git/gitlab.md).
    - [**Go**](/programming/go.md) (hay Golang) là lựa chọn bạn không cần phải học nhưng cũng hay nếu biết được thì có thể dùng để viết một số tool phục vụ cho luồng làm việc.
    - Và gợi ý cuối cùng thuộc diện động vào cái gì tìm hiểu cái đó là [Java](/programming/java.md) và [JavaScript](/programming/javascript.md). Lý do đơn giản là vì chúng được sử dụng rộng rãi ở khắp mọi nơi, tuy bạn có thể không chuyên sâu vào dev nhưng một khi vào cái ngành chết tiệt này thì dù có muốn né tránh cỡ nào đi chăng nữa thì ở thời điểm nào đó trong cuộc đời bạn cũng phải động tới 1 trong 2 thứ này. Hiểu chúng nó để biết được cách thức vận hành ra sao.
-5. **Text Editor** như **Visual Studio Code** hoặc **Vim**.
-6. **Git**, **GitHub** hoặc **GitLab**
-7. **Container** **Docker** **Kubernetes**
+5. **Text Editor** như [**Visual Studio Code**](/tools/vscodium.md) hoặc [**Vim**](/tools/neovim.md). Với công việc hằng ngày của DevOps thì không phải ngồi cả ngày với Text Editor nên khuyên khích dùng VSCode hơn, nhưng với một số trường hợp khi remote tới một server mà không có GUI thì việc cần và sử dụng một TUI lighweight như Vim hoặc Nano là cần thiết. Cái này là tùy chọn ở mỗi người, miễn sao dùng cái nào để làm được việc là được.
+6. [**Git**](/git/index.md) (VCS) dùng để quản lý code và **GitHub** hoặc [**GitLab**](/git/gitlab.md) để làm một nơi lưu trữ code (thường là trên Cloud), collab với người khác và automate luồng CI/CD. Có nhiều VCS khác nhưng ai quan tâm chứ? Trừ khi bạn làm việc ở big tech thì họ có nhiều lựa chọn tốt hơn _phải học_.
+7. [**Container**](/container/index.md) là công nghệ thịnh hành từ 2015 trở đi, với cá nhân từ một người làm infra thì nó không có quá nhiều khác biệt so với việc setup máy ảo nếu nói về thành phẩm cuối cùng. Yếu tố làm container nên học ở thời điểm này là vì nhiều doanh nghiệp đang chuyển sang sử dụng nó, trong giới này có một câu "Không ai mất việc vì mua đồ IBM cả" và dù biết có nhiều giải pháp đơn giản và tối ưu hơn nhưng [**Docker**](/container/docker.md) vẫn là một thứ nên biết để phục vụ thị trường. [**Kubernetes**](/container/k8s.md) là một vấn đề mà Google tạo ra cho thế giới để họ có thể kinh doanh giải pháp của mình (GKE), nhưng vì nó cũng là thứ đang phổ biến nên bạn sẽ phải động tới nó ở một lúc nào đó khi theo cái ngành này.
 8. Học cách tự cài đặt một số thứ như: Web server (Nginx hoặc Apache), Firewall, Forward/Reverse Proxy, Caching server.
-9. Configuration Management **Ansible** **Chef** **Puppet**
-10. CI/CD Tool **GitLab CI** **Github Actions** hoặc **Jenkins**
+9. Configuration Management **Ansible**
+10. [**CI/CD**](/cicd/index.md) Tool **GitLab CI** **Github Actions** hoặc **Jenkins**
 11. Secret Management như **Vault** hay sử dụng của Kubernetes hoặc Cloud
 12. Monitoring (**Grafana**, **Prometheus**, **New Relic**, **Open Telemetry**)
 13. Log Management: **Loki**, **Splunk**
 14. Artifact Management: **Jfrog** hoặc sử dụng của Cloud.
-15. GitOps tool như **ArgoCD**.
+15. Việc áp dụng **GitOps** sẽ khiến cho team dev nhìn mặt bạn một cách khó hiểu và bắt đầu hỏi những câu như "Tại sao luồng cũ đang chạy đơn giản và bình thường mà sao lại phải thêm thằng này vào?". Sau khi mất một thời gian giải thích về nó thì bạn có thể sử dụng tool như [**ArgoCD**](/git/argocd.md) hoặc **Flux CD**. Tuy nó không thật sự giúp cho cuộc đời bạn tốt hơn hay thậm chí còn làm cuộc đời bạn phức tạp hơn, nhưng ít ra giờ resource trong K8S có thể được quản lý tập trung trên Git.
 16. Cloud Design Patterns như **Availability**.
 
 Tất nhiên không ai học hết được đống trên, chỉ cần biết qua và chuyên sâu một cái thôi là được rồi. Không ai đa năng tới mức nắm được hết đống trên đâu nên đừng kỳ vọng.
