@@ -4,6 +4,11 @@ Trang viết về những thứ liên quan tới công nghệ hoặc kĩ thuật
 
 <!-- Cuộc sống có nhiều niềm vui hơn nếu bạn không phải là người muốn học hết tất cả đống này. Cuộc đời tôi sẽ tốt đẹp hơn nếu ngày nào đó tôi dừng viết mấy thứ kiểu này. -->
 
+Theo dõi tôi trên trang và kênh Escaping from visual mode để cập nhật tin tức mới!
+
+- Facebook: [@escapevim](https://www.facebook.com/escapevim)
+- YouTube: [@escapevim](https://www.youtube.com/@escapevim)
+
 ## Bắt dầu
 
 Để bắt đầu thì mọi người có thể dùng thanh tìm kiếm hoặc menu để lướt xem trên trang này. Đôi khi nội dung có thể nằm ngoài phạm vi hoặc không liên quan mật thiết tới máy tính hoặc internet, vậy nên mình xin giới thiệu sơ qua nội dung trang để giúp cho mọi người tiếp cận dễ dàng hơn.
