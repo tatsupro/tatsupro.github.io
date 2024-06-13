@@ -9,7 +9,7 @@ Theo dõi tôi trên trang và kênh Escaping from visual mode để cập nhậ
 - Facebook: [@escapevim](https://www.facebook.com/escapevim)
 - YouTube: [@escapevim](https://www.youtube.com/@escapevim)
 
-## Bắt dầu
+## Bắt đầu
 
 Để bắt đầu thì mọi người có thể dùng thanh tìm kiếm hoặc menu để lướt xem trên trang này. Đôi khi nội dung có thể nằm ngoài phạm vi hoặc không liên quan mật thiết tới máy tính hoặc internet, vậy nên mình xin giới thiệu sơ qua nội dung trang để giúp cho mọi người tiếp cận dễ dàng hơn.
 
@@ -19,7 +19,7 @@ Theo dõi tôi trên trang và kênh Escaping from visual mode để cập nhậ
    - Các công cụ hoặc phần mềm mà tôi sử dụng
    - Lập trình (cũng lâu chưa động tới nên phần này mình sẽ không chú trọng)
    - Mạng máy tính (sắp ra mắt)
-2. [Gợi ý](/recommendation/index.md) hoặc hướng dẫn [thi cử](/get-certified/index.md)
+2. [Gợi ý](/rcm/index.md) hoặc hướng dẫn [thi cử](/cert/index.md)
 3. Chủ đề phi kĩ thuật: [văn hóa xã hội](/social/index.md).
 
 Mục tiêu của mình không phải là viết một trang wiki hay tài liệu theo hình thức mà chỉ cung cấp đủ thông tin để giúp cho chính bản thân mình và cũng hy vọng người đọc có đủ kiến thức để tiếp tục tìm tòi và thành thạo thêm.
