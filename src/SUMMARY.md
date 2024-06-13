@@ -63,6 +63,8 @@
     - [dwm](tools/dwm.md)
   - [LF File Manager](tools/lf.md)
   - [Fuzzy Finder](tools/fzf.md)
+- [Riêng tư]()
+  - [Chặn QC & Tracker](privacy/blocker.md)
 - [Văn hóa & xã hội](social/index.md)
   - [Eternal September](social/eternal-september.md)
   - [Dead Internet Theory](social/dead-internet.md)

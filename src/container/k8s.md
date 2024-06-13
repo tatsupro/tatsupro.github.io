@@ -263,3 +263,15 @@ abcxyz
 ## Kubectl cơ bản
 
 [Kubectl Dictionary](https://kubernetes.io/docs/reference/kubectl/cheatsheet) (dùng Cmd + F để tìm lệnh cần dùng)
+
+## Tip & Tricks
+
+1. Tìm tên các image đang được sử dụng
+
+```sh
+kubectl get pods --all-namespaces -o jsonpath="{.items[*].spec['initContainers', 'containers'][*].image}" |\
+tr -s '[[:space:]]' '\n' |\
+sort |\
+uniq -c |\
+grep "<image-name-here>"
+```
