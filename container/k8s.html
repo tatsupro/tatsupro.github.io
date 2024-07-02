@@ -1,0 +1,436 @@
+<!DOCTYPE HTML>
+<html lang="vi" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Kubernetes - Long Technical Documents</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../intro.html">Giới thiệu</a></li><li class="chapter-item expanded "><a href="../cloud/index.html"><strong aria-hidden="true">1.</strong> Cloud</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cloud/gcp.html"><strong aria-hidden="true">1.1.</strong> Google Cloud</a></li></ol></li><li class="chapter-item expanded "><a href="../devops/index.html"><strong aria-hidden="true">2.</strong> DevOps</a></li><li class="chapter-item expanded "><a href="../cicd/index.html"><strong aria-hidden="true">3.</strong> CI/CD</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cicd/gitops.html"><strong aria-hidden="true">3.1.</strong> GitOps</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cicd/argocd.html"><strong aria-hidden="true">3.1.1.</strong> ArgoCD</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../container/index.html"><strong aria-hidden="true">4.</strong> Container</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../container/docker.html"><strong aria-hidden="true">4.1.</strong> Docker</a></li><li class="chapter-item expanded "><a href="../container/k8s.html" class="active"><strong aria-hidden="true">4.2.</strong> Kubernetes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../container/kubectl.html"><strong aria-hidden="true">4.2.1.</strong> kubectl</a></li><li class="chapter-item expanded "><a href="../container/helm.html"><strong aria-hidden="true">4.2.2.</strong> Helm</a></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Database</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../database/sql.html"><strong aria-hidden="true">5.1.</strong> SQL</a></li></ol></li><li class="chapter-item expanded "><a href="../terraform/index.html"><strong aria-hidden="true">6.</strong> Terraform</a></li><li class="chapter-item expanded "><a href="../ansible/index.html"><strong aria-hidden="true">7.</strong> Ansible</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Lập trình</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">8.1.</strong> Ứng dụng</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">8.1.1.</strong> WebApp</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.1.2.</strong> Microservice</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.</strong> Khái niệm</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../program/data-structure.html"><strong aria-hidden="true">8.2.1.</strong> Cấu trúc dữ liệu</a></li><li class="chapter-item expanded "><a href="../program/algorithm.html"><strong aria-hidden="true">8.2.2.</strong> Giải thuật</a></li><li class="chapter-item expanded "><a href="../program/oop.html"><strong aria-hidden="true">8.2.3.</strong> Hướng đối tượng</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.3.1.</strong> Clean Code</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.3.2.</strong> Object Oriented Analysis and Design</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.3.3.</strong> Software Development Design Principles</div></li><li class="chapter-item expanded "><a href="../program/solid.html"><strong aria-hidden="true">8.2.3.4.</strong> SOLID Principles</a></li><li class="chapter-item expanded "><a href="../program/design-patterns.html"><strong aria-hidden="true">8.2.3.5.</strong> Design Patterns</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.3.6.</strong> Anti Patterns</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.3.7.</strong> Refactoring</div></li></ol></li><li class="chapter-item expanded "><a href="../program/12factors.html"><strong aria-hidden="true">8.2.4.</strong> 12 Factors</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.3.</strong> Ngôn ngữ</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../program/javascript.html"><strong aria-hidden="true">8.3.1.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="../program/python.html"><strong aria-hidden="true">8.3.2.</strong> Python</a></li><li class="chapter-item expanded "><a href="../program/java.html"><strong aria-hidden="true">8.3.3.</strong> Java</a></li><li class="chapter-item expanded "><a href="../program/go.html"><strong aria-hidden="true">8.3.4.</strong> Go</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../monitor/index.html"><strong aria-hidden="true">9.</strong> Monitoring</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../monitor/grafana.html"><strong aria-hidden="true">9.1.</strong> Grafana</a></li><li class="chapter-item expanded "><a href="../monitor/tempo.html"><strong aria-hidden="true">9.2.</strong> Grafana Tempo</a></li><li class="chapter-item expanded "><a href="../monitor/loki.html"><strong aria-hidden="true">9.3.</strong> Grafana Loki</a></li><li class="chapter-item expanded "><a href="../monitor/prometheus.html"><strong aria-hidden="true">9.4.</strong> Prometheus</a></li><li class="chapter-item expanded "><a href="../monitor/otel.html"><strong aria-hidden="true">9.5.</strong> OpenTelemetry</a></li></ol></li><li class="chapter-item expanded "><a href="../network/index.html"><strong aria-hidden="true">10.</strong> Network</a></li><li class="chapter-item expanded "><a href="../cloudflare/index.html"><strong aria-hidden="true">11.</strong> Cloudflare</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Hệ điều hành</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../os/unix.html"><strong aria-hidden="true">12.1.</strong> Unix</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tools/shell.html"><strong aria-hidden="true">12.1.1.</strong> Shell</a></li></ol></li><li class="chapter-item expanded "><a href="../os/linux.html"><strong aria-hidden="true">12.2.</strong> Linux</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.3.</strong> BSD</div></li></ol></li><li class="chapter-item expanded "><a href="../git/index.html"><strong aria-hidden="true">13.</strong> Git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../git/gitlab.html"><strong aria-hidden="true">13.1.</strong> GitLab</a></li></ol></li><li class="chapter-item expanded "><a href="../dotfiles/index.html"><strong aria-hidden="true">14.</strong> Dotfiles</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> Tools</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tools/index.html"><strong aria-hidden="true">15.1.</strong> Text Editor</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tools/vim.html"><strong aria-hidden="true">15.1.1.</strong> Vim</a></li><li class="chapter-item expanded "><a href="../tools/vscode.html"><strong aria-hidden="true">15.1.2.</strong> VSCode</a></li></ol></li><li class="chapter-item expanded "><a href="../tools/wm.html"><strong aria-hidden="true">15.2.</strong> Window Manager</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tools/yabai.html"><strong aria-hidden="true">15.2.1.</strong> yabai</a></li><li class="chapter-item expanded "><a href="../tools/dwm.html"><strong aria-hidden="true">15.2.2.</strong> dwm</a></li></ol></li><li class="chapter-item expanded "><a href="../tools/lf.html"><strong aria-hidden="true">15.3.</strong> LF File Manager</a></li><li class="chapter-item expanded "><a href="../tools/fzf.html"><strong aria-hidden="true">15.4.</strong> Fuzzy Finder</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">16.</strong> Riêng tư</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../privacy/blocker.html"><strong aria-hidden="true">16.1.</strong> Chặn QC & Tracker</a></li></ol></li><li class="chapter-item expanded "><a href="../social/index.html"><strong aria-hidden="true">17.</strong> Văn hóa & xã hội</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../social/eternal-september.html"><strong aria-hidden="true">17.1.</strong> Eternal September</a></li><li class="chapter-item expanded "><a href="../social/dead-internet.html"><strong aria-hidden="true">17.2.</strong> Dead Internet Theory</a></li><li class="chapter-item expanded "><a href="../social/wallgarden.html"><strong aria-hidden="true">17.3.</strong> Walled garden</a></li></ol></li><li class="chapter-item expanded "><a href="../rcm/index.html"><strong aria-hidden="true">18.</strong> Gợi ý</a></li><li class="chapter-item expanded "><a href="../cert/index.html"><strong aria-hidden="true">19.</strong> Thi cử</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cert/cka.html"><strong aria-hidden="true">19.1.</strong> CKA</a></li><li class="chapter-item expanded "><a href="../cert/gcp.html"><strong aria-hidden="true">19.2.</strong> GCP</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">20.</strong> Nháp</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../drafts/lab-otel.html"><strong aria-hidden="true">20.1.</strong> LAB - OpenTelemetry và Tempo</a></li><li class="chapter-item expanded "><a href="../drafts/backend.html"><strong aria-hidden="true">20.2.</strong> Backend</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Long Technical Documents</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="kubernetes"><a class="header" href="#kubernetes">Kubernetes</a></h1>
+<p>Kubernetes là orchestration framework (tức nó dùng để điều phối và quản trị các container). k8s cung cấp các thứ cho container chạy ở môi trường production theo scale tuỳ thích. Kubernetes giúp quản lý một lượng lớn container dễ dàng hơn.</p>
+<h2 id="kiến-trúc"><a class="header" href="#kiến-trúc">Kiến trúc</a></h2>
+<p><img src="/assets/k8s-1.png" alt="" /></p>
+<h3 id="control-plane"><a class="header" href="#control-plane">Control Plane</a></h3>
+<p>Tên gọi khác là Master Node, là một tập hợp các thành phần quản lý chính cluster chứa nó.</p>
+<p><img src="/assets/k8s-2.png" alt="" /></p>
+<ul>
+<li><strong>Kube API</strong>: Đây là API server, có thể coi nó như interface tương tác với control plane (cũng như cluster) của chính nó.</li>
+<li><strong>Etcd:</strong> Đây là server tương tác với 1 database key-value để lưu những thông tin liên quan tới state của cluster.</li>
+<li><strong>Scheduler:</strong> Đây là thành phần quản lý việc scheduling, quản lý việc chọn node nào khả dụng trên cluster nào để chạy container.</li>
+<li><strong>Control Manager:</strong> Đây là thành phần chạy nhiều thành phần con trong đó, quản lý nhiều task tự động hóa với cluster.</li>
+<li><strong>Cloud Control Manager:</strong> Dùng làm interface giữa Kubernetes và cloud provider, không cần quan tâm ngay bây giờ (đang nói thằng viết câu này).</li>
+</ul>
+<h3 id="node"><a class="header" href="#node">Node</a></h3>
+<p>Có thể gọi là Worker Node, là một máy bị quản lý và chạy các container bởi 1 cluster nào đó, 1 cluster có thể có nhiều node.</p>
+<p><img src="/assets/k8s-3.png" alt="" /></p>
+<ul>
+<li><strong>Kubelet:</strong> là 1 agent chạy trên mỗi node, thường tương tác với [[#Control Plane]] để đảm bảo các Container chạy trên các Node hoạt động theo đúng chỉ dẫn từ Control Plane. Kubelet đồng thời lo report lại trang thái của Container và các thông tin khác về Control Plane.</li>
+<li><strong>Container runtime:</strong> không phải là một phần của k8s. Nó là một phần mềm khác dùng để chạy các container mà k8s quản lý, có thể là [[Docker]] hoặc là containerd.</li>
+<li><strong>Kube Proxy:</strong> là Network Proxy chạy trên mỗi node để lo một số thứ dạng như thông mạng giữa các container và service trong cluster.</li>
+</ul>
+<h2 id="dựng-1-cụm-k8s"><a class="header" href="#dựng-1-cụm-k8s">Dựng 1 cụm k8s</a></h2>
+<p>Ở đây tôi dựng 3 máy ảo AWS, 1 master node và 2 worker node. Phải đảm bảo cả 3 máy đều chung một network.</p>
+<ol>
+<li><strong>Sửa file hosts</strong>
+Cho dễ phân biệt với nhau thì có thể dùng lệnh <code>sudo hostnamectl set-hostname</code> để đổi tên lại các host. Xong thêm 3 dòng sau vào file hosts:</li>
+</ol>
+<pre><code>/etc/hosts
+172.31.84.97 k8s-control
+172.31.92.249 k8s-worker1
+172.31.83.141 k8s-worker2
+</code></pre>
+<p>Format là <code>&lt;IP&gt; &lt;Tên host&gt;</code>. Tên host phía trên tương ứng với những host mà tôi tự đặt. 2. <strong>Bật một số module trong kernel</strong>
+Để mỗi lần khởi động hệ thống, <code>overlay</code> và <code>br_netfilter</code> sẽ được bật.</p>
+<pre><code class="language-bash">cat &lt;&lt; EOF | sudo tee /etc/modules-load.d/containerd.conf
+overlay
+br_netfilter
+EOF
+</code></pre>
+<p>Chạy luôn mà không cần khởi động:</p>
+<pre><code class="language-bash">sudo modprobe overlay
+sudo modprobe br_netfilter
+</code></pre>
+<ol start="3">
+<li><strong>Thêm một số system config cho phần network của k8s</strong></li>
+</ol>
+<pre><code class="language-bash">cat &lt;&lt; EOF | sudo tee /etc/sysctl.d/99-kubernetes-cri.conf
+net.bridge.bridge-nf-call-iptables  = 1
+net.ipv4.ip_forward                 = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+EOF
+</code></pre>
+<p>Và chạy lệnh sau để apply config ngay lật tức.</p>
+<pre><code class="language-bash">sudo sysctl --system
+</code></pre>
+<ol start="4">
+<li><strong>Cài containerd</strong></li>
+</ol>
+<pre><code class="language-bash">sudo apt-get update &amp;&amp; sudo apt-get install -y containerd
+</code></pre>
+<ol start="5">
+<li><strong>Viết config cho cotnainerd</strong></li>
+</ol>
+<pre><code class="language-bash"># Tạo thư mục cho config
+sudo mkdir -p /etc/containerd
+# Generate ra config
+sudo containerd config default | sudo tee /etc/containerd/config.toml
+# Khởi động lại containerd
+sudo systemctl restart containerd
+# Kiểm tra containerd hoạt động chưa
+sudo systemctl status containerd
+</code></pre>
+<ol start="6">
+<li>Tắt swap đi</li>
+</ol>
+<pre><code class="language-bash">sudo swapoff -a
+</code></pre>
+<ol start="7">
+<li>Cài Kubernetes
+Đây là doc chính thức nếu có gì đó thay đổi: <a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/">doc</a>.</li>
+</ol>
+<pre><code class="language-bash"># cài các deps cần thiết cho k8s
+sudo apt-get update &amp;&amp; sudo apt-get install -y apt-transport-https ca-certificates curl
+# thêm key cho repo của k8s
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+# thêm config cho repo
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+</code></pre>
+<p>Lặp lại từ bước 2 tới bước 7 cho mỗi Node. 8. Tạo cluster</p>
+<pre><code class="language-bash">sudo kubeadm init --pod-network-cidr 192.168.0.0/16
+</code></pre>
+<ol start="9">
+<li>Setup kubeconfig
+Làm theo hướng dẫn sau khi cluster được init xong.</li>
+<li>Setup network
+Có nhiều cái lắm nhưng cứ tàu nhanh calico vậy:</li>
+</ol>
+<pre><code class="language-bash">kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+</code></pre>
+<ol start="11">
+<li>Cho các worker node join vào cụm</li>
+</ol>
+<pre><code class="language-bash">kubeadm token create --print-join-command
+</code></pre>
+<p>Rồi paste cái lệnh nó in ra vào mấy worker node và <code>kubectl get nodes</code> để check xem.</p>
+<h2 id="cách-kết-nối-tới-cluster"><a class="header" href="#cách-kết-nối-tới-cluster">Cách kết nối tới cluster</a></h2>
+<ol>
+<li>Đối với cloud như GCP, <a href="https://cloud.google.com/sdk/docs/install">cài gcloud &amp; auth</a> để lấy credentials.</li>
+<li>Cài kubectl: <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl-macos">MacOS</a></li>
+<li>(Tùy chọn) Cài kubectx/kubens để thay đổi cluster/namespace dễ dàng hơn</li>
+<li>Đối với GCP, lấy credentials như sau:</li>
+</ol>
+<pre><code class="language-bash">gcloud container clusters get-credentials &lt;example-cluster&gt;
+--region &lt;place-cluster-region-here&gt;
+--project example-project
+--internal
+</code></pre>
+<p>Tài liệu tham chiếu: https://vinid-team.atlassian.net/wiki/spaces/1MGTEC/pages/1750401610/D+ng+resources+tr+n+c+m+K8S+m+i</p>
+<h2 id="các-khái-niệm-cơ-bản"><a class="header" href="#các-khái-niệm-cơ-bản">Các khái niệm cơ bản</a></h2>
+<h3 id="cách-các-object-đc-define"><a class="header" href="#cách-các-object-đc-define">Cách các Object đc define</a></h3>
+<p>Thường một file yaml sẽ trông như thế này</p>
+<pre><code class="language-yaml">apiVersion:
+kind:
+metadata:
+
+spec:
+</code></pre>
+<p>Ví dụ tạo một Pod</p>
+<pre><code class="language-yaml">apiVersion: v1
+kind: Pod
+metadata:
+	name: myapp-pod
+	labels:
+		app: my-app
+spec:
+	containers:
+		- name: nginx-container
+		  image: nginx
+</code></pre>
+<p>Và dùng lệnh sau để áp dụng</p>
+<pre><code class="language-bash">kubectl create -f dat-fucking.yml
+</code></pre>
+<h3 id="pod"><a class="header" href="#pod">Pod</a></h3>
+<p>Pod là đơn vị object nhỏ nhất mà kubernetes (đại diện cho một instance của một nhóm container) cho người dùng deploy một hay nhiều container chạy trong một node. Kubernetes không trực tiếp deploy container, mà gián tiếp thông qua việc deploy pod.</p>
+<ol>
+<li>Tạo và chạy một pod (CLI): <code>kubectl run</code></li>
+<li>Tạo pod (CLI hoặc YAML): <code>kubectl create</code></li>
+<li>Tạo hoặc cập nhật thay đổi (CLI hoặc YAML): <code>kubectl apply</code></li>
+</ol>
+<p>Pod chỉ là một layer trừu tượng, chỉ là ý tưởng chứ không phải là thực thể về một nhóm của một loại tài nguyên bao hàm 1 hay nhiều container cùng dùng chung 1 địa chỉ IP và cùng chung 1 cơ chế deploy.
+Khi có thay đổi liên quan tới pod thì nó chỉ kill pod cũ đi và tạo cái mới.</p>
+<ul>
+<li>Để xem các pods đang có</li>
+</ul>
+<pre><code class="language-bash">kubectl get pods
+</code></pre>
+<ul>
+<li>Để xem thông tin chi tiết về 1 pod</li>
+</ul>
+<pre><code>kubectl describe pod dat-pod-name
+</code></pre>
+<h3 id="replicaset"><a class="header" href="#replicaset">ReplicaSet</a></h3>
+<p>&lt; Cái này để viết sau đi ... &gt;</p>
+<h3 id="namespace"><a class="header" href="#namespace">Namespace</a></h3>
+<p>Namespace là tính năng giúp cho mình tạo những nhóm các object ([[#Pod]], Container, ...) của k8s vào các nhóm mà chúng có thể hoạt động trong môi trường tách biệt nhau, gần giống như việc object ở trong các cluster ảo được tạo ra trong 1 cluster thật vậy.</p>
+<ul>
+<li>Liệt kê namespace đang có trong cluster: <code>kubectl get namespaces</code></li>
+<li>Liệt kê những tài nguyên trong namespace, ví dụ như pod:
+<code>kubectl get pods --namespace my-namespace</code>
+có thể viết tắt đi bằng <code>-n</code></li>
+<li>Tạo namespace: <code>kubectl create namespace my-namespace</code></li>
+</ul>
+<h3 id="service"><a class="header" href="#service">Service</a></h3>
+<p>Là 1 tài nguyên cung cấp network endpoint cho một hay nhiều [[#Pod]]. Các pods sẽ nhận được traffic được config qua selector, tức là tên của các Pod đó.</p>
+<p><img src="/assets/k8s-4.png" alt="" /></p>
+<h4 id="các-loại-service"><a class="header" href="#các-loại-service">Các loại Service</a></h4>
+<ul>
+<li><strong>ClusterIP:</strong> Loại mặc định, giới hạn kết nối của service trong các cluster đã được define sẵn.</li>
+<li><strong>NodePort:</strong> Sẽ tạo ra 1 dải port mở cố định trên node mà service được deploy. Có thể truy cập từ bên ngoài cluster qua <code>NodeIP:nodePort</code>.</li>
+<li><strong>LoadBalancer:</strong> Service này sẽ dùng load balancer ngoài, cụ thể là LB của cloud.</li>
+<li><strong>ExternalName:</strong> Loại service này thay vì sử dụng selector để trỏ tới một service ngoài như trên thì nó dùng DNS để trỏ tới một service cụ thể khác với các type trên thay vì thông qua proxy hay forwarding thì type này điều hướng thông qua DNS.</li>
+</ul>
+<h4 id="cách-tạo-service"><a class="header" href="#cách-tạo-service">Cách tạo Service</a></h4>
+<p>abcxyz</p>
+<h3 id="ingress"><a class="header" href="#ingress">Ingress</a></h3>
+<p>Là cách kiểm soát mọi băng thông thông qua một thành phần của k8s, được lựa chọn là phương án để expose dịch vụ ở môi trường production. Thay vì phải dùng tới Load Balancer bên ngoài thì Ingress đã có sẵn ngay trong cluster (chạy dưới dạng các pod).</p>
+<h3 id="configmap"><a class="header" href="#configmap">ConfigMap</a></h3>
+<p>abcxyz</p>
+<h3 id="secret"><a class="header" href="#secret">Secret</a></h3>
+<p>abcxyz</p>
+<h2 id="kiến-trúc-network"><a class="header" href="#kiến-trúc-network">Kiến trúc network</a></h2>
+<p>abcxyz</p>
+<h2 id="kubectl-cơ-bản"><a class="header" href="#kubectl-cơ-bản">Kubectl cơ bản</a></h2>
+<p><a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet">Kubectl Dictionary</a> (dùng Cmd + F để tìm lệnh cần dùng)</p>
+<h2 id="tip--tricks"><a class="header" href="#tip--tricks">Tip &amp; Tricks</a></h2>
+<ol>
+<li>Tìm tên các image đang được sử dụng</li>
+</ol>
+<pre><code class="language-sh">kubectl get pods --all-namespaces -o jsonpath="{.items[*].spec['initContainers', 'containers'][*].image}" |\
+tr -s '[[:space:]]' '\n' |\
+sort |\
+uniq -c |\
+grep "&lt;image-name-here&gt;"
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../container/docker.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../container/kubectl.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../container/docker.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../container/kubectl.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

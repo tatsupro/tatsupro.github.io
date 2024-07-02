@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<html lang="vi" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>DevOps - Long Technical Documents</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../intro.html">Giới thiệu</a></li><li class="chapter-item expanded "><a href="../cloud/index.html"><strong aria-hidden="true">1.</strong> Cloud</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cloud/gcp.html"><strong aria-hidden="true">1.1.</strong> Google Cloud</a></li></ol></li><li class="chapter-item expanded "><a href="../devops/index.html" class="active"><strong aria-hidden="true">2.</strong> DevOps</a></li><li class="chapter-item expanded "><a href="../cicd/index.html"><strong aria-hidden="true">3.</strong> CI/CD</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cicd/gitops.html"><strong aria-hidden="true">3.1.</strong> GitOps</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cicd/argocd.html"><strong aria-hidden="true">3.1.1.</strong> ArgoCD</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../container/index.html"><strong aria-hidden="true">4.</strong> Container</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../container/docker.html"><strong aria-hidden="true">4.1.</strong> Docker</a></li><li class="chapter-item expanded "><a href="../container/k8s.html"><strong aria-hidden="true">4.2.</strong> Kubernetes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../container/kubectl.html"><strong aria-hidden="true">4.2.1.</strong> kubectl</a></li><li class="chapter-item expanded "><a href="../container/helm.html"><strong aria-hidden="true">4.2.2.</strong> Helm</a></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Database</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../database/sql.html"><strong aria-hidden="true">5.1.</strong> SQL</a></li></ol></li><li class="chapter-item expanded "><a href="../terraform/index.html"><strong aria-hidden="true">6.</strong> Terraform</a></li><li class="chapter-item expanded "><a href="../ansible/index.html"><strong aria-hidden="true">7.</strong> Ansible</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Lập trình</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">8.1.</strong> Ứng dụng</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">8.1.1.</strong> WebApp</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.1.2.</strong> Microservice</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.</strong> Khái niệm</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../program/data-structure.html"><strong aria-hidden="true">8.2.1.</strong> Cấu trúc dữ liệu</a></li><li class="chapter-item expanded "><a href="../program/algorithm.html"><strong aria-hidden="true">8.2.2.</strong> Giải thuật</a></li><li class="chapter-item expanded "><a href="../program/oop.html"><strong aria-hidden="true">8.2.3.</strong> Hướng đối tượng</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.3.1.</strong> Clean Code</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.3.2.</strong> Object Oriented Analysis and Design</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.3.3.</strong> Software Development Design Principles</div></li><li class="chapter-item expanded "><a href="../program/solid.html"><strong aria-hidden="true">8.2.3.4.</strong> SOLID Principles</a></li><li class="chapter-item expanded "><a href="../program/design-patterns.html"><strong aria-hidden="true">8.2.3.5.</strong> Design Patterns</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.3.6.</strong> Anti Patterns</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.3.7.</strong> Refactoring</div></li></ol></li><li class="chapter-item expanded "><a href="../program/12factors.html"><strong aria-hidden="true">8.2.4.</strong> 12 Factors</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.3.</strong> Ngôn ngữ</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../program/javascript.html"><strong aria-hidden="true">8.3.1.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="../program/python.html"><strong aria-hidden="true">8.3.2.</strong> Python</a></li><li class="chapter-item expanded "><a href="../program/java.html"><strong aria-hidden="true">8.3.3.</strong> Java</a></li><li class="chapter-item expanded "><a href="../program/go.html"><strong aria-hidden="true">8.3.4.</strong> Go</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../monitor/index.html"><strong aria-hidden="true">9.</strong> Monitoring</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../monitor/grafana.html"><strong aria-hidden="true">9.1.</strong> Grafana</a></li><li class="chapter-item expanded "><a href="../monitor/tempo.html"><strong aria-hidden="true">9.2.</strong> Grafana Tempo</a></li><li class="chapter-item expanded "><a href="../monitor/loki.html"><strong aria-hidden="true">9.3.</strong> Grafana Loki</a></li><li class="chapter-item expanded "><a href="../monitor/prometheus.html"><strong aria-hidden="true">9.4.</strong> Prometheus</a></li><li class="chapter-item expanded "><a href="../monitor/otel.html"><strong aria-hidden="true">9.5.</strong> OpenTelemetry</a></li></ol></li><li class="chapter-item expanded "><a href="../network/index.html"><strong aria-hidden="true">10.</strong> Network</a></li><li class="chapter-item expanded "><a href="../cloudflare/index.html"><strong aria-hidden="true">11.</strong> Cloudflare</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Hệ điều hành</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../os/unix.html"><strong aria-hidden="true">12.1.</strong> Unix</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tools/shell.html"><strong aria-hidden="true">12.1.1.</strong> Shell</a></li></ol></li><li class="chapter-item expanded "><a href="../os/linux.html"><strong aria-hidden="true">12.2.</strong> Linux</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.3.</strong> BSD</div></li></ol></li><li class="chapter-item expanded "><a href="../git/index.html"><strong aria-hidden="true">13.</strong> Git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../git/gitlab.html"><strong aria-hidden="true">13.1.</strong> GitLab</a></li></ol></li><li class="chapter-item expanded "><a href="../dotfiles/index.html"><strong aria-hidden="true">14.</strong> Dotfiles</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> Tools</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tools/index.html"><strong aria-hidden="true">15.1.</strong> Text Editor</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tools/vim.html"><strong aria-hidden="true">15.1.1.</strong> Vim</a></li><li class="chapter-item expanded "><a href="../tools/vscode.html"><strong aria-hidden="true">15.1.2.</strong> VSCode</a></li></ol></li><li class="chapter-item expanded "><a href="../tools/wm.html"><strong aria-hidden="true">15.2.</strong> Window Manager</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tools/yabai.html"><strong aria-hidden="true">15.2.1.</strong> yabai</a></li><li class="chapter-item expanded "><a href="../tools/dwm.html"><strong aria-hidden="true">15.2.2.</strong> dwm</a></li></ol></li><li class="chapter-item expanded "><a href="../tools/lf.html"><strong aria-hidden="true">15.3.</strong> LF File Manager</a></li><li class="chapter-item expanded "><a href="../tools/fzf.html"><strong aria-hidden="true">15.4.</strong> Fuzzy Finder</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">16.</strong> Riêng tư</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../privacy/blocker.html"><strong aria-hidden="true">16.1.</strong> Chặn QC & Tracker</a></li></ol></li><li class="chapter-item expanded "><a href="../social/index.html"><strong aria-hidden="true">17.</strong> Văn hóa & xã hội</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../social/eternal-september.html"><strong aria-hidden="true">17.1.</strong> Eternal September</a></li><li class="chapter-item expanded "><a href="../social/dead-internet.html"><strong aria-hidden="true">17.2.</strong> Dead Internet Theory</a></li><li class="chapter-item expanded "><a href="../social/wallgarden.html"><strong aria-hidden="true">17.3.</strong> Walled garden</a></li></ol></li><li class="chapter-item expanded "><a href="../rcm/index.html"><strong aria-hidden="true">18.</strong> Gợi ý</a></li><li class="chapter-item expanded "><a href="../cert/index.html"><strong aria-hidden="true">19.</strong> Thi cử</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cert/cka.html"><strong aria-hidden="true">19.1.</strong> CKA</a></li><li class="chapter-item expanded "><a href="../cert/gcp.html"><strong aria-hidden="true">19.2.</strong> GCP</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">20.</strong> Nháp</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../drafts/lab-otel.html"><strong aria-hidden="true">20.1.</strong> LAB - OpenTelemetry và Tempo</a></li><li class="chapter-item expanded "><a href="../drafts/backend.html"><strong aria-hidden="true">20.2.</strong> Backend</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Long Technical Documents</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="devops"><a class="header" href="#devops">DevOps</a></h1>
+<p><strong>Nó từng là một từ có ý nghĩa còn giờ thì không.</strong> Đọc định nghĩa sai tại <a href="https://en.wikipedia.org/wiki/DevOps">Wikipedia.org</a>.</p>
+<p><em>Vì không quan trọng bạn hiểu đúng hoặc sai, hay thậm chí không hiểu gì cả. <u>Mà bạn cần biết mình làm gì</u>.</em> Sau đây là danh sách những công cụ hoặc luồng làm việc cần biết để sử dụng và quản lý:</p>
+<ol>
+<li><strong>Phần cứng máy tính</strong> và <a href="/cloud/index.html"><strong>Cloud</strong></a>, phần cứng chỉ cần biết các thành phần cơ bản và các dịch vụ điện toán đám mây (của AWS, Google hoặc Azure) hay được sử dụng trong thực tế. Sau khi hiểu rõ hơn rồi thì có thể tìm hiểu thêm về tool IaC (Infrastructure as Code) như <a href="/terraform/index.html"><strong>Terraform</strong></a>.</li>
+<li><strong>Hệ điều hành (OS)</strong> là thứ kể cả người học tin học phổ thông tuy chưa bao giờ hiểu sâu về nó nhưng cũng nghe qua về cái tên (chắc vậy). Một khi đã đâm đầu sang phía Infra thì cũng nên hiểu cách dùng hệ điều hành hơn chút để biết thêm một số chương trình có sẵn. Hệ điều hành hay dùng có thể kể đến như:
+<ul>
+<li><strong>Microsoft Windows</strong> có thể là OS nên cài trên máy tính cá nhân nếu bạn có một cuộc đời, nhưng nếu nó ở trên server thì có vẻ như công ty bạn đang làm đang là nô lệ hệ sinh thái của Microsoft và đến lúc này bạn nên ước mình chưa từng sinh ra trên cuộc đời này. Vì mọi thứ đều rất Microsofty từ command line cho tới những phần mềm tệ hại mà giới lập trình viên quay lưng không muốn quan tâm.</li>
+<li>Tiếp theo là vế còn lại của thế giới hay dùng là <strong>các OS thuộc gia đình Unix</strong>: thủy tổ của họ nhà này là bản Unix được phát triển ở AT&amp;T Bell Labs (nơi có Ken Thompson and Dennis Ritchie đóng góp cho công cuộc đẻ ra rất nhiều phần mềm kino sau này) với phiên bản thương mại đầu tiên là <u>System V</u>. Bối cảnh Unix được tạo ra là khi OS trước đó chỉ <u>chạy đơn nhiệm với 1 người dùng</u> như họ nhà DOS chỉ đủ để <u>thực hiện một số thao tác cơ bản</u> và lập trình bằng BASIC mà tới thời điểm này (cuối năm 1960s) mainframe cũng đã bắt đầu sẵn sàng cho các tác vụ nặng hơn, vậy nên Unix ra đời với <u>khả năng đa nhiệm - nhiều người dùng</u>... và cũng cùng với sự ra đời của ngôn ngữ C tích hợp chung với Unix. Ở thời điểm mới ra mắt thì Unix bị đánh giá là tốn kém tài nguyên sử dụng nhưng nhiều năm sau đó thì đây không còn là vấn đề nữa rồi. Thành công của <u>System V</u> tốt tới mức Đại học Berkeley ăn cắp đống code đó và làm một bản Unix riêng của mình có tên là <strong>BSD</strong> (Berkeley Software Distribution) và dẫn tới nhiều vụ kiện và đấu đá mà người ta còn gọi đó là Unix Wars - Sau này khi cuộc chiến ngã ngũ thì BSD vẫn là một OS nhưng source code cũng đã khác nhiều so với Unix (mặc dù qua cách sử dụng thì mọi thứ vẫn gần như tương tự). Trong thời điểm này, việc BSD phân phối lại cũng truyền cảm hứng cho một thế hệ đấu tranh cho phần mềm mở và làm Unix dễ dàng tiếp cận với giới sinh viên và sở thích theo học thay vì để Unix độc quyền trong tay của AT&amp;T và tạo ra một loạt hệ điều hành tương tự Unix như <u>MIMIX</u> và sau đó truyền cảm hứng cho <strong>Linux</strong>. Qua lịch sử được sơ lược qua của Unix thì tất cả những gì được để lại tới ngày nay là:
+<ul>
+<li><a href="/linux/index.html"><strong>Linux</strong></a> là OS mà nếu bạn cài trên PC thì bạn không có một cuộc đời, nhưng ở thập niên 2000s thì hầu như mọi server nên chạy bằng Linux chứ đừng dùng Windows. Cái tên Linux ban đầu chỉ để đặt cho phần quan trọng nhất của hệ điều hành là <u>kernel</u> và khó có khả năng sử dụng nếu đứng một mình, để có chức năng của một OS đầy đủ như Windows thì nó cần <u>GNU coreutils</u>, các thành phần giao diện đồ họa và chương trình người dùng khác thì mới có chức năng đầy đủ. Lý do phần này được đề cập cụ thể tới mức này là để hiểu rằng thứ mà gọi là Linux được cấu tạo bởi nhiều thành phần và có khả năng thay thế được và tùy theo từng bản Linux (như <u>Ubuntu, Debian, Red Hat, Open SUSE Arch Linux, v.v.</u>) thường sẽ gần như giống nhau và không có gì khác biệt hoặc khác biệt hoàn toàn, ví dụ như Alpine Linux là bản Linux mà sử dụng <u>Busybox</u> thay cho GNU coreutils cho mục đích tối giản. <strong><em>Sau cùng dù có nhiều bản nhưng tất cả đều là Linux</em></strong>, chỉ là được tùy chỉnh cho nhiều mục đích khác nhau.</li>
+<li><strong>Họ nhà BSD</strong> không giống như Linux vốn bị ràng buộc bởi rất nhiều quy tắc và định hướng sai lệch thì các OS họ nhà BSD thường được phát triển theo định hướng kỹ thuật tốt hơn nên chúng có ưu điểm là đơn giản và bảo mật hơn. Các OS phổ biến của họ nhà này có thể kể đến như OpenBSD, FreeBSD, NetBSD, v.v. <strong>MacOS</strong> là một bản phân phối lại của FreeBSD nên các chương trình và dòng lệnh tương tự - và đây là lý do một lượng lớn người làm IT chọn Mac vì nó đơn giản với người dùng phổ thông nhưng vẫn có tinh hoa của Unix. Tất nhiên không có thứ gì hoàn hảo và nhất là sản phẩm làm bởi Apple luôn đóng cửa và thích chơi trong vườn của mình, quan trọng hơn là người tạo ra nhiều thiết kế ngu xuẩn mà tôi không thể stand được: tao đang nhìn mày đấy <em>trình quản lý cửa sổ</em> và những gì Apple làm vừa là điều tuyệt vời nhưng cũng là điều tệ hại nhất từng xảy ra trong lịch sử ngành điện toán.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/network/index.html"><strong>Mạng máy tính</strong></a> là kiến thức nền tảng trong thời buổi mà Internet phát triển như bây giờ, không cần nắm quá sâu mà chỉ cần hiểu sơ về: mô hình mạng như OSI (Open Systems Interconnection); các giao thức hoặc thành phần mạng như TCP hoặc UDP, HTTP/HTTPS, DNS, SSH, FTP/SFTP, v.v. Mã hóa kết nối như SSL/TLS và tương tự. Các phương thức Routing như Robin, Service Mesh, v.v.</li>
+<li><a href="/programming/index.html"><strong>Lập trình</strong> (tùy chọn):</a> Không cần phải biết quá nhiều cũng nên nắm sơ qua để hiểu cách thức ngôn ngữ đó vận hành hoặc biết viết chút ít để viết tool hoặc script tự động hóa vài thứ. Sau đây là một số gợi ý và đường dẫn tới các ngôn ngữ lập trình nên biết để sử dụng:
+<ul>
+<li><a href="/programming/python.html"><strong>Python</strong></a> là lựa chọn tối ưu cho mọi người vì hiếm khi DevOps động tới code và đây là ngôn ngữ rất đơn giản và dễ học, ứng dụng ở nhiều thứ khác nhau. Biết viết chút ít python cũng đỡ đi nhiều việc tay chân mỗi ngày.</li>
+<li><strong>Shell Script</strong> và lý do vì mục thứ 2: Unix (nó là một phần của OS) và <a href="/git/gitlab.html">GitLab</a>.</li>
+<li><a href="/programming/go.html"><strong>Go</strong></a> (hay Golang) là lựa chọn bạn không cần phải học nhưng cũng hay nếu biết được thì có thể dùng để viết một số tool phục vụ cho luồng làm việc.</li>
+<li>Và gợi ý cuối cùng thuộc diện động vào cái gì tìm hiểu cái đó là <a href="/programming/java.html">Java</a> và <a href="/programming/javascript.html">JavaScript</a>. Lý do đơn giản là vì chúng được sử dụng rộng rãi ở khắp mọi nơi, tuy bạn có thể không chuyên sâu vào dev nhưng một khi vào cái ngành chết tiệt này thì dù có muốn né tránh cỡ nào đi chăng nữa thì ở thời điểm nào đó trong cuộc đời bạn cũng phải động tới 1 trong 2 thứ này. Hiểu chúng nó để biết được cách thức vận hành ra sao.</li>
+</ul>
+</li>
+<li><strong>Text Editor</strong> như <a href="/tools/vscodium.html"><strong>Visual Studio Code</strong></a> hoặc <a href="/tools/neovim.html"><strong>Vim</strong></a>. Với công việc hằng ngày của DevOps thì không phải ngồi cả ngày với Text Editor nên khuyên khích dùng VSCode hơn, nhưng với một số trường hợp khi remote tới một server mà không có GUI thì việc cần và sử dụng một TUI lighweight như Vim hoặc Nano là cần thiết. Cái này là tùy chọn ở mỗi người, miễn sao dùng cái nào để làm được việc là được.</li>
+<li><a href="/git/index.html"><strong>Git</strong></a> (VCS) dùng để quản lý code và <strong>GitHub</strong> hoặc <a href="/git/gitlab.html"><strong>GitLab</strong></a> để làm một nơi lưu trữ code (thường là trên Cloud), collab với người khác và automate luồng CI/CD. Có nhiều VCS khác nhưng ai quan tâm chứ? Trừ khi bạn làm việc ở big tech thì họ có nhiều lựa chọn tốt hơn <em>phải học</em>.</li>
+<li><a href="/container/index.html"><strong>Container</strong></a> là công nghệ thịnh hành từ 2015 trở đi, với cá nhân từ một người làm infra thì nó không có quá nhiều khác biệt so với việc setup máy ảo nếu nói về thành phẩm cuối cùng. Yếu tố làm container nên học ở thời điểm này là vì nhiều doanh nghiệp đang chuyển sang sử dụng nó, trong giới này có một câu "Không ai mất việc vì mua đồ IBM cả" và dù biết có nhiều giải pháp đơn giản và tối ưu hơn nhưng <a href="/container/docker.html"><strong>Docker</strong></a> vẫn là một thứ nên biết để phục vụ thị trường. <a href="/container/k8s.html"><strong>Kubernetes</strong></a> là một vấn đề mà Google tạo ra cho thế giới để họ có thể kinh doanh giải pháp của mình (GKE), nhưng vì nó cũng là thứ đang phổ biến nên bạn sẽ phải động tới nó ở một lúc nào đó khi theo cái ngành này.</li>
+<li>Học cách tự cài đặt một số thứ như: Web server (Nginx hoặc Apache), Firewall, Forward/Reverse Proxy, Caching server.</li>
+<li>Configuration Management <strong>Ansible</strong></li>
+<li><a href="/cicd/index.html"><strong>CI/CD</strong></a> Tool <strong>GitLab CI</strong> <strong>Github Actions</strong> hoặc <strong>Jenkins</strong></li>
+<li>Secret Management như <strong>Vault</strong> hay sử dụng của Kubernetes hoặc Cloud</li>
+<li>Monitoring (<strong>Grafana</strong>, <strong>Prometheus</strong>, <strong>New Relic</strong>, <strong>Open Telemetry</strong>)</li>
+<li>Log Management: <strong>Loki</strong>, <strong>Splunk</strong></li>
+<li>Artifact Management: <strong>Jfrog</strong> hoặc sử dụng của Cloud.</li>
+<li>Việc áp dụng <strong>GitOps</strong> sẽ khiến cho team dev nhìn mặt bạn một cách khó hiểu và bắt đầu hỏi những câu như "Tại sao luồng cũ đang chạy đơn giản và bình thường mà sao lại phải thêm thằng này vào?". Sau khi mất một thời gian giải thích về nó thì bạn có thể sử dụng tool như <a href="/git/argocd.html"><strong>ArgoCD</strong></a> hoặc <strong>Flux CD</strong>. Tuy nó không thật sự giúp cho cuộc đời bạn tốt hơn hay thậm chí còn làm cuộc đời bạn phức tạp hơn, nhưng ít ra giờ resource trong K8S có thể được quản lý tập trung trên Git.</li>
+<li>Cloud Design Patterns như <strong>Availability</strong>.</li>
+</ol>
+<p>Tất nhiên không ai học hết được đống trên, chỉ cần biết qua và chuyên sâu một cái thôi là được rồi. Không ai đa năng tới mức nắm được hết đống trên đâu nên đừng kỳ vọng.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../cloud/gcp.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../cicd/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../cloud/gcp.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../cicd/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

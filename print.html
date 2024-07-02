@@ -1,0 +1,2549 @@
+<!DOCTYPE HTML>
+<html lang="vi" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Long Technical Documents</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Giới thiệu</a></li><li class="chapter-item expanded "><a href="cloud/index.html"><strong aria-hidden="true">1.</strong> Cloud</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cloud/gcp.html"><strong aria-hidden="true">1.1.</strong> Google Cloud</a></li></ol></li><li class="chapter-item expanded "><a href="devops/index.html"><strong aria-hidden="true">2.</strong> DevOps</a></li><li class="chapter-item expanded "><a href="cicd/index.html"><strong aria-hidden="true">3.</strong> CI/CD</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cicd/gitops.html"><strong aria-hidden="true">3.1.</strong> GitOps</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cicd/argocd.html"><strong aria-hidden="true">3.1.1.</strong> ArgoCD</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="container/index.html"><strong aria-hidden="true">4.</strong> Container</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="container/docker.html"><strong aria-hidden="true">4.1.</strong> Docker</a></li><li class="chapter-item expanded "><a href="container/k8s.html"><strong aria-hidden="true">4.2.</strong> Kubernetes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="container/kubectl.html"><strong aria-hidden="true">4.2.1.</strong> kubectl</a></li><li class="chapter-item expanded "><a href="container/helm.html"><strong aria-hidden="true">4.2.2.</strong> Helm</a></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Database</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="database/sql.html"><strong aria-hidden="true">5.1.</strong> SQL</a></li></ol></li><li class="chapter-item expanded "><a href="terraform/index.html"><strong aria-hidden="true">6.</strong> Terraform</a></li><li class="chapter-item expanded "><a href="ansible/index.html"><strong aria-hidden="true">7.</strong> Ansible</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Lập trình</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">8.1.</strong> Ứng dụng</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">8.1.1.</strong> WebApp</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.1.2.</strong> Microservice</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.</strong> Khái niệm</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="program/data-structure.html"><strong aria-hidden="true">8.2.1.</strong> Cấu trúc dữ liệu</a></li><li class="chapter-item expanded "><a href="program/algorithm.html"><strong aria-hidden="true">8.2.2.</strong> Giải thuật</a></li><li class="chapter-item expanded "><a href="program/oop.html"><strong aria-hidden="true">8.2.3.</strong> Hướng đối tượng</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.3.1.</strong> Clean Code</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.3.2.</strong> Object Oriented Analysis and Design</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.3.3.</strong> Software Development Design Principles</div></li><li class="chapter-item expanded "><a href="program/solid.html"><strong aria-hidden="true">8.2.3.4.</strong> SOLID Principles</a></li><li class="chapter-item expanded "><a href="program/design-patterns.html"><strong aria-hidden="true">8.2.3.5.</strong> Design Patterns</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.3.6.</strong> Anti Patterns</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.3.7.</strong> Refactoring</div></li></ol></li><li class="chapter-item expanded "><a href="program/12factors.html"><strong aria-hidden="true">8.2.4.</strong> 12 Factors</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.3.</strong> Ngôn ngữ</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="program/javascript.html"><strong aria-hidden="true">8.3.1.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="program/python.html"><strong aria-hidden="true">8.3.2.</strong> Python</a></li><li class="chapter-item expanded "><a href="program/java.html"><strong aria-hidden="true">8.3.3.</strong> Java</a></li><li class="chapter-item expanded "><a href="program/go.html"><strong aria-hidden="true">8.3.4.</strong> Go</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="monitor/index.html"><strong aria-hidden="true">9.</strong> Monitoring</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="monitor/grafana.html"><strong aria-hidden="true">9.1.</strong> Grafana</a></li><li class="chapter-item expanded "><a href="monitor/tempo.html"><strong aria-hidden="true">9.2.</strong> Grafana Tempo</a></li><li class="chapter-item expanded "><a href="monitor/loki.html"><strong aria-hidden="true">9.3.</strong> Grafana Loki</a></li><li class="chapter-item expanded "><a href="monitor/prometheus.html"><strong aria-hidden="true">9.4.</strong> Prometheus</a></li><li class="chapter-item expanded "><a href="monitor/otel.html"><strong aria-hidden="true">9.5.</strong> OpenTelemetry</a></li></ol></li><li class="chapter-item expanded "><a href="network/index.html"><strong aria-hidden="true">10.</strong> Network</a></li><li class="chapter-item expanded "><a href="cloudflare/index.html"><strong aria-hidden="true">11.</strong> Cloudflare</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Hệ điều hành</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="os/unix.html"><strong aria-hidden="true">12.1.</strong> Unix</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tools/shell.html"><strong aria-hidden="true">12.1.1.</strong> Shell</a></li></ol></li><li class="chapter-item expanded "><a href="os/linux.html"><strong aria-hidden="true">12.2.</strong> Linux</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.3.</strong> BSD</div></li></ol></li><li class="chapter-item expanded "><a href="git/index.html"><strong aria-hidden="true">13.</strong> Git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="git/gitlab.html"><strong aria-hidden="true">13.1.</strong> GitLab</a></li></ol></li><li class="chapter-item expanded "><a href="dotfiles/index.html"><strong aria-hidden="true">14.</strong> Dotfiles</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> Tools</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="tools/index.html"><strong aria-hidden="true">15.1.</strong> Text Editor</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tools/vim.html"><strong aria-hidden="true">15.1.1.</strong> Vim</a></li><li class="chapter-item expanded "><a href="tools/vscode.html"><strong aria-hidden="true">15.1.2.</strong> VSCode</a></li></ol></li><li class="chapter-item expanded "><a href="tools/wm.html"><strong aria-hidden="true">15.2.</strong> Window Manager</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tools/yabai.html"><strong aria-hidden="true">15.2.1.</strong> yabai</a></li><li class="chapter-item expanded "><a href="tools/dwm.html"><strong aria-hidden="true">15.2.2.</strong> dwm</a></li></ol></li><li class="chapter-item expanded "><a href="tools/lf.html"><strong aria-hidden="true">15.3.</strong> LF File Manager</a></li><li class="chapter-item expanded "><a href="tools/fzf.html"><strong aria-hidden="true">15.4.</strong> Fuzzy Finder</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">16.</strong> Riêng tư</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="privacy/blocker.html"><strong aria-hidden="true">16.1.</strong> Chặn QC & Tracker</a></li></ol></li><li class="chapter-item expanded "><a href="social/index.html"><strong aria-hidden="true">17.</strong> Văn hóa & xã hội</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="social/eternal-september.html"><strong aria-hidden="true">17.1.</strong> Eternal September</a></li><li class="chapter-item expanded "><a href="social/dead-internet.html"><strong aria-hidden="true">17.2.</strong> Dead Internet Theory</a></li><li class="chapter-item expanded "><a href="social/wallgarden.html"><strong aria-hidden="true">17.3.</strong> Walled garden</a></li></ol></li><li class="chapter-item expanded "><a href="rcm/index.html"><strong aria-hidden="true">18.</strong> Gợi ý</a></li><li class="chapter-item expanded "><a href="cert/index.html"><strong aria-hidden="true">19.</strong> Thi cử</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cert/cka.html"><strong aria-hidden="true">19.1.</strong> CKA</a></li><li class="chapter-item expanded "><a href="cert/gcp.html"><strong aria-hidden="true">19.2.</strong> GCP</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">20.</strong> Nháp</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="drafts/lab-otel.html"><strong aria-hidden="true">20.1.</strong> LAB - OpenTelemetry và Tempo</a></li><li class="chapter-item expanded "><a href="drafts/backend.html"><strong aria-hidden="true">20.2.</strong> Backend</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Long Technical Documents</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="bonjour"><a class="header" href="#bonjour">Bonjour!</a></h1>
+<p>Trang viết về những thứ liên quan tới công nghệ hoặc kĩ thuật. <!-- nơi duy nhất người ta được viết docs với giọng bố đời --></p>
+<!-- Cuộc sống có nhiều niềm vui hơn nếu bạn không phải là người muốn học hết tất cả đống này. Cuộc đời tôi sẽ tốt đẹp hơn nếu ngày nào đó tôi dừng viết mấy thứ kiểu này. -->
+<p>Theo dõi tôi trên trang và kênh Escaping from visual mode để cập nhật tin tức mới!</p>
+<ul>
+<li>Facebook: <a href="https://www.facebook.com/escapevim">@escapevim</a></li>
+<li>YouTube: <a href="https://www.youtube.com/@escapevim">@escapevim</a></li>
+</ul>
+<h2 id="bắt-đầu"><a class="header" href="#bắt-đầu">Bắt đầu</a></h2>
+<p>Để bắt đầu thì mọi người có thể dùng thanh tìm kiếm hoặc menu để lướt xem trên trang này. Đôi khi nội dung có thể nằm ngoài phạm vi hoặc không liên quan mật thiết tới máy tính hoặc internet, vậy nên mình xin giới thiệu sơ qua nội dung trang để giúp cho mọi người tiếp cận dễ dàng hơn.</p>
+<ol>
+<li>Các nội dung liên quan tới phần mềm:
+<ul>
+<li><a href="/devops/index.html">DevOps</a>, <a href="/cloud/index.html">Cloud</a>, v.v.</li>
+<li>Tài liệu về setup cá nhân: <a href="/dotfiles/index.html">Dotfiles</a></li>
+<li>Các công cụ hoặc phần mềm mà tôi sử dụng</li>
+<li>Lập trình (cũng lâu chưa động tới nên phần này mình sẽ không chú trọng)</li>
+<li>Mạng máy tính (sắp ra mắt)</li>
+</ul>
+</li>
+<li><a href="/rcm/index.html">Gợi ý</a> hoặc hướng dẫn <a href="/cert/index.html">thi cử</a></li>
+<li>Chủ đề phi kĩ thuật: <a href="/social/index.html">văn hóa xã hội</a>.</li>
+</ol>
+<p>Mục tiêu của mình không phải là viết một trang wiki hay tài liệu theo hình thức mà chỉ cung cấp đủ thông tin để giúp cho chính bản thân mình và cũng hy vọng người đọc có đủ kiến thức để tiếp tục tìm tòi và thành thạo thêm.</p>
+<h2 id="giấy-phép"><a class="header" href="#giấy-phép">Giấy phép</a></h2>
+<p>Nội dung của trang được cấp kèm giấy phép Creative Commons Attribution-NonCommercial-ShareAlike 4.0. Người sử dụng được phép phân phối lại với điều kiện:</p>
+<ul>
+<li>Ghi danh tường minh tác giả, trích lại liên kết tới <a href="https://github.com/tatsupro/tatsupro.github.io/blob/main/LICENSE">giấy phép gốc</a>, thông báo lại khi có thay đổi.</li>
+<li>Không được sử dụng cho mục đích thương mại.</li>
+<li>Tuyệt đối không được thay đổi giấy phép dưới bất kì hình thức nào.</li>
+</ul>
+<p>Cụ thể hơn xin vui lòng đọc kĩ và tuân thủ chi tiết giấy phép <a href="https://github.com/tatsupro/tatsupro.github.io/blob/main/LICENSE">tại đây</a> nếu có sử dụng phân phối lại.</p>
+<p><img src="/assets/cc-by-nc-sa_icon.png" alt="CC-BY-NC-SA" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cloud"><a class="header" href="#cloud">Cloud</a></h1>
+<p><strong>Máy tính của người khác trên Internet</strong>. Theo cách truyền thống, dữ liệu và chương trình của người dùng được lưu và chạy trên máy tính thuộc sở hữu của cá nhân hoặc tổ chức đó. Sau này khi công nghệ điện toán và mạng máy tính phát triển thì về cơ bản 2 cái trên chạy và lưu trên máy tính của cloud service provider.</p>
+<p>Một số <u>thể loại cLoUd</u> có thể kể đến như:</p>
+<ol>
+<li>Hoàn toàn phụ thuộc vào bên khác (thường là những gã khổng lồ luôn nhăm nhe lấy tiền trong ví của bạn)</li>
+<li>cỜ-lAo tự cung tự cấp</li>
+<li>Xài kết hợp cả hai</li>
+<li>Hoặc đơn giản nhất là không dùng :)</li>
+</ol>
+<p>Các dịch vụ điện toán đám mây thường rơi vào 3 <u>thể loại dịch vụ</u> sau:</p>
+<ol>
+<li><strong>SaaS (Software as a service)</strong> là các dịch vụ mọi người thường thấy như Gmail, Google Drive (Workspace), OneDrive (365), Dropbox, iCloud, v.v. mà người dùng chỉ cần biết kiến thức tin học phổ thông để sử dụng.</li>
+<li><strong>PaaS (Platform as a service)</strong> là dịch vụ mà người dùng bình thường không dùng. Khách hàng chính của các loại dịch vụ này là người mà cần một nền tảng để vận hành ứng dụng mà họ phát triển trên đó mà không cần động tới phần phức tạp của cơ sở hạ tầng (như Firebase, Netlify, Heroku, v.v.)</li>
+<li><strong>IaaS (Infrastructure as a service)</strong> là lý do doanh nghiệp của bạn cần đội "Cloud Engineer" sử dụng để cung cấp hạ tầng thiết bị hoặc máy tính từ xa dưới dạng trừu tượng nào đó. Đây là thể loại dịch vụ tuy phức tạp nhưng giúp cho bạn hoàn toàn kiểm soát cơ sở hạ tầng đảm bảo tài nguyên sử dụng cho bạn. 3 dịch vụ phổ biến nhất là Amazon Web Services (AWS), Google Cloud Platform (GCP) và Microsoft Azure.</li>
+</ol>
+<h2 id="danh-sách-sản-phẩm-và-dịch-vụ-iaas-phổ-biến"><a class="header" href="#danh-sách-sản-phẩm-và-dịch-vụ-iaas-phổ-biến">Danh sách sản phẩm và dịch vụ IaaS phổ biến</a></h2>
+<p>Sau đây là danh sách các sản phẩm và dịch vụ hay sử dụng từ 3 cloud provider phổ biến nhất.</p>
+<blockquote>
+<p><strong>ℹ️ Tip:</strong> Dịch vụ tuy có nhiều nhưng quan trọng nhất cũng chỉ là VM hoặc Kubernetes. Các dịch vụ khác chỉ xoay quanh hỗ trợ 2 cái này.</p>
+</blockquote>
+<div class="table-wrapper"><table><thead><tr><th>Tên dịch vụ</th><th>AWS</th><th>Azure</th><th>GCP</th></tr></thead><tbody>
+<tr><td>Máy ảo (VM - Virtual Machine)</td><td>Elastic Compute Cloud (EC2)</td><td>Virtual Machine</td><td>Compute Engine</td></tr>
+<tr><td>Kubernetes</td><td>Elastic Kubernetes Service (EKS)</td><td>Azure Kubernetes Service (AKS)</td><td>Google Kubernetes Engine (GKE)</td></tr>
+<tr><td>Serverless</td><td>Lambda</td><td>Azure Functions</td><td>Cloud Functions</td></tr>
+<tr><td>Lưu trữ (Storage)</td><td>Simple Storage Service (S3)</td><td>Blob Storage</td><td>Cloud Storage</td></tr>
+<tr><td>Ổ cứng (Disk)</td><td>Elastic Block Store</td><td>Managed Disk</td><td>Persistent Disk</td></tr>
+<tr><td>VPC - Virtual Private Cloud</td><td>Virtual Private Cloud</td><td>Virtual Network</td><td>Virtual Private Cloud</td></tr>
+<tr><td>DNS - Domain Name System</td><td>Route 53</td><td>DNS</td><td>Cloud DNS</td></tr>
+<tr><td>Load Balancer</td><td>Elastic Load Balancing</td><td>Load Balancer</td><td>Cloud Load Balancing</td></tr>
+<tr><td>Tường lửa (Firewall)</td><td>Web Application Firewall</td><td>Web Application Firewall</td><td>Cloud Armor</td></tr>
+<tr><td>SQL</td><td>RDS</td><td>SQL Database</td><td>Cloud SQL</td></tr>
+<tr><td>NoSQL</td><td>DynamoDB</td><td>Cosmos DB</td><td>Firebase Database</td></tr>
+<tr><td>Dataware house</td><td>Redshift</td><td>Synapse Analytics</td><td>BigQuery</td></tr>
+<tr><td>Message queue</td><td>Simple Queuing Service</td><td>Storage Queues</td><td>Pub/Sub</td></tr>
+<tr><td>Monitor</td><td>CloudWatch</td><td>Monitor</td><td>Cloud Monitoring</td></tr>
+<tr><td>Identity Service</td><td>IAM</td><td>Microsoft Entra ID</td><td>Cloud Identity</td></tr>
+<tr><td>Key management</td><td>KMS</td><td>Key Vault</td><td>Cloud KMS</td></tr>
+<tr><td>Secret</td><td>Secrets Manager</td><td>Key Vault</td><td>Secret Manager</td></tr>
+<tr><td>Package &amp; Container Repository</td><td>Elastic Container Registry &amp; CodeArtifact</td><td>Azure Container Registry &amp; Azure Artifacts</td><td>Artifact Registry</td></tr>
+</tbody></table>
+</div>
+<p>Bọn IT đụt mắt cận chưa bao giờ biết cách đặt tên cho đúng, tên các service như trên chỉ để phục vụ mục đích marketing.</p>
+<h2 id="so-sánh"><a class="header" href="#so-sánh">So sánh</a></h2>
+<p>Đối với 3 IaaS sơ qua thì đều có điểm chung là web UI tệ để người dùng sử dụng và quản lý, đó là lý do <a href="cloud//terraform/index.html">Terraform</a> ra đời. Còn điểm khác nhau thì:</p>
+<ul>
+<li>AWS chi phí đắt đỏ nhưng hệ thống ổn định hơn, bản thân Amazon cũng chạy trên AWS và do đây là dịch vụ có nhiều người sử dụng nhất nên hỗ trợ cũng tốt hơn.</li>
+<li>Vì mối quan hệ hợp tác giữa Microsoft và OpenAI nên người ta dùng Azure để sử dụng OpenAI Service để truy cập vào GPT, ChatGPT hoặc DALL-E.</li>
+<li>Google Cloud có chi phí rẻ nhất trong số này, ưu điểm chính là AI và GKE (tất nhiên vì Google là công ty đứng đằng sau Kubernetes).</li>
+</ul>
+<h2 id="tranh-cãi"><a class="header" href="#tranh-cãi">Tranh cãi</a></h2>
+<p>Ừm chẳng có gì là tốt đẹp cả, tự vận hành cơ sở hạ tầng tuy tốn kém tiền của và yêu cầu nhiều nhân lực hơn nhưng được lợi ích lâu dài. Một khi sử dụng cloud thì số phận của bạn thuộc về một bên khác và bạn chẳng làm được gì nhiều với đồ ăn liền.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="google-cloud"><a class="header" href="#google-cloud">Google Cloud</a></h1>
+<p>GCP là nền tảng điện toán đám mây cung cấp nhiều dịch vụ/sản phẩm khác nhau. Nó là 1 tập hợp các tài nguyên ảo như máy tính hoặc ổ cứng chạy trên cơ sở hạ tầng của Google.</p>
+<p><img src="cloud//assets/gcp-0.png" alt="" /></p>
+<h2 id="compute-engine"><a class="header" href="#compute-engine">Compute Engine</a></h2>
+<p><strong><u>VMs, GPUs, TPUs, Disks.</u></strong></p>
+<p>Compute Engine dùng để tạo máy ảo chạy OS và cấu hình tuỳ thích trên Google Infra.</p>
+<p><img src="cloud//assets/gcp-1.png" alt="" /></p>
+<p><img src="cloud//assets/gcp-2.png" alt="" /></p>
+<p><img src="cloud//assets/gcp-3.png" alt="" /></p>
+<h2 id="kubernetes-engine"><a class="header" href="#kubernetes-engine">Kubernetes Engine</a></h2>
+<p>GKE là một giải pháp Kubernetes (một nền tảng mã nguồn mở điều phối container) quản lý bởi Google, bên cạnh việc cung cấp k8s thì còn quản lý control plane và nodes.</p>
+<h3 id="khi-nào-sử-dụng"><a class="header" href="#khi-nào-sử-dụng">Khi nào sử dụng</a></h3>
+<p>Khi dùng container. Cần config scale, network, hardware và secutiry.</p>
+<p><img src="cloud//assets/gcp-4.png" alt="" /></p>
+<h2 id="networking"><a class="header" href="#networking">Networking</a></h2>
+<p>Hạ tầng mạng của Google Cloud được dựa trên cơ cấu mạng <a href="https://cloud.google.com/blog/products/gcp/a-look-inside-googles-data-center-networks">Jupiter network fabric</a> và ảo hoá mạng bằng <a href="https://www.usenix.org/conference/nsdi18/presentation/dalton">Andromeda</a>.</p>
+<p><img src="cloud//assets/gcp-5.png" alt="" /></p>
+<p><img src="cloud//assets/gcp-6.png" alt="" /></p>
+<p>Andromeda là một SDN (software-defined networking), đây là nền móng của hệ thống mạng ảo. Kiểu nó như là orchestration point cho provisioning, configuring và quản lý mạng ảo và hoạt động packet processing trong mạng.</p>
+<p><img src="cloud//assets/gcp-7.png" alt="" /></p>
+<h3 id="physical-network-organisation"><a class="header" href="#physical-network-organisation">Physical Network Organisation</a></h3>
+<p>Infra được chia thành từng vùng (region), nhỏ hơn chia thành từng miền (zone).</p>
+<ul>
+<li>1 vùng có tính chất như 1 khu vực địa lý.</li>
+<li>1 miền có tính chất là 1 khu vực deploy trong 1 vùng, miền có không gian isolated riêng <br />
+<em>Vậy nên nếu có vấn đề xảy ra, 2 máy tính nằm ở vùng hoặc miền khác sẽ không có chung 1 kết quả.</em></li>
+</ul>
+<h3 id="networking-services"><a class="header" href="#networking-services">Networking Services</a></h3>
+<p>Có 5 loại dịch vụ:</p>
+<ul>
+<li>Connect</li>
+<li>Secure</li>
+<li>Scale</li>
+<li>Optimize</li>
+<li>Modernize</li>
+</ul>
+<h3 id="network-service-tiers"><a class="header" href="#network-service-tiers">Network Service Tiers</a></h3>
+<p>Cuộc đời có nhiều cách để tiêu tiền, tiền vào cloud cũng vậy.</p>
+<p><img src="cloud//assets/gcp-8.png" alt="" /></p>
+<p><img src="cloud//assets/gcp-9.png" alt="" /></p>
+<p><img src="cloud//assets/gcp-10.png" alt="" /></p>
+<h3 id="load-balancing"><a class="header" href="#load-balancing">Load Balancing</a></h3>
+<p><img src="cloud//assets/gcp-11.png" alt="" /></p>
+<h2 id="sql"><a class="header" href="#sql">SQL</a></h2>
+<p>Như tên gọi, dùng để quản lý CSDL quan hệ (MySQL, PostgreSQL, SQL Server).</p>
+<p><img src="cloud//assets/gcp-12.png" alt="" /></p>
+<h2 id="storage"><a class="header" href="#storage">Storage</a></h2>
+<p>Như tên gọi, toàn mấy dịch vụ để lưu trữ dữ liệu dưới dạng Object storage. Uhm nó là một kiểu lưu trữ mà mỗi file kiểu có metadata vs id cụ thể. Object storage is immutable, vậy nên không chỉnh sửa được mà mỗi lần thay đổi gì đó thì nó sẽ tạo bản sao được chỉnh sửa mới.
+Nếu bật versioning thì bản cũ sẽ được giữ lại, còn không thì sẽ bị bản mới ghi đè.</p>
+<p><img src="cloud//assets/gcp-13.png" alt="" /></p>
+<p>Cloud storage files được tổ chức theo các buckets, mỗi bucket có id và địa điểm lưu trữ địa lý cụ thể.
+Storage có thể được quản lý bằng IAM.</p>
+<h3 id="lifecycle-policies"><a class="header" href="#lifecycle-policies">Lifecycle policies</a></h3>
+<p>Bộ nhớ sinh ra để bị lấp đầy, để cho bớt nặng thì có thể set policy kiểu:</p>
+<ul>
+<li>Xoá object cũ hơn 365 ngày</li>
+<li>Xoá object được tạo trc MM/DD/YYYY</li>
+<li>Chỉ giữ lại 3 phiên bản gần nhất</li>
+</ul>
+<h3 id="nên-sử-dụng-kiểu-lưu-trữ-nào"><a class="header" href="#nên-sử-dụng-kiểu-lưu-trữ-nào">Nên sử dụng kiểu lưu trữ nào?</a></h3>
+<p>Tuỳ vào mục đích sử dụng và loại dữ liệu muốn lưu.</p>
+<p><img src="cloud//assets/gcp-14.png" alt="" /></p>
+<h3 id="storage-class"><a class="header" href="#storage-class">Storage Class</a></h3>
+<p><img src="cloud//assets/gcp-15.png" alt="" /></p>
+<h2 id="iam"><a class="header" href="#iam">IAM</a></h2>
+<p>Viết tắt của Identity and Access Management, dùng để quản lý quyền truy cập tới các resource trên cloud (cái này thì thằng nào cũng có). Được thiết kế dựa trên các nguyên tắc PoLP (Principle of least privilege): bất kì thành phần nào cũng sẽ chỉ được có quyền truy cập vừa đủ để thực hiện chức năng của nó.</p>
+<p><img src="cloud//assets/gcp-16.png" alt="" /></p>
+<p>IAM sẽ định nghĩa <code>ai (who - identity) | có quyền gì (what role) | với tài nguyên nào (where - resource)</code>.</p>
+<h3 id="policy"><a class="header" href="#policy">Policy</a></h3>
+<p>Policy là 1 tập hợp các binding, audit config và metadata.</p>
+<ul>
+<li>Binding định nghĩa việc các cấp quyền truy cập tài nguyên ra sao, role được gán cho những member nào, với các condition binding khác.</li>
+<li>Metadata là tập hợp các thông tin về policy (etag, version).</li>
+<li>Audit config như tên gọi.</li>
+</ul>
+<p><img src="cloud//assets/gcp-17.png" alt="" /></p>
+<p><img src="cloud//assets/gcp-18.png" alt="" /></p>
+<h1 id="tư-liệu"><a class="header" href="#tư-liệu">Tư liệu</a></h1>
+<h2 id="tài-liệu-chính-thức"><a class="header" href="#tài-liệu-chính-thức">Tài liệu chính thức</a></h2>
+<ul>
+<li><a href="https://cloud.google.com/">Google Cloud Website</a></li>
+<li><a href="https://cloud.google.com/docs">Official Documentation</a></li>
+<li><a href="https://cloud.google.com/docs/get-started/">Google Cloud Get Started Guide</a></li>
+<li><a href="https://cloud.google.com/free/docs/map-aws-google-cloud-platform">Compare AWS and Azure services to Google Cloud</a></li>
+</ul>
+<h2 id="youtube-courses"><a class="header" href="#youtube-courses">YouTube Courses</a></h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=jpno8FSqpc8&amp;t=58628s">Freecodecamp - Google Cloud Associate Cloud Engineer Course</a></li>
+<li><a href="https://www.youtube.com/watch?v=IUU6OR8yHCc">Edureka - Google Cloud Platform Full Course</a></li>
+</ul>
+<h2 id="coursera-courses"><a class="header" href="#coursera-courses">Coursera Courses</a></h2>
+<ul>
+<li><a href="https://www.coursera.org/professional-certificates/cloud-engineering-gcp#courses">Coursera Complete Course for Google Cloud</a></li>
+</ul>
+<h2 id="mấy-chỗ-khác"><a class="header" href="#mấy-chỗ-khác">Mấy chỗ khác</a></h2>
+<ul>
+<li><a href="https://thenewstack.io/5-tips-to-become-a-google-cloud-certified-professional-architect/">5 Tips to Become a Google Cloud Certified Professional Architect</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="devops"><a class="header" href="#devops">DevOps</a></h1>
+<p><strong>Nó từng là một từ có ý nghĩa còn giờ thì không.</strong> Đọc định nghĩa sai tại <a href="https://en.wikipedia.org/wiki/DevOps">Wikipedia.org</a>.</p>
+<p><em>Vì không quan trọng bạn hiểu đúng hoặc sai, hay thậm chí không hiểu gì cả. <u>Mà bạn cần biết mình làm gì</u>.</em> Sau đây là danh sách những công cụ hoặc luồng làm việc cần biết để sử dụng và quản lý:</p>
+<ol>
+<li><strong>Phần cứng máy tính</strong> và <a href="devops//cloud/index.html"><strong>Cloud</strong></a>, phần cứng chỉ cần biết các thành phần cơ bản và các dịch vụ điện toán đám mây (của AWS, Google hoặc Azure) hay được sử dụng trong thực tế. Sau khi hiểu rõ hơn rồi thì có thể tìm hiểu thêm về tool IaC (Infrastructure as Code) như <a href="devops//terraform/index.html"><strong>Terraform</strong></a>.</li>
+<li><strong>Hệ điều hành (OS)</strong> là thứ kể cả người học tin học phổ thông tuy chưa bao giờ hiểu sâu về nó nhưng cũng nghe qua về cái tên (chắc vậy). Một khi đã đâm đầu sang phía Infra thì cũng nên hiểu cách dùng hệ điều hành hơn chút để biết thêm một số chương trình có sẵn. Hệ điều hành hay dùng có thể kể đến như:
+<ul>
+<li><strong>Microsoft Windows</strong> có thể là OS nên cài trên máy tính cá nhân nếu bạn có một cuộc đời, nhưng nếu nó ở trên server thì có vẻ như công ty bạn đang làm đang là nô lệ hệ sinh thái của Microsoft và đến lúc này bạn nên ước mình chưa từng sinh ra trên cuộc đời này. Vì mọi thứ đều rất Microsofty từ command line cho tới những phần mềm tệ hại mà giới lập trình viên quay lưng không muốn quan tâm.</li>
+<li>Tiếp theo là vế còn lại của thế giới hay dùng là <strong>các OS thuộc gia đình Unix</strong>: thủy tổ của họ nhà này là bản Unix được phát triển ở AT&amp;T Bell Labs (nơi có Ken Thompson and Dennis Ritchie đóng góp cho công cuộc đẻ ra rất nhiều phần mềm kino sau này) với phiên bản thương mại đầu tiên là <u>System V</u>. Bối cảnh Unix được tạo ra là khi OS trước đó chỉ <u>chạy đơn nhiệm với 1 người dùng</u> như họ nhà DOS chỉ đủ để <u>thực hiện một số thao tác cơ bản</u> và lập trình bằng BASIC mà tới thời điểm này (cuối năm 1960s) mainframe cũng đã bắt đầu sẵn sàng cho các tác vụ nặng hơn, vậy nên Unix ra đời với <u>khả năng đa nhiệm - nhiều người dùng</u>... và cũng cùng với sự ra đời của ngôn ngữ C tích hợp chung với Unix. Ở thời điểm mới ra mắt thì Unix bị đánh giá là tốn kém tài nguyên sử dụng nhưng nhiều năm sau đó thì đây không còn là vấn đề nữa rồi. Thành công của <u>System V</u> tốt tới mức Đại học Berkeley ăn cắp đống code đó và làm một bản Unix riêng của mình có tên là <strong>BSD</strong> (Berkeley Software Distribution) và dẫn tới nhiều vụ kiện và đấu đá mà người ta còn gọi đó là Unix Wars - Sau này khi cuộc chiến ngã ngũ thì BSD vẫn là một OS nhưng source code cũng đã khác nhiều so với Unix (mặc dù qua cách sử dụng thì mọi thứ vẫn gần như tương tự). Trong thời điểm này, việc BSD phân phối lại cũng truyền cảm hứng cho một thế hệ đấu tranh cho phần mềm mở và làm Unix dễ dàng tiếp cận với giới sinh viên và sở thích theo học thay vì để Unix độc quyền trong tay của AT&amp;T và tạo ra một loạt hệ điều hành tương tự Unix như <u>MIMIX</u> và sau đó truyền cảm hứng cho <strong>Linux</strong>. Qua lịch sử được sơ lược qua của Unix thì tất cả những gì được để lại tới ngày nay là:
+<ul>
+<li><a href="devops//linux/index.html"><strong>Linux</strong></a> là OS mà nếu bạn cài trên PC thì bạn không có một cuộc đời, nhưng ở thập niên 2000s thì hầu như mọi server nên chạy bằng Linux chứ đừng dùng Windows. Cái tên Linux ban đầu chỉ để đặt cho phần quan trọng nhất của hệ điều hành là <u>kernel</u> và khó có khả năng sử dụng nếu đứng một mình, để có chức năng của một OS đầy đủ như Windows thì nó cần <u>GNU coreutils</u>, các thành phần giao diện đồ họa và chương trình người dùng khác thì mới có chức năng đầy đủ. Lý do phần này được đề cập cụ thể tới mức này là để hiểu rằng thứ mà gọi là Linux được cấu tạo bởi nhiều thành phần và có khả năng thay thế được và tùy theo từng bản Linux (như <u>Ubuntu, Debian, Red Hat, Open SUSE Arch Linux, v.v.</u>) thường sẽ gần như giống nhau và không có gì khác biệt hoặc khác biệt hoàn toàn, ví dụ như Alpine Linux là bản Linux mà sử dụng <u>Busybox</u> thay cho GNU coreutils cho mục đích tối giản. <strong><em>Sau cùng dù có nhiều bản nhưng tất cả đều là Linux</em></strong>, chỉ là được tùy chỉnh cho nhiều mục đích khác nhau.</li>
+<li><strong>Họ nhà BSD</strong> không giống như Linux vốn bị ràng buộc bởi rất nhiều quy tắc và định hướng sai lệch thì các OS họ nhà BSD thường được phát triển theo định hướng kỹ thuật tốt hơn nên chúng có ưu điểm là đơn giản và bảo mật hơn. Các OS phổ biến của họ nhà này có thể kể đến như OpenBSD, FreeBSD, NetBSD, v.v. <strong>MacOS</strong> là một bản phân phối lại của FreeBSD nên các chương trình và dòng lệnh tương tự - và đây là lý do một lượng lớn người làm IT chọn Mac vì nó đơn giản với người dùng phổ thông nhưng vẫn có tinh hoa của Unix. Tất nhiên không có thứ gì hoàn hảo và nhất là sản phẩm làm bởi Apple luôn đóng cửa và thích chơi trong vườn của mình, quan trọng hơn là người tạo ra nhiều thiết kế ngu xuẩn mà tôi không thể stand được: tao đang nhìn mày đấy <em>trình quản lý cửa sổ</em> và những gì Apple làm vừa là điều tuyệt vời nhưng cũng là điều tệ hại nhất từng xảy ra trong lịch sử ngành điện toán.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="devops//network/index.html"><strong>Mạng máy tính</strong></a> là kiến thức nền tảng trong thời buổi mà Internet phát triển như bây giờ, không cần nắm quá sâu mà chỉ cần hiểu sơ về: mô hình mạng như OSI (Open Systems Interconnection); các giao thức hoặc thành phần mạng như TCP hoặc UDP, HTTP/HTTPS, DNS, SSH, FTP/SFTP, v.v. Mã hóa kết nối như SSL/TLS và tương tự. Các phương thức Routing như Robin, Service Mesh, v.v.</li>
+<li><a href="devops//programming/index.html"><strong>Lập trình</strong> (tùy chọn):</a> Không cần phải biết quá nhiều cũng nên nắm sơ qua để hiểu cách thức ngôn ngữ đó vận hành hoặc biết viết chút ít để viết tool hoặc script tự động hóa vài thứ. Sau đây là một số gợi ý và đường dẫn tới các ngôn ngữ lập trình nên biết để sử dụng:
+<ul>
+<li><a href="devops//programming/python.html"><strong>Python</strong></a> là lựa chọn tối ưu cho mọi người vì hiếm khi DevOps động tới code và đây là ngôn ngữ rất đơn giản và dễ học, ứng dụng ở nhiều thứ khác nhau. Biết viết chút ít python cũng đỡ đi nhiều việc tay chân mỗi ngày.</li>
+<li><strong>Shell Script</strong> và lý do vì mục thứ 2: Unix (nó là một phần của OS) và <a href="devops//git/gitlab.html">GitLab</a>.</li>
+<li><a href="devops//programming/go.html"><strong>Go</strong></a> (hay Golang) là lựa chọn bạn không cần phải học nhưng cũng hay nếu biết được thì có thể dùng để viết một số tool phục vụ cho luồng làm việc.</li>
+<li>Và gợi ý cuối cùng thuộc diện động vào cái gì tìm hiểu cái đó là <a href="devops//programming/java.html">Java</a> và <a href="devops//programming/javascript.html">JavaScript</a>. Lý do đơn giản là vì chúng được sử dụng rộng rãi ở khắp mọi nơi, tuy bạn có thể không chuyên sâu vào dev nhưng một khi vào cái ngành chết tiệt này thì dù có muốn né tránh cỡ nào đi chăng nữa thì ở thời điểm nào đó trong cuộc đời bạn cũng phải động tới 1 trong 2 thứ này. Hiểu chúng nó để biết được cách thức vận hành ra sao.</li>
+</ul>
+</li>
+<li><strong>Text Editor</strong> như <a href="devops//tools/vscodium.html"><strong>Visual Studio Code</strong></a> hoặc <a href="devops//tools/neovim.html"><strong>Vim</strong></a>. Với công việc hằng ngày của DevOps thì không phải ngồi cả ngày với Text Editor nên khuyên khích dùng VSCode hơn, nhưng với một số trường hợp khi remote tới một server mà không có GUI thì việc cần và sử dụng một TUI lighweight như Vim hoặc Nano là cần thiết. Cái này là tùy chọn ở mỗi người, miễn sao dùng cái nào để làm được việc là được.</li>
+<li><a href="devops//git/index.html"><strong>Git</strong></a> (VCS) dùng để quản lý code và <strong>GitHub</strong> hoặc <a href="devops//git/gitlab.html"><strong>GitLab</strong></a> để làm một nơi lưu trữ code (thường là trên Cloud), collab với người khác và automate luồng CI/CD. Có nhiều VCS khác nhưng ai quan tâm chứ? Trừ khi bạn làm việc ở big tech thì họ có nhiều lựa chọn tốt hơn <em>phải học</em>.</li>
+<li><a href="devops//container/index.html"><strong>Container</strong></a> là công nghệ thịnh hành từ 2015 trở đi, với cá nhân từ một người làm infra thì nó không có quá nhiều khác biệt so với việc setup máy ảo nếu nói về thành phẩm cuối cùng. Yếu tố làm container nên học ở thời điểm này là vì nhiều doanh nghiệp đang chuyển sang sử dụng nó, trong giới này có một câu "Không ai mất việc vì mua đồ IBM cả" và dù biết có nhiều giải pháp đơn giản và tối ưu hơn nhưng <a href="devops//container/docker.html"><strong>Docker</strong></a> vẫn là một thứ nên biết để phục vụ thị trường. <a href="devops//container/k8s.html"><strong>Kubernetes</strong></a> là một vấn đề mà Google tạo ra cho thế giới để họ có thể kinh doanh giải pháp của mình (GKE), nhưng vì nó cũng là thứ đang phổ biến nên bạn sẽ phải động tới nó ở một lúc nào đó khi theo cái ngành này.</li>
+<li>Học cách tự cài đặt một số thứ như: Web server (Nginx hoặc Apache), Firewall, Forward/Reverse Proxy, Caching server.</li>
+<li>Configuration Management <strong>Ansible</strong></li>
+<li><a href="devops//cicd/index.html"><strong>CI/CD</strong></a> Tool <strong>GitLab CI</strong> <strong>Github Actions</strong> hoặc <strong>Jenkins</strong></li>
+<li>Secret Management như <strong>Vault</strong> hay sử dụng của Kubernetes hoặc Cloud</li>
+<li>Monitoring (<strong>Grafana</strong>, <strong>Prometheus</strong>, <strong>New Relic</strong>, <strong>Open Telemetry</strong>)</li>
+<li>Log Management: <strong>Loki</strong>, <strong>Splunk</strong></li>
+<li>Artifact Management: <strong>Jfrog</strong> hoặc sử dụng của Cloud.</li>
+<li>Việc áp dụng <strong>GitOps</strong> sẽ khiến cho team dev nhìn mặt bạn một cách khó hiểu và bắt đầu hỏi những câu như "Tại sao luồng cũ đang chạy đơn giản và bình thường mà sao lại phải thêm thằng này vào?". Sau khi mất một thời gian giải thích về nó thì bạn có thể sử dụng tool như <a href="devops//git/argocd.html"><strong>ArgoCD</strong></a> hoặc <strong>Flux CD</strong>. Tuy nó không thật sự giúp cho cuộc đời bạn tốt hơn hay thậm chí còn làm cuộc đời bạn phức tạp hơn, nhưng ít ra giờ resource trong K8S có thể được quản lý tập trung trên Git.</li>
+<li>Cloud Design Patterns như <strong>Availability</strong>.</li>
+</ol>
+<p>Tất nhiên không ai học hết được đống trên, chỉ cần biết qua và chuyên sâu một cái thôi là được rồi. Không ai đa năng tới mức nắm được hết đống trên đâu nên đừng kỳ vọng.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cicd"><a class="header" href="#cicd">CI/CD</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gitops"><a class="header" href="#gitops">GitOps</a></h1>
+<p>Chỉ là một tiêu đề khó hiểu cho việc sử dụng VCS làm 1 nơi thống nhất để quản lý source code và mấy file manifest của Kubernetes.</p>
+<p>Khi cần deploy 1 ứng dụng lên 1 cụm k8s, bạn cần tạo resource để app của bạn <em>"có thể là 1 trang Wordpress"</em> chạy trên đó và để cho k8s biết được resource bạn muốn tạo thì chúng ta dùng <code>kubectl</code> hoặc 𝓓𝓮𝓬𝓵𝓪𝓻𝓪𝓽𝓲𝓿𝓮 hơn thì apply bằng file manifest. Vậy sau khi tạo resource và đẩy app lên xong rồi vứt đống file manifest vào hư vô? Tất nhiên là không, vì vậy cần tạo 1 folder trong source code đó tên là <code>k8s</code> và vứt tất cả những gì bạn vừa viết vào đó. Sau đó bạn nhận ra sẽ khá là mệt nếu cứ mỗi lần muốn deploy app bạn phải <code>kubectl rollout</code>, vậy nên bạn setup 1 luồng CI/CD và viết 1 file shell script nào đó để bớt những công việc tay chân đi.</p>
+<p>Vô hình trung, bạn đã vừa provision resource bằng mấy file YAML được lưu ở trên Git thông qua CI/CD + Shell Script và người ta gọi đó là <strong>GitOps</strong>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="argocd"><a class="header" href="#argocd">ArgoCD</a></h1>
+<p>Argo<strong>CD</strong> là <a href="cicd/gitops.html">GitOps</a> tool để automate deploy (nhìn vào chữ <strong>CD</strong> bên cạnh tên nó đi bro) và sync changes ở Kubernetes với những gì được define ở Git. Người ta thường dùng nó để phòng trường hợp điển hình như khi có ông Ops bất kì thay đổi resource của app trên k8s mà khác so với những gì ghi trong file manifest được lưu cùng source code.</p>
+<p><img src="cicd//assets/argocd-sync-flow.png" alt="The ArgoCD Flow" /></p>
+<p>Vì dựa trên ý tưởng của Git nên ngoài việc đảm bảo Infra có state đã được define thì Argo kế thừa những tinh hoa của Git dành cho Infra như tạo, khôi phục, revert change của config hoặc resource trong 1 state nhất định (như save game vậy).</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="container"><a class="header" href="#container">Container</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="docker"><a class="header" href="#docker">Docker</a></h1>
+<blockquote>
+<p>⚠️ Trang còn sơ sài, cần cập nhật sang tiếng Việt</p>
+</blockquote>
+<ul>
+<li><a href="https://learn.acloud.guru/course/da6947b1-0901-4f60-a045-c15ec895a3d9/dashboard">Docker Quick Start</a></li>
+<li><a href="https://learn.acloud.guru/course/introduction-to-containers-and-docker/dashboard">Introduction to Containers and Docker</a></li>
+</ul>
+<hr />
+<p>🐳 Docker là một công cụ dùng để đóng gói phần mềm dưới dạng container, dễ dàng chạy linh hoạt trên các môi trường khác nhau.</p>
+<p><strong>Liệu container về bản chất khác gì máy ảo không?</strong>
+Không, cả 2 đều tạo ra một môi trường tách biệt với môi trường host. Chỉ khác là một cái chỉ không ảo hóa phần cứng và một cái có, hiệu năng sẽ cải thiện hơn chút. Với sysadmin thì sẽ không thấy khác biệt nhiều, nhưng với dev thì hiệu quả rõ rệt hơn.</p>
+<p><strong>Kiến thức có thể liên quan: Stateful và Stateless</strong>
+State ở đây chỉ trạng thái của thông tin mà ứng dụng xử lý.
+Về cơ bản nói đơn giản và dễ hiểu thì Stateless là những ứng dụng chỉ đơn giản nhận request, thông tin của client rồi trả về mà bản thân nó không lưu lại bất kì dữ liệu gì liên quan tới request từ client đó; còn Stateful sẽ lưu lại (và thường là trong database).
+Dựa vào usecase của ứng dụng muốn thiết kế mà lựa chọn 1 trong 2 tính chất. Và tùy theo hai tính chất này, ứng dụng có thể được triển khai trên container khác nhau.</p>
+<h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<h2 id="-problems"><a class="header" href="#-problems">🔍 Problems</a></h2>
+<p>Imagine you're build an with COBOL on weird flavor Linux distro like Puppy, you want to share this application with your friend but he has an different system.
+So how do we replicate the environment of our software needs on any machine❓</p>
+<p><img src="container//assets/docker-1.png" alt="" /></p>
+<p>🖥️ One way to package an app is a virtual machine where the hardware is simulated then installed with the required os and dependencies. This allows us to run multiple apps on the same infrastructure, however because each VM is running its own operating system they
+tend to be bulky and slow.</p>
+<p>🐳 A Docker container is similar to a VM in concept, but with one key difference: instead of virtualizing hardware, containers virtualize only the OS. In other words, all applications or containers are run by a single kernel, resulting in improved speed and efficiency.</p>
+<p><img src="container//assets/docker-2.png" alt="" /></p>
+<h2 id="-fundamental-elements"><a class="header" href="#-fundamental-elements">🏛️ Fundamental elements</a></h2>
+<p>There are three fundamental elements in the universe of Docker: Dockerfile, Image and Container.
+The 🗃️ <strong>Dockerfile</strong> is like DNA, it's just code that tells Docker how to build an 🖼️ <strong>Image</strong> which itself is a snapshot of your software along with all of its dependencies down to the operating system level the image is immutable and it can be used to spin up multiple 🪣 <strong>Containers</strong> which is your actual software running in the real world.</p>
+<h1 id="-underlying-technologies"><a class="header" href="#-underlying-technologies">❗️🚧 Underlying Technologies</a></h1>
+<blockquote>
+<p>🚧💬 This section is pretty sloppy. It's got too many words saying the same thing and abstract stuff that's hard to understand. You should probably fix it later.</p>
+</blockquote>
+<p>Understanding the core technologies that power Docker will provide you with a deeper insight into how Docker works and will help you use the platform more effectively.
+<strong>tl;dr</strong>: Containers are just lightweight isolated process running on Linux.</p>
+<p><img src="container//assets/docker-3.png" alt="" /></p>
+<p>ℹ️ _NOTE: In the version 0.9, Docker replaced LXC with its own component, libcontainer, which was written in the <a href="https://en.wikipedia.org/wiki/Go_(programming*language)" title="Go (programming language)">Go</a> programming language.*</p>
+<h2 id="linux-containers-lxc"><a class="header" href="#linux-containers-lxc">Linux Containers (LXC)</a></h2>
+<p>Linux Containers (LXC) serve as the foundation for Docker. LXC is a lightweight virtualization solution that allows multiple isolated Linux systems to run on a single host without the need for a full-fledged hypervisor. LXC effectively isolates applications and their dependencies in a secure and optimized manner.</p>
+<h2 id="control-groups-cgroups"><a class="header" href="#control-groups-cgroups">Control Groups (cgroups)</a></h2>
+<p><strong>cgroups</strong> or <strong>control groups</strong> is a Linux kernel feature that allows you to allocate and manage resources, such as CPU, memory, network bandwidth, and I/O, among groups of processes running on a system. It plays a crucial role in providing resource isolation and limiting the resources that a running container can use.
+Docker utilizes cgroups to enforce resource constraints on containers, allowing them to have a consistent and predictable behavior. Below are some of the key features and benefits of cgroups in the context of Docker containers:</p>
+<h3 id="resource-isolation"><a class="header" href="#resource-isolation">Resource Isolation</a></h3>
+<p>cgroups helps to confine each container to a specific set of resources, ensuring fair sharing of system resources among multiple containers. This enables better isolation between different containers, so that a misbehaving container does not consume all available resources, thereby negatively affecting other containers.</p>
+<h3 id="limiting-resources"><a class="header" href="#limiting-resources">Limiting Resources</a></h3>
+<p>With cgroups, you can set limits on various system resources used by a container, such as CPU, memory, and I/O. This helps to prevent a single container from consuming excessive resources and causing performance issues for other containers or the host system.</p>
+<h3 id="prioritizing-containers"><a class="header" href="#prioritizing-containers">Prioritizing Containers</a></h3>
+<p>By allocating different shares of resources, cgroups allows you to give preference or priority to certain containers. This can be useful in scenarios where some containers are more critical than others, or during high resource contention situations.</p>
+<h3 id="monitoring"><a class="header" href="#monitoring">Monitoring</a></h3>
+<p>cgroups also offers mechanisms for monitoring the resource usage of individual containers, which helps to gain insights into container performance and identify potential resource bottlenecks.
+Overall, cgroups is an essential underlying technology in Docker. By leveraging cgroups, Docker provides a robust and efficient container runtime environment, ensuring the containers have the required resources while maintaining good overall system performance.</p>
+<h2 id="union-file-systems-unionfs"><a class="header" href="#union-file-systems-unionfs">Union File Systems (UnionFS)</a></h2>
+<p>Union filesystems, also known as UnionFS, play a crucial role in the overall functioning of Docker. It’s a unique type of filesystem that creates a virtual, layered file structure by overlaying multiple directories. Instead of modifying the original file system or merging directories, UnionFS enables the simultaneous mounting of multiple directories on a single mount point while keeping their contents separate. This feature is especially beneficial in the context of Docker, as it allows us to manage and optimize storage performance by minimizing duplication and reducing the container image size.
+These are some of the essential features of union filesystems:</p>
+<ul>
+<li><strong>Layered Structure</strong>: UnionFS builds a layered structure consisting of multiple read-only layers and a top writable layer. This structure enables efficient handling of changes by only updating the writable layer, while the read-only layers preserve the original data.</li>
+<li><strong>Copy-on-Write</strong>: The copy-on-write (COW) mechanism is an indispensable feature of UnionFS. If a container makes changes to an existing file, the system creates a copy of the file in the writable layer, leaving the original file in the read-only layer untouched. This process restricts modification to the topmost layer, ensuring a fast and resource-efficient operation.</li>
+<li><strong>Resource Sharing</strong>: Union filesystems allow multiple containers to share common base layers while running separately. This feature prevents resource duplication and saves significant storage space.</li>
+<li><strong>Fast Container Initialization</strong>: Union filesystems make it possible to create new containers instantly by merely creating a new writable layer on existing read-only layers. This quick initialization reduces the overhead of duplicated file operations, ultimately improving performance.</li>
+</ul>
+<h2 id="popular-union-filesystems-in-docker"><a class="header" href="#popular-union-filesystems-in-docker">Popular Union Filesystems in Docker</a></h2>
+<p>Docker supports multiple union filesystems that facilitate building and managing containers. Some of the popular options include:</p>
+<ul>
+<li><a href="http://aufs.sourceforge.net/"><strong>AUFS (Advanced Multi-Layered Unification Filesystem)</strong></a>: AUFS is widely used as a Docker storage driver, enabling efficient management of multiple layers.</li>
+<li><a href="https://www.kernel.org/doc/html/latest/filesystems/overlayfs.html"><strong>OverlayFS (Overlay Filesystem)</strong></a>: OverlayFS is another union filesystem supported by Docker. It uses a simplified approach compared to AUFS to create and manage overlayed directories.</li>
+<li><a href="https://btrfs.wiki.kernel.org/index.php/Main_Page"><strong>Btrfs (B-Tree Filesystem)</strong></a>: Btrfs, a modern file system, offers compatibility with union filesystems in addition to advanced storage features like snapshots and checksumming.</li>
+<li><a href="https://zfsonlinux.org/"><strong>ZFS (Z File System)</strong></a>: ZFS is a high-capacity and robust storage platform that provides union filesystem features along with data protection, compression, and deduplication.</li>
+</ul>
+<h2 id="namespaces"><a class="header" href="#namespaces">Namespaces</a></h2>
+<p>Namespaces are one of the core technologies that Docker uses to provide isolation between containers. In this section, we’ll briefly discuss what namespaces are and how they work.</p>
+<h3 id="what-are-namespaces"><a class="header" href="#what-are-namespaces">What are Namespaces?</a></h3>
+<p>In the Linux kernel, namespaces are a feature that allows the isolation of various system resources, making it possible for a process and its children to have a view of a subset of the system that is separate from other processes. Namespaces help to create an abstraction layer to keep containerized processes separate from one another and from the host system.
+There are several types of namespaces in Linux, including:</p>
+<ul>
+<li><strong>PID (Process IDs)</strong>: Isolates the process ID number space, which means that processes within a container only see their own processes, not those on the host or in other containers.</li>
+<li><strong>Network (NET)</strong>: Provides each container with a separate view of the network stack, including its own network interfaces, routing tables, and firewall rules.</li>
+<li><strong>Mount (MNT)</strong>: Isolates the file system mount points in such a way that each container has its own root file system, and mounted resources appear only within that container.</li>
+<li><strong>UTS (UNIX Time Sharing System)</strong>: Allows each container to have its own hostname and domain name, separate from other containers and the host system.</li>
+<li><strong>User (USER)</strong>: Maps user and group identifiers between the container and the host, so different permissions can be set for resources within the container.</li>
+<li><strong>IPC (Inter-Process Communication)</strong>: Allows or restricts the communication between processes in different containers.</li>
+</ul>
+<h3 id="how-docker-uses-namespaces"><a class="header" href="#how-docker-uses-namespaces">How Docker uses Namespaces</a></h3>
+<p>Docker uses namespaces to create isolated environments for containers. When a container is started, Docker creates a new set of namespaces for that container. These namespaces only apply within the container, so any processes running inside the container have access to a subset of system resources that are isolated from other containers as well as the host system.
+By leveraging namespaces, Docker ensures that containers are truly portable and can run on any system without conflicts or interference from other processes or containers running on the same host.
+In summary, namespaces provide a level of resource isolation that enables running multiple containers with separate system resources within the same host, without them interfering with each other. This is a critical feature that forms the backbone of Docker’s container technology.</p>
+<h1 id="installation--setup"><a class="header" href="#installation--setup">Installation / Setup</a></h1>
+<blockquote>
+<p>ℹ️ Lack of information and clear instructions. Should probably fix it later.</p>
+</blockquote>
+<p>Docker provides a desktop application called <strong>Docker Desktop</strong> that simplifies the installation and setup process. There is also another option to install using the <strong>Docker Engine</strong>.</p>
+<ul>
+<li><a href="https://www.docker.com/products/docker-desktop">Docker Desktop website</a>.</li>
+<li><a href="https://docs.docker.com/engine/install/">Docker Engine</a>.</li>
+</ul>
+<h1 id="docker-basics"><a class="header" href="#docker-basics">Docker Basics</a></h1>
+<h1 id="data-persistence"><a class="header" href="#data-persistence">Data Persistence</a></h1>
+<h1 id="using-3rd-party-container-images"><a class="header" href="#using-3rd-party-container-images">Using 3rd Party Container Images</a></h1>
+<h1 id="building-container-images"><a class="header" href="#building-container-images">Building Container Images</a></h1>
+<h1 id="container-registries"><a class="header" href="#container-registries">Container Registries</a></h1>
+<h1 id="running-containers"><a class="header" href="#running-containers">Running Containers</a></h1>
+<h1 id="container-security"><a class="header" href="#container-security">Container Security</a></h1>
+<h1 id="docker-cli"><a class="header" href="#docker-cli">Docker CLI</a></h1>
+<h1 id="developer-experience"><a class="header" href="#developer-experience">Developer Experience</a></h1>
+<h1 id="deploying-containers"><a class="header" href="#deploying-containers">Deploying Containers</a></h1>
+<h1 id="ℹ-reference"><a class="header" href="#ℹ-reference">ℹ️ Reference</a></h1>
+<ul>
+<li>https://www.bretfisher.com/kubernetes-vs-docker/</li>
+<li>https://opencontainers.org/about/overview/</li>
+<li>https://github.com/BretFisher/udemy-docker-mastery/blob/main/intro/what-is-docker/what-is-docker.md</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="kubernetes"><a class="header" href="#kubernetes">Kubernetes</a></h1>
+<p>Kubernetes là orchestration framework (tức nó dùng để điều phối và quản trị các container). k8s cung cấp các thứ cho container chạy ở môi trường production theo scale tuỳ thích. Kubernetes giúp quản lý một lượng lớn container dễ dàng hơn.</p>
+<h2 id="kiến-trúc"><a class="header" href="#kiến-trúc">Kiến trúc</a></h2>
+<p><img src="container//assets/k8s-1.png" alt="" /></p>
+<h3 id="control-plane"><a class="header" href="#control-plane">Control Plane</a></h3>
+<p>Tên gọi khác là Master Node, là một tập hợp các thành phần quản lý chính cluster chứa nó.</p>
+<p><img src="container//assets/k8s-2.png" alt="" /></p>
+<ul>
+<li><strong>Kube API</strong>: Đây là API server, có thể coi nó như interface tương tác với control plane (cũng như cluster) của chính nó.</li>
+<li><strong>Etcd:</strong> Đây là server tương tác với 1 database key-value để lưu những thông tin liên quan tới state của cluster.</li>
+<li><strong>Scheduler:</strong> Đây là thành phần quản lý việc scheduling, quản lý việc chọn node nào khả dụng trên cluster nào để chạy container.</li>
+<li><strong>Control Manager:</strong> Đây là thành phần chạy nhiều thành phần con trong đó, quản lý nhiều task tự động hóa với cluster.</li>
+<li><strong>Cloud Control Manager:</strong> Dùng làm interface giữa Kubernetes và cloud provider, không cần quan tâm ngay bây giờ (đang nói thằng viết câu này).</li>
+</ul>
+<h3 id="node"><a class="header" href="#node">Node</a></h3>
+<p>Có thể gọi là Worker Node, là một máy bị quản lý và chạy các container bởi 1 cluster nào đó, 1 cluster có thể có nhiều node.</p>
+<p><img src="container//assets/k8s-3.png" alt="" /></p>
+<ul>
+<li><strong>Kubelet:</strong> là 1 agent chạy trên mỗi node, thường tương tác với [[#Control Plane]] để đảm bảo các Container chạy trên các Node hoạt động theo đúng chỉ dẫn từ Control Plane. Kubelet đồng thời lo report lại trang thái của Container và các thông tin khác về Control Plane.</li>
+<li><strong>Container runtime:</strong> không phải là một phần của k8s. Nó là một phần mềm khác dùng để chạy các container mà k8s quản lý, có thể là [[Docker]] hoặc là containerd.</li>
+<li><strong>Kube Proxy:</strong> là Network Proxy chạy trên mỗi node để lo một số thứ dạng như thông mạng giữa các container và service trong cluster.</li>
+</ul>
+<h2 id="dựng-1-cụm-k8s"><a class="header" href="#dựng-1-cụm-k8s">Dựng 1 cụm k8s</a></h2>
+<p>Ở đây tôi dựng 3 máy ảo AWS, 1 master node và 2 worker node. Phải đảm bảo cả 3 máy đều chung một network.</p>
+<ol>
+<li><strong>Sửa file hosts</strong>
+Cho dễ phân biệt với nhau thì có thể dùng lệnh <code>sudo hostnamectl set-hostname</code> để đổi tên lại các host. Xong thêm 3 dòng sau vào file hosts:</li>
+</ol>
+<pre><code>/etc/hosts
+172.31.84.97 k8s-control
+172.31.92.249 k8s-worker1
+172.31.83.141 k8s-worker2
+</code></pre>
+<p>Format là <code>&lt;IP&gt; &lt;Tên host&gt;</code>. Tên host phía trên tương ứng với những host mà tôi tự đặt. 2. <strong>Bật một số module trong kernel</strong>
+Để mỗi lần khởi động hệ thống, <code>overlay</code> và <code>br_netfilter</code> sẽ được bật.</p>
+<pre><code class="language-bash">cat &lt;&lt; EOF | sudo tee /etc/modules-load.d/containerd.conf
+overlay
+br_netfilter
+EOF
+</code></pre>
+<p>Chạy luôn mà không cần khởi động:</p>
+<pre><code class="language-bash">sudo modprobe overlay
+sudo modprobe br_netfilter
+</code></pre>
+<ol start="3">
+<li><strong>Thêm một số system config cho phần network của k8s</strong></li>
+</ol>
+<pre><code class="language-bash">cat &lt;&lt; EOF | sudo tee /etc/sysctl.d/99-kubernetes-cri.conf
+net.bridge.bridge-nf-call-iptables  = 1
+net.ipv4.ip_forward                 = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+EOF
+</code></pre>
+<p>Và chạy lệnh sau để apply config ngay lật tức.</p>
+<pre><code class="language-bash">sudo sysctl --system
+</code></pre>
+<ol start="4">
+<li><strong>Cài containerd</strong></li>
+</ol>
+<pre><code class="language-bash">sudo apt-get update &amp;&amp; sudo apt-get install -y containerd
+</code></pre>
+<ol start="5">
+<li><strong>Viết config cho cotnainerd</strong></li>
+</ol>
+<pre><code class="language-bash"># Tạo thư mục cho config
+sudo mkdir -p /etc/containerd
+# Generate ra config
+sudo containerd config default | sudo tee /etc/containerd/config.toml
+# Khởi động lại containerd
+sudo systemctl restart containerd
+# Kiểm tra containerd hoạt động chưa
+sudo systemctl status containerd
+</code></pre>
+<ol start="6">
+<li>Tắt swap đi</li>
+</ol>
+<pre><code class="language-bash">sudo swapoff -a
+</code></pre>
+<ol start="7">
+<li>Cài Kubernetes
+Đây là doc chính thức nếu có gì đó thay đổi: <a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/">doc</a>.</li>
+</ol>
+<pre><code class="language-bash"># cài các deps cần thiết cho k8s
+sudo apt-get update &amp;&amp; sudo apt-get install -y apt-transport-https ca-certificates curl
+# thêm key cho repo của k8s
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+# thêm config cho repo
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+</code></pre>
+<p>Lặp lại từ bước 2 tới bước 7 cho mỗi Node. 8. Tạo cluster</p>
+<pre><code class="language-bash">sudo kubeadm init --pod-network-cidr 192.168.0.0/16
+</code></pre>
+<ol start="9">
+<li>Setup kubeconfig
+Làm theo hướng dẫn sau khi cluster được init xong.</li>
+<li>Setup network
+Có nhiều cái lắm nhưng cứ tàu nhanh calico vậy:</li>
+</ol>
+<pre><code class="language-bash">kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+</code></pre>
+<ol start="11">
+<li>Cho các worker node join vào cụm</li>
+</ol>
+<pre><code class="language-bash">kubeadm token create --print-join-command
+</code></pre>
+<p>Rồi paste cái lệnh nó in ra vào mấy worker node và <code>kubectl get nodes</code> để check xem.</p>
+<h2 id="cách-kết-nối-tới-cluster"><a class="header" href="#cách-kết-nối-tới-cluster">Cách kết nối tới cluster</a></h2>
+<ol>
+<li>Đối với cloud như GCP, <a href="https://cloud.google.com/sdk/docs/install">cài gcloud &amp; auth</a> để lấy credentials.</li>
+<li>Cài kubectl: <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl-macos">MacOS</a></li>
+<li>(Tùy chọn) Cài kubectx/kubens để thay đổi cluster/namespace dễ dàng hơn</li>
+<li>Đối với GCP, lấy credentials như sau:</li>
+</ol>
+<pre><code class="language-bash">gcloud container clusters get-credentials &lt;example-cluster&gt;
+--region &lt;place-cluster-region-here&gt;
+--project example-project
+--internal
+</code></pre>
+<p>Tài liệu tham chiếu: https://vinid-team.atlassian.net/wiki/spaces/1MGTEC/pages/1750401610/D+ng+resources+tr+n+c+m+K8S+m+i</p>
+<h2 id="các-khái-niệm-cơ-bản"><a class="header" href="#các-khái-niệm-cơ-bản">Các khái niệm cơ bản</a></h2>
+<h3 id="cách-các-object-đc-define"><a class="header" href="#cách-các-object-đc-define">Cách các Object đc define</a></h3>
+<p>Thường một file yaml sẽ trông như thế này</p>
+<pre><code class="language-yaml">apiVersion:
+kind:
+metadata:
+
+spec:
+</code></pre>
+<p>Ví dụ tạo một Pod</p>
+<pre><code class="language-yaml">apiVersion: v1
+kind: Pod
+metadata:
+	name: myapp-pod
+	labels:
+		app: my-app
+spec:
+	containers:
+		- name: nginx-container
+		  image: nginx
+</code></pre>
+<p>Và dùng lệnh sau để áp dụng</p>
+<pre><code class="language-bash">kubectl create -f dat-fucking.yml
+</code></pre>
+<h3 id="pod"><a class="header" href="#pod">Pod</a></h3>
+<p>Pod là đơn vị object nhỏ nhất mà kubernetes (đại diện cho một instance của một nhóm container) cho người dùng deploy một hay nhiều container chạy trong một node. Kubernetes không trực tiếp deploy container, mà gián tiếp thông qua việc deploy pod.</p>
+<ol>
+<li>Tạo và chạy một pod (CLI): <code>kubectl run</code></li>
+<li>Tạo pod (CLI hoặc YAML): <code>kubectl create</code></li>
+<li>Tạo hoặc cập nhật thay đổi (CLI hoặc YAML): <code>kubectl apply</code></li>
+</ol>
+<p>Pod chỉ là một layer trừu tượng, chỉ là ý tưởng chứ không phải là thực thể về một nhóm của một loại tài nguyên bao hàm 1 hay nhiều container cùng dùng chung 1 địa chỉ IP và cùng chung 1 cơ chế deploy.
+Khi có thay đổi liên quan tới pod thì nó chỉ kill pod cũ đi và tạo cái mới.</p>
+<ul>
+<li>Để xem các pods đang có</li>
+</ul>
+<pre><code class="language-bash">kubectl get pods
+</code></pre>
+<ul>
+<li>Để xem thông tin chi tiết về 1 pod</li>
+</ul>
+<pre><code>kubectl describe pod dat-pod-name
+</code></pre>
+<h3 id="replicaset"><a class="header" href="#replicaset">ReplicaSet</a></h3>
+<p>&lt; Cái này để viết sau đi ... &gt;</p>
+<h3 id="namespace"><a class="header" href="#namespace">Namespace</a></h3>
+<p>Namespace là tính năng giúp cho mình tạo những nhóm các object ([[#Pod]], Container, ...) của k8s vào các nhóm mà chúng có thể hoạt động trong môi trường tách biệt nhau, gần giống như việc object ở trong các cluster ảo được tạo ra trong 1 cluster thật vậy.</p>
+<ul>
+<li>Liệt kê namespace đang có trong cluster: <code>kubectl get namespaces</code></li>
+<li>Liệt kê những tài nguyên trong namespace, ví dụ như pod:
+<code>kubectl get pods --namespace my-namespace</code>
+có thể viết tắt đi bằng <code>-n</code></li>
+<li>Tạo namespace: <code>kubectl create namespace my-namespace</code></li>
+</ul>
+<h3 id="service"><a class="header" href="#service">Service</a></h3>
+<p>Là 1 tài nguyên cung cấp network endpoint cho một hay nhiều [[#Pod]]. Các pods sẽ nhận được traffic được config qua selector, tức là tên của các Pod đó.</p>
+<p><img src="container//assets/k8s-4.png" alt="" /></p>
+<h4 id="các-loại-service"><a class="header" href="#các-loại-service">Các loại Service</a></h4>
+<ul>
+<li><strong>ClusterIP:</strong> Loại mặc định, giới hạn kết nối của service trong các cluster đã được define sẵn.</li>
+<li><strong>NodePort:</strong> Sẽ tạo ra 1 dải port mở cố định trên node mà service được deploy. Có thể truy cập từ bên ngoài cluster qua <code>NodeIP:nodePort</code>.</li>
+<li><strong>LoadBalancer:</strong> Service này sẽ dùng load balancer ngoài, cụ thể là LB của cloud.</li>
+<li><strong>ExternalName:</strong> Loại service này thay vì sử dụng selector để trỏ tới một service ngoài như trên thì nó dùng DNS để trỏ tới một service cụ thể khác với các type trên thay vì thông qua proxy hay forwarding thì type này điều hướng thông qua DNS.</li>
+</ul>
+<h4 id="cách-tạo-service"><a class="header" href="#cách-tạo-service">Cách tạo Service</a></h4>
+<p>abcxyz</p>
+<h3 id="ingress"><a class="header" href="#ingress">Ingress</a></h3>
+<p>Là cách kiểm soát mọi băng thông thông qua một thành phần của k8s, được lựa chọn là phương án để expose dịch vụ ở môi trường production. Thay vì phải dùng tới Load Balancer bên ngoài thì Ingress đã có sẵn ngay trong cluster (chạy dưới dạng các pod).</p>
+<h3 id="configmap"><a class="header" href="#configmap">ConfigMap</a></h3>
+<p>abcxyz</p>
+<h3 id="secret"><a class="header" href="#secret">Secret</a></h3>
+<p>abcxyz</p>
+<h2 id="kiến-trúc-network"><a class="header" href="#kiến-trúc-network">Kiến trúc network</a></h2>
+<p>abcxyz</p>
+<h2 id="kubectl-cơ-bản"><a class="header" href="#kubectl-cơ-bản">Kubectl cơ bản</a></h2>
+<p><a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet">Kubectl Dictionary</a> (dùng Cmd + F để tìm lệnh cần dùng)</p>
+<h2 id="tip--tricks"><a class="header" href="#tip--tricks">Tip &amp; Tricks</a></h2>
+<ol>
+<li>Tìm tên các image đang được sử dụng</li>
+</ol>
+<pre><code class="language-sh">kubectl get pods --all-namespaces -o jsonpath="{.items[*].spec['initContainers', 'containers'][*].image}" |\
+tr -s '[[:space:]]' '\n' |\
+sort |\
+uniq -c |\
+grep "&lt;image-name-here&gt;"
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="kubectl"><a class="header" href="#kubectl">kubectl</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="helm"><a class="header" href="#helm">Helm</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="sql-1"><a class="header" href="#sql-1">SQL</a></h1>
+<blockquote>
+<p>💬 Chưa chuyển sang tiếng Việt</p>
+</blockquote>
+<h2 id="create-database"><a class="header" href="#create-database">CREATE Database</a></h2>
+<pre><code class="language-sql">CREATE DATABASE &lt;database_name&gt;;
+</code></pre>
+<h2 id="create-table"><a class="header" href="#create-table">CREATE Table</a></h2>
+<pre><code class="language-sql">-- here is the comment
+CREATE TABLE &lt;table_name&gt;;
+
+CREATE TABLE Users(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	email VARCHAR(255) NOT NULL UNIQUE,
+	bio TEXT,
+	country VARCHAR(2)
+);
+</code></pre>
+<h2 id="insert-new-data"><a class="header" href="#insert-new-data">INSERT New Data</a></h2>
+<pre><code class="language-sql">-- insert single values
+INSERT INTO Users (email, bio, country)
+VALUES(
+	'hello@world.com',
+	'i love you!',
+	'US'
+);
+
+-- insert multiple values
+INSERT INTO Users (email, bio, country)
+VALUES
+	('hello@world.com','i love you!','US'),
+	('hola@munda.com','foo','MX'),
+	('bonjour@monde.com','bar','FR'),
+);
+</code></pre>
+<h2 id="read-or-select-data"><a class="header" href="#read-or-select-data">Read or SELECT Data</a></h2>
+<pre><code class="language-sql">-- select all columns
+SELECT * FROM Users;
+
+-- select specific columns
+SELECT email, id FROM Users;
+
+-- limit amount of data will be fetched
+SELECT email, id FROM Users LIMIT 2;
+
+-- sort
+SELECT email, id FROM Users
+ORDER BY id ASC
+LIMIT 2;
+
+-- filter
+SELECT email, id FROM Users
+WHERE country = 'US'
+ORDER BY id ASC
+LIMIT 2;
+
+-- logical AND OR
+SELECT email, id FROM Users
+WHERE country = 'US' AND id &gt; 1
+ORDER BY id ASC
+LIMIT 2;
+
+-- LIKE matching pattern | kinda slow
+SELECT email, id FROM Users
+WHERE country = 'US' AND email LIKE 'h%'
+ORDER BY id ASC
+LIMIT 2;
+</code></pre>
+<h2 id="index-for-read-speed"><a class="header" href="#index-for-read-speed">INDEX for read speed</a></h2>
+<pre><code class="language-sql">CREATE INDEX email_index ON Users(email);
+</code></pre>
+<h2 id="join-a-relationship"><a class="header" href="#join-a-relationship">JOIN a relationship</a></h2>
+<p>![[Pasted image 20230613104608.png]]
+Create mock table for example:</p>
+<pre><code class="language-sql">-- create rooms table
+CREATE TABLE Rooms(
+	id INT AUTO_INCREMENT,
+	street VARCHAR(255),
+	owner_id INT NOT NULL,
+	PRIMARY KEY (id),
+	FOREIGN KEY (owner_id) REFERENCES Users(id)
+)
+
+-- insert data
+INSERT INTO Rooms (owner_id, street)
+VALUES
+	(1, 'san diego sailboat'),
+	(1, 'nantucket cottage'),
+	(1, 'vail cabin'),
+	(1, 'sf cardboard box'),
+);
+</code></pre>
+<p><img src="database//assets/sql.png" alt="" /></p>
+<h3 id="inner-join"><a class="header" href="#inner-join">INNER JOIN</a></h3>
+<p>Returns only the rows where there is a match between the columns in both tables.</p>
+<pre><code class="language-sql">SELECT * FROM Users
+INNER JOIN Rooms
+ON Rooms.owner_id = Users.id
+</code></pre>
+<h3 id="outer-join"><a class="header" href="#outer-join">OUTER JOIN</a></h3>
+<p>Returns all the rows from both tables, matching them where possible. If there is no match, NULL values are returned for the columns of the table that doesn't have a match.</p>
+<pre><code class="language-sql">SELECT * FROM Users
+OUTER JOIN Rooms
+ON Rooms.owner_id = Users.id
+</code></pre>
+<h3 id="left-join"><a class="header" href="#left-join">LEFT JOIN</a></h3>
+<p>Returns all the rows from the right table and the matching rows from the left table. If there is no match, NULL values are returned for the columns of the left table.</p>
+<blockquote>
+<p>In our case, we want to show all the users who have room and don't have room. Just simply using Left Join query.</p>
+</blockquote>
+<pre><code class="language-sql">SELECT * FROM Users
+LEFT JOIN Rooms
+ON Rooms.owner_id = Users.id
+</code></pre>
+<h3 id="right-join"><a class="header" href="#right-join">RIGHT JOIN</a></h3>
+<p>Returns all the rows from the left table and the matching rows from the right table. If there is no match, NULL values are returned for the columns of the right table.</p>
+<blockquote>
+<p>Right Join is just an opposite of Left Join.</p>
+</blockquote>
+<pre><code class="language-sql">SELECT * FROM Users
+RIGHT JOIN Rooms
+ON Rooms.owner_id = Users.id
+</code></pre>
+<h2 id="select-alias"><a class="header" href="#select-alias">SELECT Alias</a></h2>
+<pre><code class="language-sql">SELECT
+	Users.id AS user_id,
+	Rooms.id AS room_id,
+	email,
+	street
+FROM Users
+INNER JOIN Rooms
+ON Rooms.owner_id = Users.id
+</code></pre>
+<h2 id="join-through-a-middle-man"><a class="header" href="#join-through-a-middle-man">JOIN through a middle man</a></h2>
+<blockquote>
+<p>User has booked many <strong>rooms</strong>
+and room has been booked by <strong>users</strong>.</p>
+</blockquote>
+<pre><code class="language-sql">CREATE TABLE Bookings(
+	id INT AUTO_INCREMENT,
+	guest_id INT NOT NULL,
+	room_id INT NOT NULL,
+	check_in DATETIME,
+	PRIMARY KEY (id),
+	FOREIGN KEY (guest_id) REFERENCES Users(id),
+	FOREIGN KEY (room_id) REFERENCES Rooms(id),
+)
+</code></pre>
+<p>For example, we can get all the rooms that user has been booked with this query:</p>
+<pre><code class="language-sql">SELECT
+	guest_id,
+	street,
+	check_in
+FROM Bookings
+INNER JOIN Rooms ON Rooms.owner_id = guest_id
+WHERE guest_id = 1;
+</code></pre>
+<p>Or get a history of all the guests who stayed in a room:</p>
+<pre><code class="language-sql">SELECT
+	room_id,
+	guess_id,
+	email,
+	bio
+FROM Bookings
+INNER JOIN Users ON Users.owner_id = guest_id
+WHERE room_id = 2;
+</code></pre>
+<h2 id="drop-everything"><a class="header" href="#drop-everything">DROP everything</a></h2>
+<pre><code class="language-sql">DROP TABLE Users;
+DROP TABLE Rooms;
+DROP TABLE Bookings;
+
+DROP DATABASE &lt;database_name&gt;;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="terraform"><a class="header" href="#terraform">Terraform</a></h1>
+<blockquote>
+<p>⚠️ Trang còn sơ sài, cần cập nhật</p>
+</blockquote>
+<p>Terraform là một công cụ “Infrastructure as Code (IaC)” có mã nguồn mở dùng để viết code để mô tả và cung cấp (provisioning) infrastructure (hạ tầng của hệ thống, bao gồm máy chủ, mạng, gateway, database, tất cả những thứ cần thiết để triển khai ứng dụng trên môi trường server) dưới dạng code.
+Các tính năng 1 tool IaC thường có:</p>
+<ul>
+<li>Tạo/Thay đổi/Quản lý Infra bằng code</li>
+<li>Config được cho nhiều dạng hạ tầng/cloud provider khác nhau</li>
+<li>Vì là code nên có tính tái sử dụng</li>
+<li>Qua git có thể versioning và collab với người khác
+Terraform còn có thể thêm khả năng quản lý infra life-cycle, theo dõi thay đổi của infra như VCS.</li>
+</ul>
+<h2 id="tài-liệu-học--công-cụ"><a class="header" href="#tài-liệu-học--công-cụ">Tài liệu học &amp; công cụ</a></h2>
+<ul>
+<li><a href="https://learn.hashicorp.com/terraform/"> Learn Terraform | Hashicorp</a></li>
+<li><a href="https://www.runatlantis.io">Atlantis</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ansible"><a class="header" href="#ansible">Ansible</a></h1>
+<blockquote>
+<p>⚠️ Trang còn sơ sài, cần cập nhật sang tiếng Việt</p>
+</blockquote>
+<p>Ansible is an open source automation tool that can describe your IT infrastructure with simple declarative code.</p>
+<p>Most importantly it uses declarative push-based YAML code that allows devops teams to easily automate their Linux servers. Increasing efficiency while reducing the likelihood of human error.</p>
+<p>Ansible works by making at least one machine to control node, it then connects to multiple manage nodes and sends them an ansible module over SSH which can configure that machine's dependencies, update network settings, provision databases.</p>
+<blockquote>
+<p><em><strong>automate any job you do more than once</strong></em></p>
+<ul>
+<li>wise devops guy says</li>
+</ul>
+</blockquote>
+<p>Developers write playbooks that contain a series of jobs called plays each play is a set of instructions (tasks) that can be executed on one or more target hosts in order against all machines in parallel.</p>
+<p>In addition, a playbook is item potent which means it won't actually make any changes unless it has to.</p>
+<p>Ansible also has a massive ecosystem of prebuilt playbooks that can be accessed on Ansible Galaxy.</p>
+<p>Ansible Vault to store sensitive information like a password securely.</p>
+<pre><code class="language-yml">- name: Create Linode Instance
+  hosts: localhost 
+  vars:
+	  hello: hi mom!
+  vars_files:
+	  - ./group_vars/vars.yml
+  tasks:
+	  - name: create a linode instance
+	    linode-cloud.instance:
+	    api_token: "{{ api_token }}"
+	    label: my-ansible-linode
+	    type: g6-nanode-1
+	    region: us-east
+	    image: linode/ubuntu22.04
+	    root_pass: "{{ password }}"
+	    state: present
+</code></pre>
+<pre><code class="language-sh">ansible-playbook deploy.yml
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cấu-trúc-dữ-liệu"><a class="header" href="#cấu-trúc-dữ-liệu">Cấu trúc dữ liệu</a></h1>
+<blockquote>
+<p>A data structure is a particular way storing and organizing data in a computer for efficient access and modification. Data structures are designed for a specific purpose. Examples include arrays, linked lists, and classes.</p>
+</blockquote>
+<p>Cấu trúc dữ liệu chỉ cách máy tính lưu trữ và tổ chức dữ liệu. Các cấu trúc dữ liệu được thiết kế cho một mục đích cụ thể. Các ví dụ bao gồm mảng, danh sách liên kết và lớp (class).</p>
+<h3 id="array"><a class="header" href="#array">Array</a></h3>
+<p><img src="program//assets/data-structure-array.png" alt="" /></p>
+<p>Mảng là cấu trúc dữ liệu chứa một loạt những phần tử có cùng kiểu ở cạnh nhau.</p>
+<ul>
+<li>Khi lấy một phần tử bất kì trong mảng thì độ phức tạp chỉ là O(1).</li>
+<li>Nếu mảng chưa đầy thì thêm một phần tử cũng chỉ là O(1).</li>
+<li>Mảng phải khai báo số lượng phần tử cho trước và chỉ được fix cứng như vậy. Ví dụ cho mảng có độ dài 5 phần tử thì chỉ có thể lưu tối đa 5 phần tử, muốn thêm phần tử thứ 6 thì phải tạo một mảng mới và copy mảng gốc sang, độ phức tạp là O(n).</li>
+<li>Xóa một phần tử thì phải xóa rồi dịch các phần tử phía sau phần tử bị xóa về trước, độ phức tạp sẽ là O(n).</li>
+</ul>
+<h3 id="linked-list"><a class="header" href="#linked-list">Linked List</a></h3>
+<p><img src="program//assets/data-structure-1.png" alt="" /></p>
+<p>Gần giống mảng, nhưng thay vì để dữ liệu cạnh nhau trên bộ nhớ thì danh sách liên kết đơn sẽ lưu các phần tử thành các node: mỗi node chứa dữ liệu và con trỏ tới dữ liệu tiếp theo.</p>
+<ul>
+<li>Điểm hay của cấu trúc dữ liệu này, giả sử nếu muốn xóa node thứ 2 trong hình thì chỉ cần điều chỉnh lại con trỏ ở node thứ 1 và xóa node 2 là xong. Độ phức tạp là O(1).</li>
+<li>Nhược điểm: Khi tìm một phần tử bất kì thì phải chạy qua từng node một, độ phức tạp là O(n).</li>
+</ul>
+<h3 id="stack-và-queue"><a class="header" href="#stack-và-queue">Stack và Queue</a></h3>
+<p><img src="program//assets/data-structure-2.png" alt="" /></p>
+<p>Stack giống như một ngăn xếp, thêm dữ liệu mới vào ngăn xếp được gọi là push và bỏ dữ liệu ra khỏi ngăn xếp gọi là pop. Dữ liệu thêm và bỏ theo thứ tự FILO (First in Last Out), thằng nào vào trước thì bỏ ra sau hoặc LIFO (First in Last Out) thằng nào vào sau thì ra trước.
+Queue giống như một hàng đợi, dữ liệu được thêm và bỏ theo thứ tự FIFO (First in First Out) thằng nào vào trước thì ra trước hoặc vào sau thì ra sau.</p>
+<p>Độ phức tạp của thuật toán push, pop, queue và dequeue đều là O(1).</p>
+<h3 id="hash-table"><a class="header" href="#hash-table">Hash Table</a></h3>
+<p><img src="program//assets/data-structure-3.png" alt="" /></p>
+<ul>
+<li>Độ phức tạp khi thêm phần tử mới: O(1).</li>
+<li>Độ phức tạp khi tìm kiếm phần tử (trong trường hợp bình thường): O(1).</li>
+</ul>
+<p>Hash Table lưu trữ dữ liệu dưới dạng Key-Value để khi cần tìm dữ liệu ta sẽ gọi nó ra theo Key của dữ liệu đó. Ví dụ: Key "Lisa" sẽ cho ra số điện thoại của Lisa như hình trên.</p>
+<ul>
+<li>CTDL này có 1 thuật toán hash để khi thêm một key mới thì nó sẽ hash thành một mã lưu ở bucket trong bộ nhớ (mỗi bucket đều chứa Linked List). Giả như: Key "Lisa" được cho mã hash là 001 như hình trên.</li>
+<li>Đôi khi thuật toán hash sẽ gặp phải trường hợp Hash Collision, đó là khi 2 key được cho cùng một mã hash. Như "Tom" và "Mark" đều có mã hash là 011, thì giờ đây nó sẽ có thêm đường dẫn số của Mark với Tom. Khi gặp trường hợp này, độ phức tạp sẽ tăng lên O(n).</li>
+</ul>
+<h3 id="set"><a class="header" href="#set">Set</a></h3>
+<p><img src="program//assets/data-structure-4.png" alt="" /></p>
+<p>Set là một tập hợp dữ liệu không trùng nhau, under the hood thì Set có thể sử dụng Hash (Set) hoặc Tree (Set) để biểu diễn dữ liệu.</p>
+<h3 id="graph"><a class="header" href="#graph">Graph</a></h3>
+<p><img src="program//assets/data-structure-5.png" alt="" /></p>
+<p>Đồ thị là tập hợp các node nối với nhau bởi các cạnh, đồ thị có thể có hướng hoặc không hướng. Trên thực tế thì thường áp dụng vào làm bản đồ.</p>
+<h3 id="tree"><a class="header" href="#tree">Tree</a></h3>
+<p><img src="program//assets/data-structure-6.png" alt="" /></p>
+<p>Đồ thị dạng cây chỉ có một node cha và rất nhiều node con, các node con có thể có nhiều node con nữa.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="giải-thuật"><a class="header" href="#giải-thuật">Giải thuật</a></h1>
+<blockquote>
+<p>⚠️ Trang còn sơ sài, cần cập nhật</p>
+</blockquote>
+<p>Algorithms are the ideas behind computer programs to <em><strong>solve a general, specified problem</strong></em>.
+An algorithmic problem is specified by <em><strong>describing the set of instances</strong></em> it must work on, and what desired properties <em><strong>the output must have</strong></em>.</p>
+<h2 id="big-o-notation"><a class="header" href="#big-o-notation">Big O Notation</a></h2>
+<p>Có thể hiểu là sự tương quan giữa thời lượng của thuật toán và độ lớn của dữ liệu. Thông thường người ta hay sử dụng biểu đồ như thế này (Big O Notation) để biểu thị độ phức tạp của thuật toán:</p>
+<p><img src="program//assets/algo-1.png" alt="" /></p>
+<p>Ví dụ:</p>
+<ul>
+<li><strong>O(1)</strong>: Dù dữ liệu có nhiều lên tới mức nào thì thời gian chạy vẫn không tăng.</li>
+<li><strong>O(n)</strong>: Dữ liệu càng nhiều thì tốc độ càng chậm.</li>
+</ul>
+<p><em>Có nhiều loại notations khác ngoài Big-O (Big Theta Notation, Big Omega Notation), đề cập tới để biết chứ không cần tìm hiểu.</em></p>
+<h3 id="common-runtimes"><a class="header" href="#common-runtimes">Common Runtimes</a></h3>
+<p>...</p>
+<h2 id="thuật-toán-sắp-xếp"><a class="header" href="#thuật-toán-sắp-xếp">Thuật toán sắp xếp</a></h2>
+<h3 id="selection-sort"><a class="header" href="#selection-sort">Selection Sort</a></h3>
+<p><strong>Yêu cầu</strong></p>
+<p>Sắp xếp một danh sách các số nguyên bằng Selection Sort. Đây là một trong những thuật toán sắp xếp cơ bản.</p>
+<p>Độ phức tạp: O(n^2), không phù hợp để sắp xếp mảng lớn.</p>
+<p><strong>Test Case</strong></p>
+<ol>
+<li>Mảng đã sắp xếp</li>
+<li>Mảng ngược thứ tự</li>
+<li>Mảng có phần tử trùng nhau</li>
+<li>Mảng rỗng</li>
+</ol>
+<pre><code>Input: []
+Output: []
+</code></pre>
+<ol start="5">
+<li>Mảng chỉ có 1 phần tử</li>
+</ol>
+<pre><code>Input: [42]
+Output: [42]
+</code></pre>
+<ol start="6">
+<li>Mảng chứa các số âm</li>
+</ol>
+<p><strong>Cách giải quyết</strong></p>
+<p>Bắt đầu từ phần tử đầu tiên của mảng, duyệt tìm phần tử nhỏ nhất và đổi chỗ cho phần tử đầu. Tiếp tục từ phần tử tiếp theo (bỏ qua phần tử đã đầu tiên vừa đổi chỗ), tìm phần tử nhỏ nhất trong mảng còn lại và tiếp tục đổi chỗ cho tới khi mảng được sắp xếp.</p>
+<p><strong>Code</strong></p>
+<pre><code class="language-python">def selection_sort(arr):
+    n = len(arr)
+
+    for i in range(n):
+        min_idx = i
+
+        for j in range(i+1, n):
+            if arr[j] &lt; arr[min_idx]:
+                min_idx = j
+        # swap
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+
+    return arr
+</code></pre>
+<h3 id="merge-sort"><a class="header" href="#merge-sort">Merge Sort</a></h3>
+<p><img src="program//assets/algo-2.gif" alt="" /></p>
+<h3 id="quick-sort"><a class="header" href="#quick-sort">Quick Sort</a></h3>
+<p><img src="program//assets/algo-3.gif" alt="" /></p>
+<h2 id="thuật-toán-tìm-kiếm"><a class="header" href="#thuật-toán-tìm-kiếm">Thuật toán tìm kiếm</a></h2>
+<h3 id="tìm-kiếm-nhị-phân"><a class="header" href="#tìm-kiếm-nhị-phân">Tìm kiếm nhị phân</a></h3>
+<p><img src="program//assets/algo-4.gif" alt="" /></p>
+<p><strong>Yêu cầu</strong></p>
+<p>Tìm 1 số trong một danh sách đã sắp xếp.</p>
+<p><strong>Test case</strong></p>
+<ol>
+<li>Danh sách rỗng</li>
+</ol>
+<pre><code>Input: []
+Output: -1
+</code></pre>
+<ol start="2">
+<li>Không có trong mảng</li>
+</ol>
+<pre><code>Input: [2, 4, 6, 8, 10]; Target: 5
+Output: -1
+</code></pre>
+<p><strong>Cách giải quyết</strong></p>
+<p>Thuật toán này sử dụng kĩ thuật chia để trị.</p>
+<ul>
+<li>Nếu giá trị ở giữa = giá trị cần tìm, thuật toán sẽ trả về chỉ số của phần tử này.</li>
+<li>Nếu giá trị ở giữa &gt; giá trị cần tìm, thuật toán sẽ tìm kiếm nửa bên trái.</li>
+<li>Nếu giá trị ở giữa &lt; giá trị cần tìm, thuật toán sẽ tìm kiếm nửa bên phải.</li>
+</ul>
+<p>Độ phức tạp của thuật toán: O(log n).
+Các trường hợp không nên áp dụng thuật toán:</p>
+<ul>
+<li>Mảng chưa được sắp xếp</li>
+<li>Mảng quá ngắn</li>
+<li>Có các phần tử trùng lặp</li>
+</ul>
+<p><strong>Code</strong></p>
+<pre><code class="language-python">def binary_search(arr, x):
+    left = 0
+    right = len(arr) - 1
+
+    while left &lt;= right:
+        mid = (left + right) // 2
+
+        if arr[mid] == x:
+            return mid
+
+        elif arr[mid] &lt; x:
+            left = mid + 1
+
+        else:
+            right = mid - 1
+
+    return -1
+</code></pre>
+<h3 id="tìm-số-bị-xóa-khỏi-mảng"><a class="header" href="#tìm-số-bị-xóa-khỏi-mảng">Tìm số bị xóa khỏi mảng</a></h3>
+<p><strong>Yêu cầu</strong>
+Cho 1 mảng các số nguyên khác nhau, lấy 1 phần tử bất kì trong mảng. Tìm phần tử bị lấy ra đó.</p>
+<p><strong>Định hướng</strong>
+Cho 1 mảng các số nguyên, sau khi lấy ra 1 phần tử bất kì sẽ tạo ra một mảng hoàn toàn mới.</p>
+<p><strong>Test case</strong></p>
+<ol>
+<li>Trường hợp mảng rỗng hoặc có 1 phần tử duy nhất</li>
+</ol>
+<pre><code>Input: []
+Output: None
+</code></pre>
+<ol start="2">
+<li>Mảng có 2 phần tử trở lên</li>
+</ol>
+<pre><code>Input: [1, 2, 3, 4, 5]; Target: 3
+Output: 3
+</code></pre>
+<p><strong>Cách giải quyết</strong>
+Tính tổng mảng cũ và mảng mới, lấy tổng mảng cũ trừ đi mảng mới là ra được số bị lấy ra.</p>
+<pre><code class="language-python">class Solution(object):
+	def twoSum(self, nums, target):
+            hashmap = {}
+            for i in range(len(nums)):
+                complement = target - nums[i]
+                if complement in hashmap:
+                    return [i, hashmap[complement]]
+                    hashmap[nums[i]] = i|
+</code></pre>
+<h3 id="tìm-số-lớn-thứ-2"><a class="header" href="#tìm-số-lớn-thứ-2">Tìm số lớn thứ 2</a></h3>
+<p><strong>Yêu cầu</strong></p>
+<p>Tìm số lớn thứ 2 trong mảng các số nguyên</p>
+<p><strong>Test case</strong></p>
+<ol>
+<li>Rỗng hoặc chỉ chứa 1 phần tử</li>
+</ol>
+<pre><code>Input: []
+Output: None
+</code></pre>
+<pre><code>Input: [5]
+Output: None
+</code></pre>
+<ol start="2">
+<li>Chứa 2 phần tử</li>
+</ol>
+<pre><code>Input: [4, 7]
+Output: 4
+</code></pre>
+<ol start="3">
+<li>Chứa nhiều phần tử, số cần tìm ở giữa danh sách</li>
+</ol>
+<pre><code>Input: [3, 7, 1, 9, 4, 5]
+Output: 7
+</code></pre>
+<ol start="4">
+<li>Chứa nhiều phần tử, số cần tìm ở cuối danh sách</li>
+</ol>
+<pre><code>Input: [1, 4, 6, 2, 8, 10]
+Output: 8
+</code></pre>
+<ol start="5">
+<li>Chứa nhiều phần tử, các phần tử đều bằng nhau</li>
+</ol>
+<pre><code>Input: [2, 2, 2, 2, 2]
+Output: 2
+</code></pre>
+<ol start="6">
+<li>Chứa nhiều phần tử, các phần tử đều âm</li>
+</ol>
+<pre><code>Input: [-3, -5, -2, -1, -4]
+Output: -2
+</code></pre>
+<p><strong>Cách giải quyết</strong></p>
+<ol>
+<li>Kiểm tra danh sách có ít nhất 2 phần tử</li>
+<li>Tìm số lớn nhất trong danh sách</li>
+<li>Xóa số lớn nhất trong mảng</li>
+<li>Tìm số lớn nhất trong mảng bị xóa (chính là số lớn thứ 2 trong mảng cũ)</li>
+<li>Trả về số lớn thứ 2</li>
+</ol>
+<p><strong>Code</strong></p>
+<pre><code class="language-python">def find_second_largest(numbers):
+    # Kiểm tra danh sách có ít nhất hai phần tử
+    if len(numbers) &lt; 2:
+        return None
+
+    # Tìm số lớn nhất trong danh sách
+    max_number = float('-inf')
+    for number in numbers:
+        if number &gt; max_number:
+            max_number = number
+
+    # Xóa số lớn nhất khỏi danh sách
+    numbers.remove(max_number)
+
+    # Tìm số lớn nhất thứ hai trong danh sách đã xóa
+    second_max_number = float('-inf')
+    for number in numbers:
+        if number &gt; second_max_number:
+            second_max_number = number
+
+    # Trả về số lớn nhất thứ hai
+    return second_max_number
+</code></pre>
+<h3 id="breadth-first-search"><a class="header" href="#breadth-first-search">Breadth First Search</a></h3>
+<p><img src="program//assets/algo-5.gif" alt="" /></p>
+<h3 id="depth-first-search"><a class="header" href="#depth-first-search">Depth First Search</a></h3>
+<p><img src="program//assets/algo-6.gif" alt="" /></p>
+<h2 id="memoization"><a class="header" href="#memoization">Memoization</a></h2>
+<p><img src="program//assets/algo-7.png" alt="" /></p>
+<h2 id="phép-toán-thao-tác-bit-bitwise-operation"><a class="header" href="#phép-toán-thao-tác-bit-bitwise-operation">Phép toán thao tác bit (Bitwise operation)</a></h2>
+<h2 id="Đệ-quy-recursion"><a class="header" href="#Đệ-quy-recursion">Đệ quy (Recursion)</a></h2>
+<p><img src="program//assets/algo-8.png" alt="" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="hướng-đối-tượng"><a class="header" href="#hướng-đối-tượng">Hướng đối tượng</a></h1>
+<h2 id="4-tính-chất"><a class="header" href="#4-tính-chất">4 tính chất</a></h2>
+<h3 id="tính-đóng-gói-encapsulation"><a class="header" href="#tính-đóng-gói-encapsulation">Tính đóng gói (Encapsulation)</a></h3>
+<p>Là cách che dấu các thuộc tính bên trong đối tượng không thể bị tác động... trừ khi thay đổi nó qua một method nào đó.</p>
+<pre><code class="language-cs">public class Rectangle {
+	private int height;
+	private int width;
+
+	public Rectangle(int newHeight, int newWidth) {
+		height = newHeight;
+		width = newWidth;
+	}
+}
+</code></pre>
+<p>Nếu có một đối tượng được tạo từ đoạn code trên, thì không thể gọi <code>height = 12</code> ra trực tiếp để sửa được. Phải gán giá trị cho height qua method <code>Rectangle()</code>.</p>
+<h3 id="tính-kế-thừa-inheritance"><a class="header" href="#tính-kế-thừa-inheritance">Tính kế thừa (Inheritance)</a></h3>
+<p>Là cách kế thừa các thuộc tính và method mà không cần phải khai báo lại chúng. Hoặc nếu cần khai báo lại thì có thể tái định nghĩa lại (override).</p>
+<pre><code class="language-cs">class Vehicle {
+	public string brand = "Ford";
+
+	public void honk() {
+		Console.WriteLine("Tuut, tuut!");
+	}
+}
+
+class Car: Vehicle {
+	public string modelName = "Mustang";
+}
+</code></pre>
+<h3 id="tính-đa-hình-polymorphism"><a class="header" href="#tính-đa-hình-polymorphism">Tính đa hình (Polymorphism)</a></h3>
+<p>Tính đa hình cho phép một hành động có thể được thực hiện bằng nhiều cách khác nhau.</p>
+<p>Có 2 cách vận dụng tính đa hình:</p>
+<ul>
+<li>Overload (đa hình khi biên dịch - compile time): Trong 1 class có nhiều method cùng tên nhưng khác params.</li>
+</ul>
+<pre><code class="language-cs">public class BankAccount() {
+	public object GetAccountInformation(int bankId) {}
+	public object GetAccountInformation(string bankName) {}
+    public object GetAccountInformation(string bankName, string address){}
+}
+</code></pre>
+<ul>
+<li>Override (đa hình khi thực thi - runtime): Các method kế thừa của class con từ class cha tùy vào từng class sẽ thực hiện như thế nào. Chỉ trong lúc runtime ta mới biết nó sử dụng method nào.</li>
+</ul>
+<pre><code class="language-cs">public class BankAccount {
+	public decimal GetTotalPrice() {}
+}
+
+public class CreditCard: BankAccount {
+    public decimal GetTotalPrice() {}
+}
+
+public class DebitCard: BankAccount {
+    public decimal GetTotalPrice() {}
+}
+</code></pre>
+<h3 id="tính-trừu-tượng-abstraction"><a class="header" href="#tính-trừu-tượng-abstraction">Tính trừu tượng (Abstraction)</a></h3>
+<blockquote>
+<p>Tính trừu tượng cho phép tổng quát hóa một đối tượng.</p>
+</blockquote>
+<p>Nghĩa là ẩn đi những thông tin chi tiết bên trong, chỉ thể hiện ra những thông tin bên ngoài. Qua thông tin bên ngoài đó ta có thể hiểu được đối tượng đó làm gì.</p>
+<p><strong>Ẩn chi tiết, thể hiện tổng quan.</strong></p>
+<p>Tính chất này được thể hiện qua việc sử dụng <strong>interface</strong> hoặc <strong>abstract class</strong>.</p>
+<pre><code class="language-cs">public Interface Checkout {
+	Bool ValidateAccount(object BankAccount);
+	Decimal CaculateTotalPrice(object BankAccount);
+	int Checkout(object BankAccount));
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="solid-principles"><a class="header" href="#solid-principles">SOLID Principles</a></h1>
+<p>SOLID Principles is a coding standard that help developers have a clear concept for developing software properly to avoid a bad design.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="design-patterns"><a class="header" href="#design-patterns">Design Patterns</a></h1>
+<p>Design Patterns là các mẫu thiết kế dùng để giải quyết những vấn đề hay gặp (cũng giúp tổ chức code tốt hơn).
+Nguồn gốc là từ cuốn sách của 4 lập trình viên C++ huyền thoại được gọi là Gang of Four, trong cuốn này có nêu ra tầm 23 patterns khác nhau. Thường được ứng dụng trong OOP, áp dụng chung nhất cho hầu hết các ngôn ngữ lập trình.</p>
+<ul>
+<li>Có 3 loại Design Patterns:
+<ul>
+<li><strong>Creational</strong>: Cách Object được tạo ra sao.</li>
+<li><strong>Structural</strong>: Cách các Object liên hệ với nhau ra sao.</li>
+<li><strong>Behavioural</strong>: Cách các Object giao tiếp với nhau ra sao.</li>
+</ul>
+</li>
+<li>Hay dùng: Factory, Facade, Singleton, Observer.</li>
+</ul>
+<h2 id="cách-học"><a class="header" href="#cách-học">Cách học</a></h2>
+<ul>
+<li>Xem Context, UML, Code mẫu.</li>
+<li>Pattern giải quyết vấn đề gì.</li>
+<li>Học và tìm hiểu pattern trong framework (nhiều khi có sẵn).</li>
+<li>Áp dụng trong thực tiễn.</li>
+</ul>
+<h2 id="hay-dùng"><a class="header" href="#hay-dùng">Hay dùng</a></h2>
+<h3 id="factory"><a class="header" href="#factory">Factory</a></h3>
+<h3 id="facade"><a class="header" href="#facade">Facade</a></h3>
+<h3 id="singleton"><a class="header" href="#singleton">Singleton</a></h3>
+<h3 id="observer"><a class="header" href="#observer">Observer</a></h3>
+<h2 id="mở-rộng"><a class="header" href="#mở-rộng">Mở rộng</a></h2>
+<h3 id="repository"><a class="header" href="#repository">Repository</a></h3>
+<h2 id="tham-khảo-thêm"><a class="header" href="#tham-khảo-thêm">Tham khảo thêm</a></h2>
+<ul>
+<li>Refactoring</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="the-twelve-factors"><a class="header" href="#the-twelve-factors">The Twelve Factors</a></h1>
+<p>https://12factor.net/</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="javascript"><a class="header" href="#javascript">JavaScript</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="python"><a class="header" href="#python">Python</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="java"><a class="header" href="#java">Java</a></h1>
+<p>Cuộc đời quá ngắn để học Java.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="go"><a class="header" href="#go">Go</a></h1>
+<h2 id="hello-world"><a class="header" href="#hello-world">Hello World</a></h2>
+<pre><code class="language-go">// for go modules
+package main
+
+// import fmt from standard library
+import "fmt"
+
+// main will be the first function to run
+func main() {
+	fmt.Println("Better Call Saul!")
+}
+</code></pre>
+<ul>
+<li>As you can see, each Go program organized by the go modules and called a <code>package</code>.</li>
+<li>Package “fmt” is a library from standard library, which can be found <a href="https://pkg.go.dev/std">here</a>.</li>
+<li><code>main</code> is the first function to run in executable binary</li>
+</ul>
+<p>Also you can import multiple packages with wrapped syntax like this</p>
+<pre><code class="language-go">import (
+	"fmt"
+	"math"
+	"io"
+)
+</code></pre>
+<p>It’s better when you can use this kind of systax with another keyword like <code>type</code>, <code>var</code> and <code>const</code>.</p>
+<h2 id="variables"><a class="header" href="#variables">Variables</a></h2>
+<p>To declare the variable, you can use <code>var</code> keyword. Go is statically type language so you need to declare a variable with a type with it.</p>
+<pre><code class="language-go">// basic declaration
+// int is integer type
+var age int
+
+// declare with a value
+// go will automatically infer type for it
+var age = 12
+
+// declare multiple value
+var (
+	age = 12
+	height = 160
+)
+// or in 1 line of code
+var age, height = 12, 160
+
+// without the declaration of value
+// the init value will depend on each type
+// with int is 0
+var age int
+fmt.Println(age) // output: 0
+</code></pre>
+<h3 id="type-inference"><a class="header" href="#type-inference">Type Inference</a></h3>
+<p>You can also declaring a variable without specifying an explicit type by using this syntax:</p>
+<pre><code class="language-go">// with a value
+age := 12
+
+// with multiple values
+age, height := 12, 160
+</code></pre>
+<h3 id="data-types"><a class="header" href="#data-types">Data Types</a></h3>
+<p>Go offers a rich collection of types, including numerics, booleans, strings, error, and the ability to create custom types.</p>
+<pre><code class="language-go">// default data types
+n := 10 // int
+pi := 3.14 // float64
+a, b := true, false // bool
+hi := "hello" // string
+
+// specified types
+var (
+	a int8 // 8-bit signed integer
+	b int16 // 16-bit signed integer
+	c int32 // 32-bit signed integer
+	d int64 // 64-bit signed integer
+	e uint8 // 8-bit unsigned integer
+	f uint16 // 16-bit unsigned integer
+	g uint32 // 32-bit unsigned integer
+	h uint64 // 64-bit unsigned integer
+	j int // Both int and uint contain same size, either 32 or 64 bit.
+	k uint // Both int and uint contain same size, either 32 or 64 bit.
+)
+var (
+	l string // slice of characters
+	m byte // it's a synonym of uint8.
+	// A byte has a limit of 0 – 255 in numerical range
+	// which can also represent an ASCII character
+	n rune // it's a synonym of int32
+	// and also represent Unicode code points.
+	o uintptr // it's an unsigned integer type.
+	// Its width is not defined, but its can hold all the bits of a pointer value.
+)
+</code></pre>
+<h2 id="concurrency"><a class="header" href="#concurrency">Concurrency</a></h2>
+<h3 id="goroutines"><a class="header" href="#goroutines">Goroutines</a></h3>
+<p>A <em>goroutine</em> is a lightweight thread managed by the Go runtime.</p>
+<pre><code class="language-go">func f(from string) {
+	for i := 0; i &lt; 3; i++ {
+		fmt.Println(from, ":", i)
+	}
+}
+
+func main() {
+	go f("goroutine")
+	f("direct")
+
+	// wait for those function finish
+	// for a more robust approach, use WaitGroup*
+	time.Sleep(time.Second)
+	fmt.Println("done")
+}
+</code></pre>
+<p>Reference: <a href="https://pkg.go.dev/sync">WaitGroup</a></p>
+<p>When we run this program, we see the output of the blocking call first, then the output of the two goroutines. The goroutines’ output may be interleaved, because goroutines are being run concurrently by the Go runtime.</p>
+<pre><code>direct : 0
+direct : 1
+direct : 2
+goroutine : 0
+goroutine : 1
+goroutine : 2
+done
+</code></pre>
+<h3 id="channels"><a class="header" href="#channels">Channels</a></h3>
+<p><em>Channels</em> are the pipes that connect concurrent goroutines. You can send values into channels from one goroutine and receive those values into another goroutine.</p>
+<pre><code class="language-go">ch &lt;- v    // Send v to channel ch.
+v := &lt;-ch  // Receive from ch, and
+           // assign value to v.
+</code></pre>
+<pre><code class="language-go">func main() {
+	// channels must be created before use
+	msg := make(chan string)
+
+	// send "ping" string to msg channel
+	go func() { msg &lt;- "ping" }()
+
+	// receive string from msg
+	message := &lt;- msg
+	fmt.Println(message)
+}
+</code></pre>
+<h3 id="channel-buffering"><a class="header" href="#channel-buffering">Channel Buffering</a></h3>
+<p>By default channels are <em>unbuffered</em>, meaning that they will only accept sends (chan &lt;-) if there is a corresponding receive (&lt;- chan) ready to receive the sent value.
+Buffered channels accept a limited number of values without a corresponding receiver for those values.</p>
+<pre><code class="language-go">func main() {
+    messages := make(chan string, 2)
+
+    messages &lt;- "buffered"
+    messages &lt;- "channel"
+
+    fmt.Println(&lt;-messages)
+    fmt.Println(&lt;-messages)
+}
+</code></pre>
+<pre><code>buffered
+channel
+</code></pre>
+<h3 id="channel-synchronization"><a class="header" href="#channel-synchronization">Channel Synchronization</a></h3>
+<p>We can use channels to synchronize execution across goroutines. Here’s an example of using a blocking receive to wait for a goroutine to finish.</p>
+<pre><code class="language-go">// This is the function we’ll run in a goroutine.
+// The `done` channel will be used to notify another goroutine that this function’s work is done.
+func worker(done chan bool) {
+    fmt.Print("working...")
+    time.Sleep(time.Second)
+    fmt.Println("done")
+
+	// Send a value to notify that we’re done.
+    done &lt;- true
+}
+
+func main() {
+	// Start a worker goroutine, giving it the channel to notify on.
+    done := make(chan bool, 1)
+    go worker(done)
+
+	// Block until we receive a notification
+	// from the worker on the channel.
+    &lt;-done
+}
+</code></pre>
+<p>If you removed the <code>&lt;- done</code> line from this program, the program would exit before the <code>worker</code> even started.</p>
+<h3 id="channel-directions"><a class="header" href="#channel-directions">Channel Directions</a></h3>
+<p>When using channels as function parameters, you can specify if a channel is meant to only send or receive values. This specificity increases the type-safety of the program.</p>
+<pre><code class="language-go">// This `ping` function only accepts a channel for sending values.
+// It would be a compile-time error to try to receive on this channel.
+func ping(pings chan&lt;- string, msg string) {
+    pings &lt;- msg
+}
+
+// The `pong` function accepts one channel for receives (`pings`) and a second for sends (`pongs`).
+func pong(pings &lt;-chan string, pongs chan&lt;- string) {
+    msg := &lt;-pings
+    pongs &lt;- msg
+}
+
+func main() {
+    pings := make(chan string, 1)
+    pongs := make(chan string, 1)
+    ping(pings, "passed message")
+    pong(pings, pongs)
+    fmt.Println(&lt;-pongs)
+}
+</code></pre>
+<h1 id="objectives"><a class="header" href="#objectives">Objectives</a></h1>
+<p>Write application that integrate with:</p>
+<ul>
+<li>REST APIs</li>
+<li>Cloud Provider</li>
+<li>Kubernetes</li>
+<li>Custom Intergration</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="monitoring-1"><a class="header" href="#monitoring-1">Monitoring</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="grafana"><a class="header" href="#grafana">Grafana</a></h1>
+<p>Observability and data visualization platform.</p>
+<h2 id="cài-đặt"><a class="header" href="#cài-đặt">Cài đặt</a></h2>
+<p>Thêm service sau vào <code>docker-compose.yml</code>:</p>
+<pre><code class="language-yml">grafana:
+  image: grafana/grafana:latest
+  restart: unless-stopped
+  volumes:
+    - ./data/var/lib/grafana:/var/lib/grafana
+  ports:
+    - "3000:3000"
+</code></pre>
+<p>Sau đó đăng nhập với tên người dùng và mật khẩu mặc định đều là <code>admin</code>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="grafana-tempo"><a class="header" href="#grafana-tempo">Grafana Tempo</a></h1>
+<p>A tracing backend.</p>
+<h2 id="cài-đặt-1"><a class="header" href="#cài-đặt-1">Cài đặt</a></h2>
+<pre><code class="language-yml">grafana:
+  image: grafana/grafana:latest
+  restart: unless-stopped
+  volumes:
+    - ./data/var/lib/grafana:/var/lib/grafana
+  ports:
+    - "3000:3000"
+</code></pre>
+<pre><code class="language-yml">stream_over_http_enabled: true
+server:
+  http_listen_port: 3200
+  log_level: info
+
+query_frontend:
+  search:
+    duration_slo: 5s
+    throughput_bytes_slo: 1.073741824e+09
+  trace_by_id:
+    duration_slo: 5s
+
+distributor:
+  receivers: # this configuration will listen on all ports and protocols that tempo is capable of.
+    jaeger: # the receives all come from the OpenTelemetry collector.  more configuration information can
+      protocols: # be found there: https://github.com/open-telemetry/opentelemetry-collector/tree/main/receiver
+        thrift_http: #
+        grpc: # for a production deployment you should only enable the receivers you need!
+        thrift_binary:
+        thrift_compact:
+    zipkin:
+    otlp:
+      protocols:
+        http:
+        grpc:
+    opencensus:
+
+ingester:
+  max_block_duration: 5m # cut the headblock when this much time passes. this is being set for demo purposes and should probably be left alone normally
+
+compactor:
+  compaction:
+    block_retention: 1h # overall Tempo trace retention. set for demo purposes
+
+metrics_generator:
+  registry:
+    external_labels:
+      source: tempo
+      cluster: docker-compose
+  storage:
+    path: /var/tempo/generator/wal
+    remote_write:
+      - url: http://localhost:9090/api/v1/write
+        send_exemplars: true
+  traces_storage:
+    path: /var/tempo/generator/traces
+
+storage:
+  trace:
+    backend: local # backend configuration to use
+    wal:
+      path: /var/tempo/wal # where to store the the wal locally
+    local:
+      path: /var/tempo/blocks
+
+overrides:
+  defaults:
+    metrics_generator:
+      processors: [service-graphs, span-metrics, local-blocks] # enables metrics generator
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="grafana-loki"><a class="header" href="#grafana-loki">Grafana Loki</a></h1>
+<p>A logging backend.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="prometheus"><a class="header" href="#prometheus">Prometheus</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="opentelemetry"><a class="header" href="#opentelemetry">OpenTelemetry</a></h1>
+<h2 id="triển-khai-tích-hợp"><a class="header" href="#triển-khai-tích-hợp">Triển khai tích hợp</a></h2>
+<h3 id="java-agent-manual-instrumentation"><a class="header" href="#java-agent-manual-instrumentation">Java Agent (Manual Instrumentation)</a></h3>
+<pre><code class="language-bash">curl https://start.spring.io/starter.tgz \
+    -d type=maven-project \
+    -d language=java \
+    -d platformVersion=3.1.5 \
+    -d packaging=jar \
+    -d jvmVersion=21 \
+    -d groupId=com.stanleykubrick \
+    -d artifactId=observability \
+    -d name=observability \
+    -d description="A Stanley Kubrick Production" \
+    -d packageName=com.stanleykubrick.observability \
+    -d dependencies=web,actuator | tar -xzvf -
+</code></pre>
+<p>Thêm <code>opentelemetry-collector</code> vào <code>pom.xml</code>:</p>
+<pre><code class="language-xml">&lt;project&gt;
+  &lt;dependencyManagement&gt;
+    &lt;dependencies&gt;
+      &lt;dependency&gt;
+        &lt;groupId&gt;io.opentelemetry&lt;/groupId&gt;
+        &lt;artifactId&gt;opentelemetry-bom&lt;/artifactId&gt;
+        &lt;version&gt;1.37.0&lt;/version&gt;
+        &lt;type&gt;pom&lt;/type&gt;
+        &lt;scope&gt;import&lt;/scope&gt;
+      &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+  &lt;/dependencyManagement&gt;
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;io.opentelemetry&lt;/groupId&gt;
+      &lt;artifactId&gt;opentelemetry-api&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+&lt;/project&gt;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="network"><a class="header" href="#network">Network</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cloudflare"><a class="header" href="#cloudflare">Cloudflare</a></h1>
+<blockquote>
+<p>⚠️ Trang còn sơ sài, cần cập nhật</p>
+</blockquote>
+<p>Uhm chẳng biết tóm tắt như thế nào về những sản phẩm chúng nó bán ra, nhưng nhìn chung chúng nó nhờ có mạng lưới máy tính rộng lớn trên thế giới mà bán được rất nhiều dịch vụ khác nhau. Nổi tiếng nhất là DNS, cứ nhắc tới Cloudflare là nhớ ngay tới DNS.</p>
+<p>Service thì nhiều nhưng cái chung chung cần biết + ổn định để dùng thì có: DNS, Proxy, Page Rules, Firewall, WARP/Zero Trust, Worker, One, ...</p>
+<p><img src="cloudflare//assets/cf-1.png" alt="" /></p>
+<ul>
+<li>DNS Only chỉ đơn giản là resolve DNS, còn Proxy thì khi trỏ tới máy chủ của Cloudflare, thông qua đó mới thông sang máy thật được. Cái này hay dùng để che địa chỉ IP của máy thật.
+Qua Proxied thì cũng có active thêm các service như Speed: Cache, CDN, cũng có Image Resizing luôn, Firewall, Page/API Shield.
+Workers giống Plugin của Kong, dùng để chạy một đoạn code can thiệp vào request nào đó.</li>
+<li>Page Rules như tên gọi.</li>
+<li>WARP/Zero Trust bản thân nó giống như 1 VPN trung gian giúp cho mọi người kết nối được vào mạng nội bộ của công ty, tuy nhiên khác biệt thì đường mạng này mọi người phải được verify IAM thì mới vào được.</li>
+</ul>
+<p><img src="cloudflare//assets/cf-2.png" alt="" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="unix"><a class="header" href="#unix">Unix</a></h1>
+<p>Unix là hệ điều hành được phát triển ở AT&amp;T Bell Labs với bản thương mại đầu tiên là <u>System V</u>. Bối cảnh Unix được tạo ra là khi OS trước đó chỉ <u>chạy đơn nhiệm với 1 người dùng</u> như họ nhà DOS chỉ đủ để <u>thực hiện một số thao tác cơ bản</u> và lập trình bằng BASIC mà tới thời điểm này (cuối năm 1960s) mainframe cũng đã bắt đầu sẵn sàng cho các tác vụ nặng hơn, vậy nên Unix ra đời với <u>khả năng đa nhiệm - nhiều người dùng</u>... và cũng cùng với sự ra đời của ngôn ngữ C tích hợp chung với Unix.</p>
+<p>Ở thời điểm mới ra mắt thì Unix bị đánh giá là tốn kém tài nguyên sử dụng nhưng nhiều năm sau đó thì đây không còn là vấn đề khi sau đó là thời kì mà phần cứng phát triển mạnh mẽ. Thành công của <u>System V</u> tốt tới mức Đại học Berkeley ăn cắp đống code đó và làm một bản Unix riêng của mình có tên là <strong>BSD</strong> (Berkeley Software Distribution) và dẫn tới nhiều vụ kiện và đấu đá mà người ta còn gọi đó là Unix Wars - Sau này khi cuộc chiến ngã ngũ thì BSD vẫn là một OS nhưng source code cũng đã khác nhiều so với Unix (mặc dù qua cách sử dụng thì mọi thứ vẫn gần như tương tự). Trong thời điểm này, việc BSD phân phối lại cũng truyền cảm hứng cho một thế hệ đấu tranh cho phần mềm mở và làm Unix dễ dàng tiếp cận với giới sinh viên và sở thích theo học thay vì để Unix độc quyền trong tay của AT&amp;T và tạo ra một loạt hệ điều hành tương tự Unix như <u>MIMIX</u> và sau đó truyền cảm hứng cho <strong>Linux</strong>. Qua lịch sử được sơ lược qua của Unix thì tất cả những gì được để lại tới ngày nay là:</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="unix-shell"><a class="header" href="#unix-shell">Unix Shell</a></h1>
+<p>Là một loại chương trình phiên dịch các câu lệnh thành các chỉ dẫn cho kernel hiểu để giúp cho người dùng tương tác với máy tính.</p>
+<h2 id="zsh"><a class="header" href="#zsh">zsh</a></h2>
+<p>So với <code>bash</code>, zsh có nhiều tính năng, có khả năng mở rộng hơn và hỗ trợ tương thích POSIX (chỉ khi để <code>emulate sh</code>).</p>
+<h3 id="các-plugins"><a class="header" href="#các-plugins">Các plugins</a></h3>
+<ul>
+<li>PowerLevel10k</li>
+<li>Fast Syntax Highlighting</li>
+<li>Auto Suggestions</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="linux"><a class="header" href="#linux">Linux</a></h1>
+<blockquote>
+<p>⚠️ Trang còn sơ sài, cần cập nhật</p>
+</blockquote>
+<ol>
+<li>Linux và GNU là 2 thứ khác nhau</li>
+<li>Có nhiều distro nhưng tất cả đều là Linux, không khác gì nhau ngoài package manager</li>
+<li>Tìm hiểu thêm kiến trúc OS: <a href="https://en.wikipedia.org/wiki/Linux#Design">link</a></li>
+<li>GUI và CLI là 2 thứ khác nhau</li>
+<li>Shell, Prompt và Terminal là những thứ khác nhau</li>
+</ol>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Linux_API.svg" alt="Linux API" /></p>
+<h2 id="tổ-chức-file-hệ-thống"><a class="header" href="#tổ-chức-file-hệ-thống">Tổ chức File hệ thống</a></h2>
+<p>Tổ chức như nhánh cây, thư mục level cao nhất là root <code>/</code>.</p>
+<pre><code class="language-sh">bin # chứa binary thiết yếu cho toàn OS, ls /bin để bt thêm
+dev # các files tương tác với phần cứng như driver
+etc # các files config của toàn OS
+home # nơi người dùng lưu file
+lib # các thư viện cho toàn hệ thống
+mnt # chứa các file của các thiết bị được mount
+proc # các thứ liên quan tới các luồng chương trình đang vận hành
+root # như home nhưng dành cho người dùng root
+sbin # các binary thiết yếu cho sysadmin
+tmp # nơi lưu trữ file tạm thời
+usr # nơi lưu binary,config,... người dùng sử dụng
+</code></pre>
+<h2 id="lệnh-linux"><a class="header" href="#lệnh-linux">Lệnh Linux</a></h2>
+<h3 id="navigate-file-system"><a class="header" href="#navigate-file-system">Navigate File System</a></h3>
+<pre><code class="language-sh">$ pwd # in ra path của working directory
+/your/current/directory
+$ cd /your/directory # thay working directory
+$ ls # in ra tên file và thư mục của working directory
+abc xyz dcm vcl
+</code></pre>
+<h3 id="chỉnh-sửa-file"><a class="header" href="#chỉnh-sửa-file">Chỉnh sửa file</a></h3>
+<pre><code class="language-sh">$ touch # vcl anh tạo 1 file để chạm vào trái tim em
+$ mkdir # tạo thư mục mới
+$ rm # remove duh
+$ cp # copy duh
+</code></pre>
+<h3 id="xem-file-text"><a class="header" href="#xem-file-text">Xem file text</a></h3>
+<pre><code class="language-sh">$ cat # in toàn bộ nội dung file
+$ head # phần đầu nội dung file
+$ tail # phần cuối nội dung file
+$ more # giống cat nhưng chỉ hiện thị hết 1 màn hình, có thể lướt qua lướt lại được
+$ less # cải tiến của more
+</code></pre>
+<h3 id="echo"><a class="header" href="#echo">Echo</a></h3>
+<pre><code class="language-sh">$ echo bonjour!
+bonjour!
+</code></pre>
+<h3 id="xử-lý-text"><a class="header" href="#xử-lý-text">Xử lý text</a></h3>
+<pre><code class="language-sh">$ grep "1" test.txt
+$ sed 's/&lt;text_to_replace&gt;/&lt;replacement_text&gt;/' &lt;file_name&gt;
+# sed để thay thế text bất kì
+$ sort # để sắp xếp nội dung trong file
+</code></pre>
+<h3 id="io-redirection"><a class="header" href="#io-redirection">I/O Redirection</a></h3>
+<pre><code class="language-sh"># để chuyển output của 1 cmd về 1 file bất kì
+$ echo "Hello World" &gt; hello.txt
+# dùng pipe để pass output sang làm argument của cmd khác
+$ sort numbers.txt | uniq
+</code></pre>
+<h2 id="sysadmin"><a class="header" href="#sysadmin">Sysadmin</a></h2>
+<h3 id="usersgroups-management"><a class="header" href="#usersgroups-management">Users/Groups Management</a></h3>
+<ul>
+<li>Linux users có UID, home directory và login shell</li>
+<li>Group bao gồm nhiều user, có UID và share được quyền cho chung 1 nhóm</li>
+</ul>
+<pre><code class="language-sh">$ id # hiển thị UID, GID, và các group mà user thuộc về.
+uid=0(root) gid=0(root) groups=0(root)
+$ whoami # hiển thị tên người dùng hiện tại
+root
+</code></pre>
+<p>Root user (hay superuser) là user có quyền cao nhất, có UID là 0</p>
+<div class="table-wrapper"><table><thead><tr><th>File</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td><code>/etc/passwd</code></td><td>Chứa username, uid, gid, home directory, login shell etc</td></tr>
+<tr><td><code>/etc/shadow</code></td><td>Mật khẩu của username tương ứng</td></tr>
+<tr><td><code>/etc/group</code></td><td>Các group user đang có</td></tr>
+</tbody></table>
+</div>
+<h3 id="users-manage-command"><a class="header" href="#users-manage-command">Users Manage Command</a></h3>
+<pre><code class="language-sh">$ useradd &lt;tên user&gt; # tạo user mới
+$ passwd &lt;tên user&gt; # tạo hoặc sửa user password
+
+$ usermod &lt;tên user&gt; # sửa user attributes
+$ usermod -h # help info &amp; list attributes
+$ usermod -gm wheel -d /home/username -a &lt;tên người dùng&gt;
+# thêm người dùng vào group bất kì `-g`
+# tạo home dir cho người dùng
+# append chứ ko remove khỏi group khác `-a`
+# tạo home dir cho người dùng
+
+$ userdel &lt;tên user&gt; # xóa user
+</code></pre>
+<h4 id="thêm-pseudo-root-access-cho-người-dùng"><a class="header" href="#thêm-pseudo-root-access-cho-người-dùng">Thêm pseudo root access cho người dùng</a></h4>
+<p>Đôi khi trong lúc setup, một số bản Linux không setup sẵn quyền <code>sudo</code> cho người dùng. Khi đó ta phải tự setup tay như sau:</p>
+<ol>
+<li>Cài package <code>sudo</code></li>
+<li>Thêm người dùng vào group <code>wheel</code> như ở ví dụ trên</li>
+<li>Sửa file <code>/etc/sudoers</code>, thêm hoặc bỏ comment dòng sau:</li>
+</ol>
+<pre><code>%wheel ALL=(ALL) ALL
+</code></pre>
+<p>Sau đó khi user thường chạy lệnh cần quyền root, chỉ cần thêm <code>sudo</code> trước lệnh đó là chạy được.</p>
+<h3 id="group-manage-command"><a class="header" href="#group-manage-command">Group Manage Command</a></h3>
+<pre><code class="language-sh">$ groupadd &lt;tên group&gt; # tạo group mới
+$ groupmod &lt;tên group&gt; # sửa group atributes
+$ groupdel &lt;tên group&gt; # xóa group
+$ gpasswd &lt;tên group&gt; # sửa group password
+</code></pre>
+<h3 id="file-management"><a class="header" href="#file-management">File Management</a></h3>
+<p><img src="os//assets/linux-perms.png" alt="" /></p>
+<div class="table-wrapper"><table><thead><tr><th>Ký hiệu</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td>1</td><td>Kiểu file:<br><code>-</code> là file thông thường<br><code>d</code> là một thư mục</td></tr>
+<tr><td>2</td><td>Quyền của owner</td></tr>
+<tr><td>3</td><td>Quyền của owner group</td></tr>
+<tr><td>4</td><td>Quyền cho toàn bộ người dùng</td></tr>
+<tr><td>5</td><td>Owner</td></tr>
+<tr><td>6</td><td>Owner group</td></tr>
+</tbody></table>
+</div>
+<pre><code>r (read) | w (write) | x (execute)
+</code></pre>
+<div class="table-wrapper"><table><thead><tr><th>Quyền</th><th><code>rwx</code></th><th>Binary</th><th>Decimal</th></tr></thead><tbody>
+<tr><td>Đọc, ghi, chạy</td><td><code>rwx</code></td><td>111</td><td>7</td></tr>
+<tr><td>Đọc, ghi</td><td><code>rw-</code></td><td>110</td><td>6</td></tr>
+<tr><td>Đọc, chạy</td><td><code>r-x</code></td><td>101</td><td>5</td></tr>
+<tr><td>Chỉ đọc</td><td><code>r--</code></td><td>100</td><td>4</td></tr>
+<tr><td>Ghi, chạy</td><td><code>-wx</code></td><td>011</td><td>3</td></tr>
+<tr><td>Chỉ ghi</td><td><code>-w-</code></td><td>010</td><td>2</td></tr>
+<tr><td>Chỉ chạy</td><td><code>--x</code></td><td>001</td><td>1</td></tr>
+<tr><td>Không có gì</td><td><code>---</code></td><td>000</td><td>0</td></tr>
+</tbody></table>
+</div>
+<ol>
+<li><code>chmod</code> để sửa quyền truy cập vào file và thư mục, có thể dùng decimal như trên</li>
+</ol>
+<pre><code class="language-sh"># Example
+$ touch test_file
+$ ls -l test_file
+-rw-r--r--  1 root wheel # Đang là 644
+$ chmod 664 test_file # Thêm quyền ghi cho group wheel
+$ ls -l test_file
+-rw-rw-r--  1 root wheel
+</code></pre>
+<ol start="2">
+<li><code>chown</code> để thay đổi owner của file</li>
+</ol>
+<pre><code class="language-sh">$ chown &lt;owner mới&gt; &lt;tên file&gt;
+</code></pre>
+<ol start="3">
+<li><code>chgrp</code> để thay đổi group của file</li>
+</ol>
+<pre><code class="language-sh">$ chown &lt;owner mới&gt; &lt;tên file&gt;
+</code></pre>
+<h3 id="ssh"><a class="header" href="#ssh">SSH</a></h3>
+<p>Remote things bruh, phân biệt 2 host như sau:</p>
+<ul>
+<li>client: máy đang sử dụng để remote máy khác</li>
+<li>remote: máy được remote tới</li>
+</ul>
+<h4 id="passwordless-auth"><a class="header" href="#passwordless-auth">Passwordless Auth</a></h4>
+<ol>
+<li>Cài <code>openssh</code></li>
+<li>Tạo key mới: <code>ssh-keygen</code> trên client vì là RSA nên sẽ có 2 khóa (public và private - public key có thể gửi cho bất kì ai và private key phải giữ bí mật nhất có thể).</li>
+</ol>
+<pre><code class="language-sh">$ ls -l ~/.ssh
+-rw------- 1 root root 2602 Jan  6 08:18 id_rsa
+-rw-r--r-- 1 root root  571 Jan  6 08:18 id_rsa.pub
+# private key chỉ cho root user đọc ghi
+# public key cho phép all user đọc
+</code></pre>
+<ol start="3">
+<li>Gửi public key tới remote</li>
+</ol>
+<pre><code class="language-sh">$ ssh-copy-id username@&lt;host_ip_address&gt;
+</code></pre>
+<ol start="4">
+<li><code>ssh</code> vào máy đích</li>
+</ol>
+<pre><code class="language-sh">$ ssh username@&lt;host_ip_address&gt;
+</code></pre>
+<ol start="5">
+<li>Để kiểm tra lại xem public key được gửi lên chưa, kiểm tra trong file <code>~/.ssh/authorized_keys</code>
+Vì lý do bảo mật, có thể setup cho máy đích chỉ chấp nhận public key auth bằng cách thêm 2 dòng sau vào file này <code>/etc/ssh/sshd_config</code>:</li>
+</ol>
+<pre><code>PasswordAuthentication no
+AuthenticationMethods publickey
+</code></pre>
+<p>Và không cho phép ssh bằng root user:</p>
+<pre><code>PermitRootLogin no
+</code></pre>
+<p>Khởi động lại để áp dụng config mới:</p>
+<pre><code class="language-sh">$ sudo systemctl restart sshd
+</code></pre>
+<h4 id="chạy-lệnh-trên-remote"><a class="header" href="#chạy-lệnh-trên-remote">Chạy lệnh trên remote</a></h4>
+<pre><code>$ ssh username@&lt;host_ip_address&gt; 'ps aux | head'
+</code></pre>
+<h4 id="truyền-file-lên-remote"><a class="header" href="#truyền-file-lên-remote">Truyền file lên remote</a></h4>
+<pre><code>$ scp test_file username@&lt;host_ip_address&gt;:/home/username
+</code></pre>
+<h3 id="package-manager"><a class="header" href="#package-manager">Package Manager</a></h3>
+<p>Dùng để cài và quản lý phần mềm, mỗi distro có thể dùng 1 cái khác như Ubuntu/Debian: <code>apt (.deb)</code>, Fedora/CentOS/Red Hat: <code>dnf/yum (rpm)</code>, OpenSUSE/SLE: <code>ZYpp</code>, Arch: <code>pacman</code>, etc.</p>
+<pre><code class="language-ssh">$ sudo apt update
+$ sudo apt upgrade
+$ sudo apt install vim
+$ sudo apt remove vim
+$ apt search vim
+</code></pre>
+<h3 id="monitor"><a class="header" href="#monitor">Monitor</a></h3>
+<p>Có 2 lệnh cơ bản để monitor process: <code>ps</code> và <code>top</code>.
+Nếu không có lệnh <code>ps</code> thì cài package <code>procps</code></p>
+<pre><code class="language-sh">$ ps
+  PID TTY          TIME CMD
+   17 pts/1    00:00:00 sh
+   66 pts/1    00:00:00 ps
+# để hiện nhiều thông tin hữu ích hơn
+$ ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0  19224  2816 pts/0    Ss+  08:17   0:00 bash
+root        17  0.0  0.0  12060  3072 pts/1    Ss   08:17   0:00 /bin/sh
+root        67  0.0  0.0  44708  3328 pts/1    R+   09:11   0:00 ps aux
+$ ps aux | grep -i "bash"
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0  19224  2816 pts/0    Ss+  08:17   0:00 bash
+root        81  0.0  0.0   9092   896 pts/1    R+   09:13   0:00 grep -i bash
+</code></pre>
+<p><code>top</code> giống <code>ps</code> về chức năng nhưng chi tiết hơn và hỗ trợ check real-time.</p>
+<pre><code class="language-sh">$ free -h # hiện memory đang dùng/đang còn trống, buffers, cache
+$ vmstat # giống cái trên nhưng hiện cả io/cpu usage
+$ df # disk free
+$ du # disk usage
+</code></pre>
+<h4 id="daemon"><a class="header" href="#daemon">Daemon</a></h4>
+<p>Là chương trình chạy nền (như <code>httpd</code>, <code>sshd</code>), người dùng không tương tác được.</p>
+<h4 id="systemd"><a class="header" href="#systemd">Systemd</a></h4>
+<p>Là service manager, quản lý theo unit (có file config trong <code>/usr/lib/systemd/system</code>)</p>
+<pre><code class="language-sh">$ systemctl start name.service # chạy service
+$ systemctl stop name.service # dừng service
+$ systemctl restart name.service # khởi động lại service
+$ systemctl status name.service # check service status
+$ systemctl reload name.service # reload service config
+</code></pre>
+<h4 id="logs"><a class="header" href="#logs">Logs</a></h4>
+<p>Thường log hay lưu ở mấy chỗ sau:</p>
+<ul>
+<li><code>/var/log/*</code>: các daemon process và system logs
+<ul>
+<li><code>/var/log/messages</code>: system errors, booting, shutdown, system config change etc</li>
+<li><code>/var/log/authlog</code>: system auth related</li>
+<li><code>/var/log/lastlog</code>: login gần đây của toàn bộ user</li>
+</ul>
+</li>
+<li><code>dmesg</code> Kernel log, muốn chuyên sâu hơn có thể đọc Arch Wiki</li>
+<li><code>journalctl</code> với hệ thống dùng systemd có thể check qua journal
+<ul>
+<li>Ví dụ check log 1 unit cụ thể <code>journalctl -u name.service</code></li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="git"><a class="header" href="#git">Git</a></h1>
+<p>Version control hay source control system giúp theo dõi và điều khiển thay đổi của các file theo thời gian. Các phần mềm kiểu này thường bao gồm khả năng lưu các phiên bản của file, tạo nhánh/tách nhánh file riêng biệt và so sánh các phiên bản của file. Hữu ích trong việc xác định ai là người thay đổi code. Git là 1 trong số những công cụ kiểu này.</p>
+<h2 id="kiến-thức-cơ-bản"><a class="header" href="#kiến-thức-cơ-bản">Kiến thức cơ bản</a></h2>
+<p>Khi tạo 1 git repository, git sẽ tạo ra 1 folder ẩn tên là <code>.git</code> dùng để lưu trữ cấu hình, thông tin và các theo dõi thay đổi tại thư mục hiện tại.</p>
+<p><img src="git//assets/git-stage-graph.png" alt="" /></p>
+<p>Khi có một file mới trong môi trường làm việc, git sẽ không để ý thay đổi cho tới khi dùng lệnh <code>git add</code> để thêm file đó vào một vùng để theo dõi (stage area - cái này mang tính ý niệm hơn là một folder vật lý). File đó sẽ được lưu vào vào main branch hay branch nào đó khác sau khi được <code>commit</code>.</p>
+<h3 id="trong-file-git-có-những-gì"><a class="header" href="#trong-file-git-có-những-gì">Trong file <code>.git</code> có những gì?</a></h3>
+<pre><code>$ ls .git/
+COMMIT_EDITMSG # chứa các commit message dưới dạng plain text
+
+HEAD # thông tin reference liên quan tới branch đang làm việc
+
+config # thông tin config của repo (như user name vs email)
+
+description # chứa tên của repo
+
+hooks # thư mục chứa scripts, có thể tự tạo script
+để automate một số tasks
+
+index # file theo dõi các item ở stage area và cả file đã commit
+
+info # thường bên trong có file liệt kê những file cần ignore
+
+logs # như tên gọi, thư mục chứa log
+
+objects # thư mục chứa database, các file được commit sẽ được nén và lưu dưới dạng hash trong database này
+
+refs # thư mục chứa các file reference, dùng cho branch với tag
+</code></pre>
+<h2 id="tạo-git-repo"><a class="header" href="#tạo-git-repo">Tạo git repo</a></h2>
+<p>Có 2 cách tạo mới 1 git repo, 1 là cứ tạo như bình thường và 2 là git bare. Khi tạo git thì 1 là nó sẽ chọn thư mục hiện tại hoặc tạo mới 1 thư mục khác, với git bare thì khác vì nó không tạo dựa trên 1 thư mục làm việc cụ thể vì để dành cho dự án lớn phức tạp hơn và khi tạo thì nó lấy luôn thư mục tạo git làm thư mục lưu thông tin về git repo chứ không tạo thêm <code>.git</code> nữa.</p>
+<pre><code class="language-sh">git init /path/to/directory
+git init --bare /path/to/directory
+</code></pre>
+<h2 id="thêm-sửa-config"><a class="header" href="#thêm-sửa-config">Thêm sửa config</a></h2>
+<p>Config của git được lưu dưới dạng key-value, để thêm mới hoặc sửa config thì ta có thể dùng lệnh <code>git config</code>.</p>
+<pre><code class="language-sh">git config user.name "tatsu"
+git config --global user.name "tatsu"
+# thêm --global để áp dụng config ở khắp mọi nơi
+</code></pre>
+<p>Liệt kê các config:</p>
+<pre><code class="language-sh">git config --list
+</code></pre>
+<pre><code>credential.helper=osxkeychain
+init.defaultbranch=main
+user.name=tatsu
+user.email=tatsu@mail.com
+user.username=tatsu
+init.defaultbranch=main
+core.editor=/usr/bin/vim
+</code></pre>
+<h2 id="thêm-file-và-check-status-của-repo"><a class="header" href="#thêm-file-và-check-status-của-repo">Thêm file và check status của repo</a></h2>
+<p>Khi có 1 file mới xuất hiện, git sẽ đếu quan tâm cho tới khi mình dùng <code>git add</code>. Sau khi <code>git add</code> một file nào đó thì để biết nó đang được track chưa thì dùng lệnh <code>git status</code>.</p>
+<pre><code class="language-sh">git add README.md
+git status
+</code></pre>
+<pre><code>On branch main
+Your branch is up to date with 'origin/main'.
+
+You are in a sparse checkout with xx% of tracked files present.
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+	modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+</code></pre>
+<p>Ngoài ra cũng có thêm 1 số flag hữu ích nếu muốn quan tâm:</p>
+<pre><code class="language-sh"># để hiện thị gọn hơn
+git status -s
+</code></pre>
+<pre><code>M README.md
+</code></pre>
+<pre><code class="language-sh"># để hiển thị đầy đủ (verbose) hơn
+git status -v
+</code></pre>
+<pre><code># như cái git status thường nhưng giờ có thêm cả diff
+</code></pre>
+<p>Muốn xoá file thì dùng git rm (xoá thật, real đó):</p>
+<pre><code class="language-sh">git rm &lt;file-nào-đó&gt;
+</code></pre>
+<p>Nhưng trong trường hợp không muốn xoá file, chỉ muốn git không biết đến sự tồn tại của file này:</p>
+<pre><code class="language-sh">git rm --cached &lt;file-nào-đó&gt;
+</code></pre>
+<h2 id="commit-file-vào-repo"><a class="header" href="#commit-file-vào-repo">Commit file vào repo</a></h2>
+<p>Đến lúc này bạn cảm thấy tự tin và đẹp zai với công việc của mình rồi, giờ đến lúc tạo cái snapshot cho nó trong 1 branch thôi.
+<code>git commit</code> sẽ mở file editor lên để bạn viết commit message cho những file bạn vừa add.
+Cảm thấy hơi bị lười? Hãy dùng <code>-m</code> để đỡ khỏi gọi cái editor nào ở đây:</p>
+<pre><code class="language-sh">git commit -m "đây là commit message"
+</code></pre>
+<p>Đây là cách ai cũng dùng.
+Để lười hơn nữa thì dùng <code>-a</code>, giờ bất cứ file nào thay đổi sẽ được commit luôn, đỡ khỏi add lại:</p>
+<pre><code class="language-sh">git commit -am "đây là commit message"
+</code></pre>
+<h2 id="ignore-một-số-file"><a class="header" href="#ignore-một-số-file">Ignore một số file</a></h2>
+<p>Thường sẽ có file, folder hoặc kiểu file bạn không muốn git track lại... điển hình là <code>node_modules</code>. Khi đó ta sẽ dùng file <code>.gitignore</code>.
+Uhm dù sẽ chẳng mấy khi động tới bao giờ, nhưng cũng nên để ý là file <code>.git/info/exclude</code> cũng giống <code>.gitignore</code> chỉ khác ở vị trí để file thôi.
+Ghi các pattern file mà muốn git né (chắc là regex) vào 1 trong 2 file này là git sẽ né chúng nó ra. Để kiểm tra pattern đúng không (vì mục đích debug), dùng lệnh <code>git check-ignore</code>.</p>
+<h2 id="tags"><a class="header" href="#tags">Tags</a></h2>
+<p>Chưa bao giờ dùng tới, Tag là chức năng đặt tên một cách đơn giản của Git, nó cho phép ta xác định một cách rõ ràng các phiên bản mã nguồn (code) của dự án. Ta có thể coi tag như một branch không thay đổi được. Một khi nó được tạo (gắn với 1 commit cụ thể) thì ta không thể thay đổi lịch sử commit ấy được nữa.
+Có 2 loại tag là <strong>annotated</strong> và <strong>lightweight</strong>.</p>
+<p><strong>Lightweight</strong> tag thực chất chỉ là đánh dấu (bookmark) cho một commit, vì chúng chỉ lưu trữ hash của commit mà chúng tham chiếu. <strong>Annotated</strong> thì ngoài tên còn có thể lưu trữ dữ liệu bổ sung như Tên tác giả (-s), tin nhắn (-m: message), và ngày dưới dạng các đối tượng đầy đủ trong cơ sở dữ liệu Git. Tất cả thông tin ấy quan trọng cho việc release dự án.</p>
+<pre><code class="language-sh"># tạo annotated tag
+git tag -a v1.0.0 -m "Releasing version v1.0.0"
+git tag # xem tất cả các tag
+# tạo lightweight tag
+git tag v1.0.0 -m "Releasing version v1.0.0"
+git tag -d v1.0.0 # xóa tag
+</code></pre>
+<h2 id="branch"><a class="header" href="#branch">Branch</a></h2>
+<p>Quá quen thuộc, không có gì xa lạ.</p>
+<pre><code class="language-sh">git branch # liệt kê các branch
+git branch branch-name # tạo branch mới có tên là branch-name
+git checkout branch-name # chuyển sang branch-name
+git merge # gộp thay đổi từ nhánh khác vào nhánh hiện tại
+git branch -d branch-name # xóa branch
+</code></pre>
+<p>Nếu việc merge thuận lời thì nhánh main sẽ fast-forward tới thay đổi mới nhất của nhánh dev như hình dưới:</p>
+<p><img src="git//assets/git-branch.png" alt="" /></p>
+<p>Còn không thì sẽ bị dính M̵̈́͜E̵͈͒R̸͉͂G̷͈͂E̵͚͒ ̷̡͆C̶͎̆O̵̢͆N̷̺̒F̵͙̓L̵͉̀Ȋ̵̙C̵̉ͅT̸̩́. Khi dính merge conflict thì phải resolve bằng tay thôi.
+Cũng là gộp nhánh khác vào, nhưng rebase khác fast forward ở chỗ nó áp thẳng (replay) các commit từ nhánh khác thay vì fast-forward tới. <strong>Thì?:</strong> Nó sẽ lưu lại lịch sử trong log đẹp hơn, dùng rebase cho code của mình thôi, đừng dùng cho thằng khác.</p>
+<h2 id="lệnh"><a class="header" href="#lệnh">Lệnh</a></h2>
+<pre><code class="language-sh">git revert # quay về một commit nào đó
+git diff # so sánh thay đổi giữa commit/branch/etc
+git gc # Garbage Collection, để dọn dẹp database khi có object không còn được tham chiếu tới nữa trong database
+git gc --prune # như trên nhưng chỉ dọn mấy cái cũ hơn 2 tuần theo mặc định. có thể tùy chỉnh thời gian.
+git config gc.pruneexpire "30 days"
+git log # xem log
+git log # cũng xem log nhưng đẹp hơn
+git log --stat
+git log --pretty=format:
+git log --since="4 days ago"
+
+# cái này gọi là phê, đọc bớt hại mắt hẳn
+git shortlog
+git log --oneline
+git log --oneline --graph
+
+# lệnh phê nhưng hơi dài
+git log --graph --pretty="%C(bold blue)%h %Cred%s %C(Yellow)by %an"
+git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset" --abbrev-commit
+
+# đến lúc này thì nên lười và alias nó thành một lệnh nào đó
+git config --global alias.l0g 'log --color --graph --pretty="%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset" --abbrev-commit'
+
+# lệnh log thì có nhiều thứ để bàn tới lắm, nhưng cứ dùng GUI nào đó như GitLens cho nhanh thay vì nhớ đi
+
+git clone &lt;repo link&gt; # để clone
+# lưu ý chút thì ngoài khả năng clone repo trên remote, git có thể clone được cả ở local
+git clone &lt;local repo folder&gt; &lt;new repo&gt;
+git remote -v # liệt kê mấy remote server đang theo dõi thay đổi
+git fetch # lấy các commit mới từ remote về
+# để upload thay đổi lên remote, dùng git push
+git push &lt;remote&gt; &lt;local branch&gt;
+git pull &lt;remote&gt; &lt;local branch&gt; # dùng để kéo branch từ remote
+</code></pre>
+<h2 id="tham-khảo-thêm-1"><a class="header" href="#tham-khảo-thêm-1">Tham khảo thêm</a></h2>
+<ul>
+<li>Học thêm ở đây: <a href="https://killercoda.com/pawelpiwosz/course/gitFundamentals">KillerCoda - Git foundations</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gitlab"><a class="header" href="#gitlab">GitLab</a></h1>
+<p>GitLab hand-on. Thông tin đầy đủ hơn: <a href="https://docs.gitlab.com/">READ THE DOCS</a>.</p>
+<h2 id="gitlab-runners"><a class="header" href="#gitlab-runners">GitLab Runners</a></h2>
+<p>Đây là một chương trình chạy ở một máy tính khác máy tính để host GitLab, bản thân GitLab vận hành khá nhiều chức năng (như lưu code, quản lý và các công việc tự động hóa, lưu các kết quả từ những pipeline) nhưng khi chạy job thì nó sẽ trigger job chạy ở trên 1 runner, phó thác job trong pipeline đó cho runner và chỉ nhận đầu ra là output của các job đó.</p>
+<h3 id="luồng"><a class="header" href="#luồng">Luồng</a></h3>
+<p>GitLab gửi cho Runner hướng dẫn quy trình chạy các job ➡️ Runner pull và chạy docker image về để tạo môi trường chạy job ➡️ Pull file từ git repo trên GitLab ➡️ Chạy tất cả các dòng lệnh được liệt kê trong quy trình ➡️ Trả lại kết quả về GitLab ➡️ Xong xuôi các thứ thì destroy hết đống container vừa dùng 💥.
+Về cơ bản để tối ưu thì có thể chạy nhiều hơn một Runner.</p>
+<h2 id="pipeline"><a class="header" href="#pipeline">Pipeline</a></h2>
+<p>Trong lĩnh vực này thì để chỉ 1 quy trình hay lặp đi lặp lại, cụ thể khi triển khai tích hợp một ứng dụng thường có 3 bước: test, build, deploy. Những quy trình có dạng kiểu này được gọi là một pipeline, tùy theo từng ứng dụng sẽ có những bước khác nhau... nhưng ý tưởng chung là vậy. Xem video của fireship để hiểu nhanh và rõ hơn <a href="https://youtube.com/watch?v=scEDHsr3APg">tại đây</a>.</p>
+<h3 id="pipeline-stages"><a class="header" href="#pipeline-stages">Pipeline stages</a></h3>
+<p>Bruh, mỗi pipeline có nhiều stage khác nhau... duh. Phân stage ra pls.</p>
+<pre><code class="language-yaml">stages:
+	- test
+	- build
+
+test1:
+	stage: test
+	script:
+		- test someshit
+
+test2:
+	stage: test
+	script:
+		- test another shit
+
+build:
+	stage: build
+	script:
+		- build someshit
+</code></pre>
+<h2 id="job-artifacts"><a class="header" href="#job-artifacts">Job artifacts</a></h2>
+<p>Job có thể đưa ra ouput là 1 tập hợp các file hoặc thư mục, những file và thư mục đó được gọi là artifact. Artifacts có thể dùng cho nhiều job khác nhau và đó là use case chính của nó.</p>
+<pre><code class="language-yaml">job:
+	script: echo "build xyz project"
+	artifacts:
+		name: "$CI_JOB_NAME" # tùy chọn
+		paths:
+			- path/*xyz/*
+		expire_in: 1 week
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dotfiles"><a class="header" href="#dotfiles">Dotfiles</a></h1>
+<p>Thông thường các ứng dụng cho người dùng hay lưu trữ config ở <code>home</code> đối với Linux, BSD hay MacOS. Bằng cách sử dụng <a href="dotfiles/../tools/git.html">git</a> để quản lý dotfiles không chỉ để theo dõi thay đổi config dễ dàng hơn mà còn có thể push code lên remote và dùng config này ở nhiều thiết bị khác nhau.</p>
+<h2 id="tats-does-dotfiles"><a class="header" href="#tats-does-dotfiles">tats does dotfiles</a></h2>
+<p><a href="https://github.com/tatsupro/dotfiles">↗ link github repo</a></p>
+<p>Đây là dotfiles tối giản chứa config, các script để setup và quản lý các package chạy trên cả MacOS và Arch Linux. Nó được cấu hình để phù hợp với luồng làm việc của tôi và để dễ dàng setup trên bất kì thiết bị chạy 2 hệ điều hành nêu trên, với mục tiêu đảm bảo config tối giản &amp; có đủ những thứ để sử dụng, không tùy biến quá sâu để giúp bạn dù dùng Arch nhưng vẫn đảm bảo cho bạn có một cuộc đời và có thời gian đi kiếm người yêu thay vì ngồi nhà phí thời gian vào configuring rapid hole.</p>
+<p>Để sử dụng lại thì bạn có thể fork lại repo này, chỉnh sửa lại các variable trong các file script, thêm hoặc loại bỏ config hoặc các package theo nhu cầu cá nhân (như loại bỏ các config liên quan tới Mac nếu bạn không dùng).</p>
+<h3 id="các-chương-trình-có-trong-dotfiles-này"><a class="header" href="#các-chương-trình-có-trong-dotfiles-này">Các chương trình có trong dotfiles này</a></h3>
+<ul>
+<li><a href="dotfiles//tools/shell.html#zsh"><strong>zsh</strong></a>: Tương tác với máy tính qua dòng lệnh.
+<ul>
+<li>Xem danh sách các plugin <a href="dotfiles//tools/shell.html#c%C3%A1c-plugins">ở đây</a>.</li>
+</ul>
+</li>
+<li><a href="dotfiles//tools/neovim.html"><strong>neovim</strong></a>: Text Editor dạng dòng lệnh.</li>
+<li><a href="dotfiles//tools/lf.html"><strong>lf</strong></a>: Trình duyệt và quản lý file dạng dòng lệnh.</li>
+<li><a href="dotfiles//tools/git.html"><strong>git</strong></a>: Version Control Tool</li>
+<li><a href="dotfiles//tools/fzf.html"><strong>fzf</strong></a>: Để tìm nhiều thứ và tương tác qua dòng lệnh.</li>
+<li><a href="dotfiles//container/docker.html"><strong>docker</strong> và <strong>docker compose</strong></a>: Container Tool.</li>
+<li><a href="dotfiles//container/kubectl.html"><strong>kubectl</strong> và <strong>kubectx</strong></a>: Kubernetes Tool.</li>
+<li><a href="dotfiles//terraform/index.html"><strong>terraform</strong></a>: Infra as Code Tool.</li>
+</ul>
+<h2 id="liên-kết-ngoài"><a class="header" href="#liên-kết-ngoài">Liên kết ngoài</a></h2>
+<ul>
+<li><a href="https://wiki.archlinux.org/title/Dotfiles">Dotfiles - Arch Wiki</a></li>
+<li><a href="https://missing.csail.mit.edu/2019/dotfiles">Dotfiles - Missing Semester</a></li>
+<li><a href="https://dotfiles.github.io">GitHub does dotfiles</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="text-editor"><a class="header" href="#text-editor">Text Editor</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vim"><a class="header" href="#vim">Vim</a></h1>
+<p>Chương trình soạn thảo văn bản sử dụng bàn phím làm cách tương tác. Thuỷ tổ của Vim là Vi được phát triển cùng với hệ điều hành <a href="tools//os/unix.html">Unix</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vscode"><a class="header" href="#vscode">VSCode</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="window-manager"><a class="header" href="#window-manager">Window Manager</a></h1>
+<p>Một phần mềm quản lý cửa sổ có chức năng quản lý vị trí và sắp xếp cửa sổ trên Giao diện Đồ họa (GUI). Thông thường đây sẽ là một thành phần của Desktop Environment, hoặc có thể sử dụng như một thành phần độc lập.</p>
+<h2 id="phân-loại"><a class="header" href="#phân-loại">Phân loại</a></h2>
+<p>Có 3 loại WM và chúng có cách sử dụng khác nhau:</p>
+<ul>
+<li><strong>Stack</strong> (hay là <strong>floating</strong>) thường thấy ở các Desktop Environment thông thường giống như Windows hoặc MacOS. Các cửa sổ sẽ giống như 1 tờ giấy trên mặt bàn, có thể đè lên lẫn nhau. Người dùng chủ yếu sử dụng chuột để tương tác với các cửa sổ.</li>
+<li><strong>Titling</strong> là loại WM tự động xếp cửa sổ vào 1 ô nhất định và thường không thể đè lên nhau. Người dùng chủ yếu sử dụng phím tắt để tương tác với các cửa sổ.</li>
+<li><strong>Dynamic</strong> là loại WM kết hợp cả hai cái trên.</li>
+</ul>
+<p>Stack có thể sử dụng mà không cần mất nhiều thời gian học phím tắt như Titling nhưng trong quá trình sử dụng nhiều cửa sổ có thể gây ra nhiều bất tiện dẫn tới thao tác chậm hơn, mặt khác Titling sẽ mất nhiều thời gian học phím tắt nhưng một khi đã thành thạo thì thao tác sẽ nhanh hơn đáng kể so với khi sử dụng Stack. Tùy vào workflow của mỗi người có thể chọn cái này tối ưu nhất khi sử dụng máy tính.</p>
+<h2 id="danh-sách-các-window-manager"><a class="header" href="#danh-sách-các-window-manager">Danh sách các Window Manager</a></h2>
+<p><em><u>Danh sách Window Manager có tài liệu trên trang này:</u></em></p>
+<ul>
+<li><a href="tools/yabai.html">yabai</a></li>
+<li><a href="tools/dwm.html">dwm</a></li>
+</ul>
+<p><em><u>Danh sách ngoài:</u></em></p>
+<ul>
+<li><a href="https://wiki.archlinux.org/title/window_manager#List_of_window_managers">Window Manager - Arch Wiki</a></li>
+<li><a href="https://wiki.gentoo.org/wiki/Window_manager#Available_software">Window Manager - Gentoo Linux Wiki</a></li>
+<li><a href="https://wiki.installgentoo.com/index.php/GNU/Linux_ricing#List_of_window_managers_and_similar_tools">GNU/Linux Ricing - InstallGentoo Wiki</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="yabai"><a class="header" href="#yabai">yabai</a></h1>
+<p>Titling Window Manager cho MacOS. Lý do chúng ta cần yabai là vì Window Manager mặc định bị đần.</p>
+<h2 id="cài-đặt-2"><a class="header" href="#cài-đặt-2">Cài đặt</a></h2>
+<ol>
+<li><strong><u>Tắt SIP (System Integrity Protection) - không tắt cũng được nhưng có vài thứ sẽ không hoạt động được bình thường.</u></strong></li>
+</ol>
+<p><em><u>Đối với máy Intel</u></em></p>
+<ol>
+<li>Tắt nguồn</li>
+<li>Khởi động lại, nhấn Command + R liên tục cho tới khi Recovery Mode hiện lên</li>
+<li>Nếu được hỏi, chọn ổ đĩa lưu OS</li>
+<li>Bật Terminal: <code>Utilities &gt; Terminal</code></li>
+<li>Chạy lệnh: <code>csrutil disable</code></li>
+<li>Khởi động lại</li>
+</ol>
+<p><em><u>Đối với máy Apple Silicon</u></em></p>
+<p>Tôi không dùng, đây là <a href="https://support.apple.com/en-us/102518">hướng dẫn</a> của Apple.</p>
+<p>Tài liệu của yabai hướng dẫn chi tiếp hơn: <a href="https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection">Xem tại đây</a>.</p>
+<ol start="2">
+<li><strong><u>Cài yabai và skhd</u></strong></li>
+</ol>
+<p>Máy bạn nên có homebrew, nếu không thì đọc tài liệu của yabai.</p>
+<ol>
+<li>Cài <code>yabai</code> với <code>brew install koekeishiya/formulae/yabai</code></li>
+<li>Cài <code>skhd</code> với <code>brew install koekeishiya/formulae/skhd</code></li>
+</ol>
+<p>Khởi động cả 2 service để cửa sổ Accessibility hiện lên hỏi quyền truy cập:</p>
+<pre><code class="language-sh">yabai --start-service
+skhd --start-service
+</code></pre>
+<p>Sau đó vào Settings theo hướng dẫn và allow cho cả 2 chương trình trên.</p>
+<p>Trước khi chạy cần config, cái này có thể tùy chỉnh nhưng nếu bạn cần nhanh 1 cái thì có thể dùng của tôi: <a href="https://github.com/tatsupro/dotfiles/blob/main/.config/yabai/yabairc">yabai</a>, <a href="https://github.com/tatsupro/dotfiles/blob/main/.config/skhd/skhdrc">skhd</a>.</p>
+<ol start="3">
+<li><strong><u>Khởi động yabai và skhd</u></strong></li>
+</ol>
+<pre><code class="language-sh">yabai --start-service
+skhd --start-service
+</code></pre>
+<h2 id="liên-kết-ngoài-1"><a class="header" href="#liên-kết-ngoài-1">Liên kết ngoài</a></h2>
+<ul>
+<li>Mã nguồn: <a href="https://github.com/koekeishiya/yabai">GitHub</a></li>
+<li>SKHD: <a href="https://github.com/koekeishiya/skhd">GitHub</a></li>
+<li><a href="https://github.com/koekeishiya/yabai/wiki">Wiki của yabai</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dwm"><a class="header" href="#dwm">dwm</a></h1>
+<p>Là một WM dành cho Xorg.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="lf-file-manager"><a class="header" href="#lf-file-manager">LF File Manager</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="fuzzy-finder"><a class="header" href="#fuzzy-finder">Fuzzy Finder</a></h1>
+<p>Tool tìm kiếm (trong Unix shell) tương tác với nhiều thể loại list (như files, command history, processes, hostnames, bookmarks, git commits, v.v.).</p>
+<h2 id="cài-đặt-3"><a class="header" href="#cài-đặt-3">Cài đặt</a></h2>
+<ol>
+<li>Xem hướng dẫn ở đầu mục này: <a href="https://github.com/junegunn/fzf?tab=readme-ov-file#installation">Installation</a></li>
+<li>Tích hợp vào shell tương ứng: <a href="https://github.com/junegunn/fzf?tab=readme-ov-file#setting-up-shell-integration">Setting up shell integration</a></li>
+</ol>
+<h2 id="sử-dụng"><a class="header" href="#sử-dụng">Sử dụng</a></h2>
+<p>Lệnh <code>fzf</code> để mở interactive finder, đơn giản nó sẽ đọc list từ input (<code>STDIN</code>) và write phần tử trong list được chọn vào output (<code>STDOUT</code>). Ví dụ câu lệnh này:</p>
+<pre><code class="language-sh">find * -type f | fzf &gt; selected
+</code></pre>
+<ul>
+<li>Input là danh sách các file</li>
+<li>Output là giá trị được chọn trong finder sẽ được redirect và write vào file <code>selected</code></li>
+</ul>
+<h3 id="phím-tắt-cơ-bản"><a class="header" href="#phím-tắt-cơ-bản">Phím tắt cơ bản</a></h3>
+<ul>
+<li>Tìm và <code>cd</code> vào thư mục bất kì: <code>Alt-C</code></li>
+<li>... chọn tên thư mục hoặc file bất kì: <code>Crtl-T</code></li>
+<li>... chọn lệnh trong lịch sử: <code>Crtl-R</code></li>
+<li>Di chuyển lên/xuống: <code>Crtl-K</code>/<code>Crtl-J</code></li>
+</ul>
+<p>Chi tiết về keymap trên và cách thức cấu hình lại: <a href="https://github.com/junegunn/fzf?tab=readme-ov-file#key-bindings-for-command-line">Key bindings for command-line</a></p>
+<p>Nếu dùng Mac thì cần map lại phím <code>⌥ Option</code> thành <code>Alt</code></p>
+<h3 id="zshbash-completion"><a class="header" href="#zshbash-completion">zsh/bash completion</a></h3>
+<pre><code class="language-sh">COMMAND [DIRECTORY/][FUZZY_PATTERN]**&lt;TAB&gt;
+</code></pre>
+<p>Ví dụ với file hoặc thư mục:</p>
+<pre><code class="language-sh">vim **&lt;TAB&gt;
+vim ../**&lt;TAB&gt;
+vim ../fzf**&lt;TAB&gt;
+vim ~/**&lt;TAB&gt;
+cd **&lt;TAB&gt;
+cd ~/github/fzf**&lt;TAB&gt;
+</code></pre>
+<p>Process IDs:</p>
+<pre><code class="language-sh">kill -9 **&lt;TAB&gt;
+</code></pre>
+<p>Host names:</p>
+<pre><code class="language-sh">ssh **&lt;TAB&gt;
+telnet **&lt;TAB&gt;
+</code></pre>
+<p>Environment variables / Aliases:</p>
+<pre><code class="language-sh">unset **&lt;TAB&gt;
+export **&lt;TAB&gt;
+unalias **&lt;TAB&gt;
+</code></pre>
+<h2 id="liên-kết-ngoài-2"><a class="header" href="#liên-kết-ngoài-2">Liên kết ngoài:</a></h2>
+<ul>
+<li>Fuzzy Finder trêm GitHub: <a href="https://github.com/junegunn/fzf">fzf - GitHub</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chặn-quảng-cáo--theo-dõi"><a class="header" href="#chặn-quảng-cáo--theo-dõi">Chặn quảng cáo &amp; theo dõi</a></h1>
+<h2 id="kiểm-tra"><a class="header" href="#kiểm-tra">Kiểm tra</a></h2>
+<p><strong>Fingerprinting tests &amp; etc:</strong></p>
+<ul>
+<li>https://www.deviceinfo.me/</li>
+<li>https://noscriptfingerprint.com/</li>
+<li>https://abrahamjuliot.github.io/creepjs/</li>
+<li>https://browserleaks.com/</li>
+<li>https://browseraudit.com/</li>
+<li>https://amiunique.org/</li>
+<li>https://fingerprint.pet-portal.eu/?menu=1#</li>
+<li>https://coveryourtracks.eff.org/</li>
+</ul>
+<p><strong>Adblock tests:</strong></p>
+<ul>
+<li>https://adblock-tester.com/</li>
+<li>https://canyoublockit.com/</li>
+<li>https://blockads.fivefilters.org/</li>
+<li>http://raymondhill.net/ublock/tests.html</li>
+<li>https://d3ward.github.io/toolz/adblock.html</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="văn-hóa--xã-hội"><a class="header" href="#văn-hóa--xã-hội">Văn hóa &amp; xã hội</a></h1>
+<blockquote>
+<p>Ghi chú: Phần này đang viết dở và mình đang bị mơ hồ về nội dung trang nên cũng viết rất lan man và không đúng trọng tâm. Sẽ sửa lại sau.</p>
+</blockquote>
+<p>Chúng ta không thể nói về công nghệ mà không nói tới những ảnh hưởng tới xã hội của nó vì rất ít trong số chúng ta vì sự ưu việt của máy móc mà quên đi những vấn đề mà máy móc tạo ra cho xã hội dù là trước đó hay sau này.</p>
+<h2 id="các-chủ-đề"><a class="header" href="#các-chủ-đề">Các chủ đề</a></h2>
+<ul>
+<li><a href="social//social/eternal-september.html">Eternal September</a></li>
+<li><a href="social//social/dead-internet.html">Dead Internet Theory</a></li>
+<li><a href="social//social/wallgarden.html">Walled garden</a></li>
+</ul>
+<h2 id="bối-cảnh"><a class="header" href="#bối-cảnh">Bối cảnh</a></h2>
+<p>Kể từ đâu đó năm 1840 khi cách mạng công nghiệp bùng nổ, máy móc bắt đầu thay thế những công việc tay chân rồi kể từ đó con người đã sống trong thời kì công nghiệp tới nay. Trong những năm đó người ta cũng chứng kiến dân số thế giới lần đầu tiên cán mốc 1 tỷ người nhờ những tiến bộ của Y học, vệ sinh sạch sẽ hơn và cũng như tỉ lệ tử vong không còn cao như trước (khi mà chuyện đẻ con ra xong tầm 1 hoặc 2 năm sẽ chết là chuyện diễn ra thường ngày, còn kể từ sau đó trở đi thì chuyện này dường như hiếm khi xảy ra rồi). Nên là nông nghiệp hay ngành nghề thủ công ở thời điểm này dường như không theo kịp được tốc độ phát triển dân số và sự ra đời của ngành công nghiệp như là một yếu tố tất yếu, nhờ nó chúng ta mới có chuỗi cung ứng như ngày nay để đáp ứng đủ cho tất cả mọi người. Công nghiệp là một trong những ma thuật con người có thể làm để giải quyết vấn đề nguồn cung trong thời buổi mà dân số tiếp tục tăng, tất nhiên dân số thế giới không thể tiếp tục tăng tới mức nhiều hơn cả số lượng nguyên tử trên trái đất được... nhưng hiện tại khác xa với thời làm nông hay thủ công là chúng ta có thể giải quyết việc vấn đề dân số tiếp tục tăng bằng cách nào đó, đến dầu mỏ từng là thứ lởm nhởm vô dụng cũng biến được thành thứ có giá trị thì không gì là không thể.</p>
+<h2 id="xã-hội-công-nghiệp-hóa"><a class="header" href="#xã-hội-công-nghiệp-hóa">Xã hội công nghiệp hóa</a></h2>
+<p>Vậy tóm lại công nghiệp sinh ra để giải quyết nguồn cung cho thời buổi bùng nổ dân số, khi nói đến dân số thì vấn đề không phải người ta cứ tiếp tục đẻ và dân số tiếp tục tăng. Nó tăng là vì tỷ lệ tử vong giảm vậy thôi, và con người sẽ tiếp tục làm tình và đẻ con dù cho kế hoạch hóa dân số có gào thét đến mức nào đi nữa. Đây sẽ là một chủ đề quá dài và thừa nếu mình tiếp tục nói cụ thể hơn, cũng có đầy người nói về nó kể từ cuối thế kỉ 19 tới nay rồi. Vậy thì nếu vấn đề không phải là vì dân số tiếp tục tăng thì vấn đề cần lo lắng ở đây là gì?</p>
+<p>Ở một thế giới khi người ta đảm bảo được đủ nguồn cung cho tất cả mọi người thì điều xấu là:</p>
+<ol>
+<li>Con người trở nên thất thế với máy móc</li>
+<li>Bổ sung cho vế trên thì con người trở nên nhàm chán</li>
+</ol>
+<p>Một câu tóm gọn lại cho tất cả mọi thứ là công nghệ làm cho chúng ta ngu hơn là thông minh hơn và giờ là thời buổi công nghệ thông tin và mọi thứ ngày càng rõ ràng hơn.</p>
+<h2 id="xem-thêm"><a class="header" href="#xem-thêm">Xem thêm</a></h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Luddite">Luddite</a> dùng để chỉ những người bảo thủ đối lập với phong cách làm việc công nghiệp hóa. Đây cũng tên của một nhóm người lao động Anh phản đối máy dệt bằng cách đập phá loại máy móc này như một hình thức biểu tình phản đối vì cho rằng nó sẽ tạo ra những sản phẩm rẻ tiền và thay thế những người lao động mất gần như cả cuộc đời để có tay nghề.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="eternal-september---tháng-9-không-hồi-kết-của-internet"><a class="header" href="#eternal-september---tháng-9-không-hồi-kết-của-internet">Eternal September - Tháng 9 không hồi kết của Internet</a></h1>
+<p>Từ này được dùng trong bối cảnh mạng Usenet - đây là một hệ thống thảo luận dạng bảng (BSS) phi tập trung. Người dùng đọc tin nhắn và bài đăng được nhóm lại với nhau (được gọi là newsgroup). Đây là tiền đề để sau này người ta phát triển một thứ tương tự gọi là forum.</p>
+<p>Khoảng những năm 1980 và đầu năm 1990 khi Internet vẫn còn chưa mainstream và chỉ có dân chuyên hoặc đam mê với máy tính; lượng người dùng mới tham gia nhỏ giọt chậm dãi đủ để cho người mới có thời gian tìm hiểu văn hóa được truyền đạt từ người cũ. Sau đó có một ngoại lệ và đó là Tháng 9 hàng năm khi một lượng lớn học viên nhập học ở các trường đại học chưa làm quen với văn hóa của Usenet gây khó khăn và phiền toái cho người dùng Usenet có kinh nghiệp trước đó, gây ra một cơn ác mộng mang tên "Tháng 9".</p>
+<p>Vào năm 1993, khi nhà mạng AOL kết nối Usenet với phần còn lại của Internet và mở kết nối trên diện rộng giúp cho nhiều người dùng tại gia có thể truy cập thì một lượng lớn người dùng bắt đầu đổ vào không hồi kết. Người ta gọi đó là "một tháng 9 không có hồi kết" - The Eternal September.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Internet_is_Full_-_Go_Away_t-shirt.jpg/480px-Internet_is_Full_-_Go_Away_t-shirt.jpg" alt="" /></p>
+<h2 id="di-sản"><a class="header" href="#di-sản">Di sản</a></h2>
+<p>Một chương trình lịch máy tính <code>sdate</code> được ra đời theo dòng sự kiện mỉa mai này. <code>sdate</code> tính ngày kể từ <code>ngày mùng 1 tháng 9 năm 1993</code>, ví dụ nếu theo lịch tiêu chuẩn hiện tại thì <code>ngày 11 tháng 5 năm 2024</code> sẽ là <code>ngày 11210 tháng 9 năm 1993</code>. Để xem lịch theo thời gian thực, hãy kiểm tra trang <a href="https://Eternal-September.org">Eternal-September.org</a>.</p>
+<h2 id="sự-kiện-tương-tự"><a class="header" href="#sự-kiện-tương-tự">Sự kiện tương tự</a></h2>
+<h3 id="Ở-việt-nam"><a class="header" href="#Ở-việt-nam">Ở Việt Nam</a></h3>
+<ul>
+<li>Vào khoảng những năm 2020, 1 loạt nhóm Facebook <a href="https://www.facebook.com/groups/929563144068596">Maybe You Missed This F***king News</a> được hậu thuẫn bởi công ty truyền thông 360LIFE có một lượng lớn người dùng gia tăng. Dù trước đó nhóm có nhiều bài đăng chất lượng nhưng vì thiếu đi kiểm duyệt và quản lý thành viên lỏng lẻo nên lượng bài đăng chất lượng kém được ồ ạt đăng một thời gian sau đó.</li>
+<li>VOZ hay Vietnam Overclock Zone là một diễn đàn công nghệ male-based bởi nhưng ông anh gia trưởng 9x cũng từng chứng kiến sự đổ bộ ồ ạt của thành viên mới khi các admin của trang quyết định đưa trang lên mainstream hơn qua các nhóm Facebook (còn được gọi là VOZ FB). Bình thường thì kể từ ngày diễn đàn này có <code>F17</code> và <code>F33</code> thì mọi thứ đã vốn tệ hại rồi, có thêm VOZ FB giúp họ xuống 18 tầng địa ngục còn lại thôi.</li>
+<li>Dota2VN ban đầu chỉ tập trung các thành phần có chung sở thích cho tới khi người ta dùng nó để hóng drama, tìm hiểu những điều tệ hại mà các 2VN đã gây ra ở đây: <a href="https://www.facebook.com/UrbanHermitOG/posts/pfbid02D6UxqG1Y9zLmpT1JNYV2idF8UD9FZZ2L82GQ8GbNiEmbWkJpJquZG2sriHwjtHWil">Facebook</a>, <a href="https://archive.org/details/urbanhermitog-screenshot-2024-05-11-at-13.43.27">Internet Archive</a>.</li>
+<li>Giữa năm 2023, một nhóm có tên là <a href="https://web.facebook.com/groups/flexdenhoithocuoicung">Flex đến hơi thở cuối cùng</a> được tạo ra để nhại lại trào lưu flex do nhà báo khởi xướng. Như tên gọi nhóm ban đầu được tạo ra với mục đích giải trí qua việc cho các thành viên khoe thành tích cá nhân, sau khi được hưởng ứng bởi số đông khán giả và đỉnh điểm hơn khi có những nghệ sĩ nổi tiếng tham gia. Vì thành viên đông và phức tạp gia tăng dẫn tới nhiều tiêu cực xa rời mục đích giải trí đơn thuần nên nhóm đã phải tạm dừng hoạt động 6 tháng từ 20 tháng 7 năm 2023.</li>
+</ul>
+<h3 id="trên-thế-giới"><a class="header" href="#trên-thế-giới">Trên thế giới</a></h3>
+<ul>
+<li>4chan có một từ lóng để chỉ lượng người dùng ở một bối cảnh tương tự là <a href="https://en.wiktionary.org/wiki/summerfag">summerfag</a> để chỉ những lứa trẻ hoặc ít hiểu biết tham gia vào 4chan, đặc biệt vào dịp nghỉ lễ của Hoa Kỳ.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dead-internet-theory"><a class="header" href="#dead-internet-theory">Dead Internet Theory</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="walled-garden"><a class="header" href="#walled-garden">Walled garden</a></h1>
+<p>Là một trong những anti-pattern practice được các công ty công nghệ lớn như Apple để giới hạn quyền người dùng sử dụng dịch vụ hoặc phần mềm ngoài "hệ sinh thái".</p>
+<p>Apple như bao công ty khác ngoại trừ việc nó có giá trị thị trường 3 ngàn tỷ dollar, với giá trị của mình Apple thừa sức để thuê một đội ngũ kĩ sư tài năng có thể giải quyết mọi vấn đề trên thế giới. Và đúng là họ có một đội ngũ kĩ sư thuộc hàng đỉnh nhưng vì lợi nhuận là điều Apple quan tâm (chứ không phải là khách hàng) nên dù họ có thể làm con chip mạnh như M1 nhưng Mac vẫn không thể truyền file được cho Android hoặc PC một cách bình thường được.</p>
+<p>Nhìn vào sản phẩm của Apple như iPhone người ta có thể thấy luôn có nhiều mẫu điện thoại tốt hơn trong tầm giá... cho tới khi người ta tìm ra được rằng các thiết bị như Mac, iPad, Apple Watch, AirPods, TV, v.v. tương tác tốt với nhau là phép màu của "hệ sinh thái" và đó là điểm làm cho sản phẩm của Apple khi kết hợp với nhau sẽ tốt hơn phần còn lại của thế giới bất chấp giá thành đắt đỏ... cho tới khi họ nhận ra những phép màu đó cũng không khác gì <a href="https://kdeconnect.kde.org">KDE Connect</a> - cái thứ mà có những tính năng giống thứ được gọi là "hệ sinh thái của Apple" nhưng có thể kết nối được với Windows, Android, Linux được preinstall.</p>
+<p>Bạn có thể thấy công nghệ Apple không sinh ra để giúp cho cuộc sống của bạn tốt hơn mà còn phụ thuộc vào nó hơn. Thứ được gọi là hệ sinh thái là biểu tượng của chủ nghĩa tiêu dùng giúp bạn bỏ nhiều tiền vào nhiều cục sắt có nhiệm vụ duy nhất là giúp bạn kết nối Internet để Apple tiếp tục thu thập thông tin về đời sống và bí mật đời tư của hàng triệu người dân trên thế giới. Chỉ là sự tự ái của bạn không muốn chấp nhận sự thật đó.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gợi-ý"><a class="header" href="#gợi-ý">Gợi ý</a></h1>
+<h2 id="tư-liệu-học"><a class="header" href="#tư-liệu-học">Tư liệu học</a></h2>
+<p>Tư liệu học vốn có rất nhiều và dễ tìm trên Internet để học, mình không liệt kê hết ở đây, chỉ có một số trang mình cảm thấy thú vị (nhiều khi là vui chứ không có ý nghĩa thông tin gì lắm) để chia sẻ:</p>
+<ol>
+<li><a href="https://xkcd.com/1296">XKCD</a>: webcomic theo phong cách tối giản, ngắn gọn, hài hước nhẹ nhàng, kì quặc và đôi khi sâu sắc vì lý do nào đó. Chủ đề truyện thường là về khoa học, toán học, công nghệ hoặc mấy thứ mọt sách nói chung.</li>
+<li><a href="https://wizardzines.com">Wizard Zines</a>: trang bán zine books (có một số zine miễn phí) nhìn trông sặc sỡ, nội dung về những công nghệ nền tảng và rất cơ bản.</li>
+<li><a href="https://www.youtube.com/fireship">Fireship</a> là một YouTuber nổi tiếng với series giải thích các công nghệ trong vòng 100 giây với các video có pacing cực kì nhanh nhưng tối giản đủ để giúp mọi người nắm sơ qua về nó. Dù với phong cách này sẽ không phù hợp với những ai không quen nhanh như vậy nhưng vẫn đáng để xem thử qua.</li>
+<li><a href="https://serverlesshorrors.com">ServerlessHorrors</a> trang blog nhỏ về những lần serverless cướp tiền của dân.</li>
+<li><a href="https://refactoring.guru">Refactoring.Guru</a>: lập trình hướng đối tượng là nỗi đau mà lập trình viên tạo ra để làm khổ nhau, trong trường hợp bạn đang phải cope với OOP thì nên xem qua trang này.</li>
+<li><a href="https://missing.csail.mit.edu">Missing Semester</a> tạm dịch là "Học kì bị thất lạc" nơi bạn có thể học những thứ nên được học mà đại học không dạy.</li>
+<li><a href="https://roadmap.sh">roadmap.sh</a> tổng hợp lộ trình học hoặc nghề nghiệp cho các ngành nghề IT phổ biến.</li>
+<li><a href="https://learnxinyminutes.com">Learn X in Y minutes</a> để học bất kì ngôn ngữ phổ biến trong vòng vài phút.</li>
+<li><a href="https://overapi.com">OverAPI</a> cheatsheet tổng hợp các API cơ bản của các ngôn ngữ hoặc thư viện.</li>
+<li>Lên Google gõ theo cú pháp sau để tìm được bất cứ thứ gì bạn muốn:
+<pre><code>&lt;thứ cần tìm&gt; site:github.com
+</code></pre>
+thi thoảng có thể thêm từ <code>awesome</code>.</li>
+<li><a href="https://linkedin.github.io/school-of-sre">School of SRE</a>: guide SRE được tạo bởi LinkedIn.</li>
+<li><a href="https://adventofcode.com">Advent of Code</a>: cách để học code tốt hơn LeetCode, đây là sự kiện hằng năm lấy chủ đề giáng sinh tổ chức từ 2015 các programming challenge.</li>
+<li><a href="https://free-for.dev">free-for.dev</a> tổng hợp đồ miễn phí để dùng</li>
+<li><a href="https://wiki.archlinux.org">Arch Wiki</a> cùng với <a href="https://man.archlinux.org">Arch manual pages</a> là nguồn tư liệu không chỉ hữu dụng với người dùng Arch mà còn cho cả những thứ liên quan Linux nói chung.</li>
+<li><a href="https://wiki.installgentoo.com">InstallGentoo Wiki</a> là một trang wiki được tạo ra với mục đích cung cấp đủ kiến thức và hướng dẫn cho người muốn xả thân vào mấy cuộc tranh luận vô nghĩa trên imageboard <code>/g/</code> của 4chan.</li>
+<li><a href="https://wiki.mozilla.org/Areweyet">Areweyet</a> là một loạt trang theo dõi trạng thái phát triển phần mềm của Rust ở một lĩnh vực nào đó (Đôi khi cũng không phải về Rust).</li>
+</ol>
+<!-- ## Công cụ -->
+<h2 id="trôn"><a class="header" href="#trôn">Trôn</a></h2>
+<p>Vì chúng ta đang đóng vai chú hề trong một rạp xiếc khổng lồ mang tên trái đất:</p>
+<ol>
+<li><a href="https://shouldiuseacarousel.com">Should I Use A Carousel?</a> - TAO CÓ NÊN SỬ DỤNG CAROUSEL!?</li>
+<li><a href="https://motherfuckingwebsite.com">This is a motherfucking website</a></li>
+<li><a href="http://bettermotherfuckingwebsite.com">This is still a motherfucking website</a></li>
+<li><a href="https://www.dagusa.com">Every Fucking Bootstrap Website Ever</a></li>
+<li><a href="https://badhtml.com">Bad HTML</a> - trang web đẹp nhất hành tinh</li>
+<li><a href="https://vercel.lol">vercel.lol</a> - công ty hình tam giác bán những thứ hình tam giác</li>
+<li><a href="https://www.youtube.com/c/KRAZAM">KRAZAM</a> web show có các tiêu phẩm hài phi lý, kì cục về một bối cảnh xã hội số hóa phản địa đàng và mỉa mai ngành công nghệ thông tin, lối sống kì quặc xa rời thực tiễn và cũng như nói lên thực trạng corporate life nói chung. Mình rất ấn tượng với kênh này vì không chỉ về hàm lượng inside joke nó có mà đôi khi cũng rất cinematic (2 anh này có vẻ có học làm phim).</li>
+<li><a href="https://www.linuxatemyram.com">Help! Linux ate my RAM!</a></li>
+</ol>
+<!-- ### Những ngôn ngữ lập trình đáng học nhất mọi thời đại
+
+1. LOLCODE
+2. Brainf\*\*k -->
+<h2 id="nocturnes-op-9-no-2"><a class="header" href="#nocturnes-op-9-no-2">Nocturnes, Op. 9 No. 2</a></h2>
+<p>Lúc đó, khi khởi đầu với những dòng code Hello World lúc năm nhất đại học bạn bắt đầu nghĩ đến việc mình code một con web hoặc app sẽ thay đổi thế giới. Thế giới lúc đó rất tươi đẹp, mọi thứ mở ra tươi sáng trên con laptop 10 năm chạy trên Windows XP Pro tuy nhỏ bé nhưng chan chứa cả một bầu trời xanh trên thảm cỏ lục. Với con laptop đó bạn ước mơ về một thế giới rộng lớn không ranh giới, một kẻ mộng mơ (Imagine - Hãy tưởng tượng xem!) về 1 thế giới mới, 1 Nutopia của John Lennon hy vọng những điều mình học có thể giúp ích cho thế giới và mọi người xung quanh mà tiếp tục bước tiến trên con đường học phận. Qua thời gian bạn nhận ra những thứ bạn học ở đại học sau tất cả là mấy cú pháp đơn giản của C/C++/Java/Python/v.v., SQL vì nó chưa bao giờ lỗi thời, kiến trúc phần cứng máy tính mặc dù thứ bạn muốn học là phần mềm, kiến thức về địa lý hoặc vật lý thế giới kiến thức về toán học mà chúng nó không hề xuất hiện lại sau đó và cú tát đau đớn của đường đời khi nhận ra từng nấy năm học đó vẫn là chưa đủ. Nhận ra biết viết và chạy code vẫn chưa thể là đủ, trải qua một cuộc bể dâu, những điều trông thấy qua những video với giọng Ấn Độ khó nghe trên YouTube, đọc qua hàng tá bài đăng ngu xuẩn trên Medium hoặc một website nào đó với HTML/CSS/JS hỏng hẳn, copy điên cuồng mọi thứ trên Google, Github hoặc StackOverflow và hypeshit với mọi công nghệ và programming paradigm, blazingly fast meaningless new shit, design patterns, architecture, some others definations I can't remember for good reason, danh tính của bạn xa rời với thực tại để rằng buộc với những giá trị vật chất phi thực như code quality, github stars, số like, followers, v.v. tất cả chỉ để phục vụ metrics giả tạo cho một vị trí công việc với cái tên giả tạo được tạo ra bởi sếp bạn người muốn hoàn thành kpi giả tạo cho performance metrics giả tạo để có được dòng tiền giả tạo tới từ các nhà đầu tư trong một nền kinh tế giả tạo. Và đó là cách bạn nhận ra trên cả nghề nghiệp, hay thậm chí cả tiền bạc và vật chất là <strong>tình yêu 🌍🫶</strong> và sự quan tâm tới chính bản thân mình và gia đình, người yêu, bạn bè thân thiết, những con người đáng quý đang cùng sống với bạn trên thế giới này.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="thi-cử"><a class="header" href="#thi-cử">Thi cử</a></h1>
+<p>Cách tiếp cận của mình chỉ đơn giản là:</p>
+<ol>
+<li>Nắm sơ qua kiến thức nằm trong đề thi</li>
+<li>Quan trọng nhất là làm đề thi thử</li>
+</ol>
+<p>Kiến thức để học thì nhiều nhưng cái nằm trong đề thi (thêm cả những thứ hữu dụng trong thực tế) thì ít. Tư liệu không thiếu nên nếu lên kế hoạch học thì có thể học và thi được rất nhanh và thi cũng dễ thôi. Sau đây là những chứng chỉ mình đã và đang dự định học và lấy trong tương lai:</p>
+<ol>
+<li><a href="cert//get-certified/cka.html">Certified Kubernetes Administrator</a></li>
+<li><a href="cert//get-certified/gcp.html">Google Cloud Certification</a></li>
+</ol>
+<p>Và sau tất cả tất cả những thứ này ngoài công dụng làm đẹp hồ sơ ra thì không còn gì khác, có thi được thì cũng không khôn hơn được đâu.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cka"><a class="header" href="#cka">CKA</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gcp"><a class="header" href="#gcp">GCP</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="lab---observability---tích-hợp-opentelemetry"><a class="header" href="#lab---observability---tích-hợp-opentelemetry">LAB - Observability - Tích hợp OpenTelemetry</a></h1>
+<p><img src="drafts//assets/lab-otel-1.png" alt="" /></p>
+<h2 id="cách-thức-triển-khai"><a class="header" href="#cách-thức-triển-khai">Cách thức triển khai</a></h2>
+<ol>
+<li>Dựng Grafana: Xem trang <a href="drafts//monitor/grafana.html#c%C3%A0i-%C4%91%E1%BA%B7t">Grafana</a>.</li>
+<li>Dựng Tempo: Xem trang <a href="drafts//monitor/tempo.html">Grafana Tempo</a>.</li>
+<li>Dựng Loki: Xem trang <a href="drafts//monitor/loki.html">Grafana Loki</a>.</li>
+<li>Dựng Prometheus: Xem trang <a href="drafts//monitor/prometheus.html">Prometheus</a>.</li>
+<li>Dựng OpenTelemetry: Xem trang <a href="drafts//monitor/otel.html">OpenTelemetry</a>.</li>
+</ol>
+<!-- **1. Setup Spring Boot App**
+
+Dùng [Spring Initializr](https://start.spring.io/) hoặc lệnh sau:
+
+```bash
+mkdir lab-otel-tempo && cd lab-otel-tempo
+``` -->
+<h2 id="liên-kết-ngoài-3"><a class="header" href="#liên-kết-ngoài-3">Liên kết ngoài</a></h2>
+<ul>
+<li><a href="https://opentelemetry.io/docs/languages/java">OpenTelemetry - Java</a></li>
+<li><a href="https://medium.com/@ahmadalammar/comprehensive-observability-in-spring-boot-using-opentelemetry-prometheus-grafana-tempo-and-067196eee539">Medium - Comprehensive Observability in Spring Boot using OpenTelemetry, Prometheus, Grafana, Tempo, and Loki</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="backend"><a class="header" href="#backend">Backend</a></h1>
+<p>Backend web development is the part of web development that deals with the server-side of a web application. This includes creating and managing the server-side logic, connecting the application to a database, creating server-side APIs, handling user authentication and authorization, and processing and responding to user requests.</p>
+<h2 id="essential"><a class="header" href="#essential">Essential</a></h2>
+<ul>
+<li><input disabled="" type="checkbox"/>
+Internet</li>
+<li><input disabled="" type="checkbox"/>
+Relational Database</li>
+<li><input disabled="" type="checkbox"/>
+NoSQL Database</li>
+<li><input disabled="" type="checkbox"/>
+APIs</li>
+<li><input disabled="" type="checkbox"/>
+Testing</li>
+<li><input disabled="" type="checkbox"/>
+Design &amp; Development Principles</li>
+<li><input disabled="" type="checkbox"/>
+Architecture Patterns</li>
+<li><input disabled="" type="checkbox"/>
+Message Brokers</li>
+</ul>
+<h2 id="programming-language"><a class="header" href="#programming-language">Programming Language</a></h2>
+<ul>
+<li><input disabled="" type="checkbox"/>
+[[Go]]</li>
+<li><input disabled="" type="checkbox"/>
+Python</li>
+</ul>
+<h2 id="extended"><a class="header" href="#extended">Extended</a></h2>
+<ul>
+<li><input disabled="" type="checkbox"/>
+CI/CD</li>
+<li><input disabled="" type="checkbox"/>
+Containerization vs Virtualization</li>
+<li><input disabled="" type="checkbox"/>
+Search Engines</li>
+<li><input disabled="" type="checkbox"/>
+WebSockets</li>
+<li><input disabled="" type="checkbox"/>
+Server Sent Events</li>
+<li><input disabled="" type="checkbox"/>
+Building for Scale</li>
+</ul>
+<h2 id="requirements-for-developer"><a class="header" href="#requirements-for-developer">Requirements for developer</a></h2>
+<p>A backend developer is responsible for the development of server-side components of a web application i.e. working with databases, handling requests, creating server-side APIs that can be consumed by frontend developers to retrieve and manipulate data, ensuring the scalability of the systems i.e. making sure that the backend can handle a high volume of traffic and is performant, integrating external services like payment gateways, message queues, cloud services, etc.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE HTML>
+<html lang="vi" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Git - Long Technical Documents</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../intro.html">Giới thiệu</a></li><li class="chapter-item expanded "><a href="../cloud/index.html"><strong aria-hidden="true">1.</strong> Cloud</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cloud/gcp.html"><strong aria-hidden="true">1.1.</strong> Google Cloud</a></li></ol></li><li class="chapter-item expanded "><a href="../devops/index.html"><strong aria-hidden="true">2.</strong> DevOps</a></li><li class="chapter-item expanded "><a href="../cicd/index.html"><strong aria-hidden="true">3.</strong> CI/CD</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cicd/gitops.html"><strong aria-hidden="true">3.1.</strong> GitOps</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cicd/argocd.html"><strong aria-hidden="true">3.1.1.</strong> ArgoCD</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../container/index.html"><strong aria-hidden="true">4.</strong> Container</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../container/docker.html"><strong aria-hidden="true">4.1.</strong> Docker</a></li><li class="chapter-item expanded "><a href="../container/k8s.html"><strong aria-hidden="true">4.2.</strong> Kubernetes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../container/kubectl.html"><strong aria-hidden="true">4.2.1.</strong> kubectl</a></li><li class="chapter-item expanded "><a href="../container/helm.html"><strong aria-hidden="true">4.2.2.</strong> Helm</a></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Database</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../database/sql.html"><strong aria-hidden="true">5.1.</strong> SQL</a></li></ol></li><li class="chapter-item expanded "><a href="../terraform/index.html"><strong aria-hidden="true">6.</strong> Terraform</a></li><li class="chapter-item expanded "><a href="../ansible/index.html"><strong aria-hidden="true">7.</strong> Ansible</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Lập trình</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">8.1.</strong> Ứng dụng</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">8.1.1.</strong> WebApp</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.1.2.</strong> Microservice</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.</strong> Khái niệm</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../program/data-structure.html"><strong aria-hidden="true">8.2.1.</strong> Cấu trúc dữ liệu</a></li><li class="chapter-item expanded "><a href="../program/algorithm.html"><strong aria-hidden="true">8.2.2.</strong> Giải thuật</a></li><li class="chapter-item expanded "><a href="../program/oop.html"><strong aria-hidden="true">8.2.3.</strong> Hướng đối tượng</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.3.1.</strong> Clean Code</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.3.2.</strong> Object Oriented Analysis and Design</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.3.3.</strong> Software Development Design Principles</div></li><li class="chapter-item expanded "><a href="../program/solid.html"><strong aria-hidden="true">8.2.3.4.</strong> SOLID Principles</a></li><li class="chapter-item expanded "><a href="../program/design-patterns.html"><strong aria-hidden="true">8.2.3.5.</strong> Design Patterns</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.3.6.</strong> Anti Patterns</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.2.3.7.</strong> Refactoring</div></li></ol></li><li class="chapter-item expanded "><a href="../program/12factors.html"><strong aria-hidden="true">8.2.4.</strong> 12 Factors</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.3.</strong> Ngôn ngữ</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../program/javascript.html"><strong aria-hidden="true">8.3.1.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="../program/python.html"><strong aria-hidden="true">8.3.2.</strong> Python</a></li><li class="chapter-item expanded "><a href="../program/java.html"><strong aria-hidden="true">8.3.3.</strong> Java</a></li><li class="chapter-item expanded "><a href="../program/go.html"><strong aria-hidden="true">8.3.4.</strong> Go</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../monitor/index.html"><strong aria-hidden="true">9.</strong> Monitoring</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../monitor/grafana.html"><strong aria-hidden="true">9.1.</strong> Grafana</a></li><li class="chapter-item expanded "><a href="../monitor/tempo.html"><strong aria-hidden="true">9.2.</strong> Grafana Tempo</a></li><li class="chapter-item expanded "><a href="../monitor/loki.html"><strong aria-hidden="true">9.3.</strong> Grafana Loki</a></li><li class="chapter-item expanded "><a href="../monitor/prometheus.html"><strong aria-hidden="true">9.4.</strong> Prometheus</a></li><li class="chapter-item expanded "><a href="../monitor/otel.html"><strong aria-hidden="true">9.5.</strong> OpenTelemetry</a></li></ol></li><li class="chapter-item expanded "><a href="../network/index.html"><strong aria-hidden="true">10.</strong> Network</a></li><li class="chapter-item expanded "><a href="../cloudflare/index.html"><strong aria-hidden="true">11.</strong> Cloudflare</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Hệ điều hành</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../os/unix.html"><strong aria-hidden="true">12.1.</strong> Unix</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tools/shell.html"><strong aria-hidden="true">12.1.1.</strong> Shell</a></li></ol></li><li class="chapter-item expanded "><a href="../os/linux.html"><strong aria-hidden="true">12.2.</strong> Linux</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.3.</strong> BSD</div></li></ol></li><li class="chapter-item expanded "><a href="../git/index.html" class="active"><strong aria-hidden="true">13.</strong> Git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../git/gitlab.html"><strong aria-hidden="true">13.1.</strong> GitLab</a></li></ol></li><li class="chapter-item expanded "><a href="../dotfiles/index.html"><strong aria-hidden="true">14.</strong> Dotfiles</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> Tools</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tools/index.html"><strong aria-hidden="true">15.1.</strong> Text Editor</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tools/vim.html"><strong aria-hidden="true">15.1.1.</strong> Vim</a></li><li class="chapter-item expanded "><a href="../tools/vscode.html"><strong aria-hidden="true">15.1.2.</strong> VSCode</a></li></ol></li><li class="chapter-item expanded "><a href="../tools/wm.html"><strong aria-hidden="true">15.2.</strong> Window Manager</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tools/yabai.html"><strong aria-hidden="true">15.2.1.</strong> yabai</a></li><li class="chapter-item expanded "><a href="../tools/dwm.html"><strong aria-hidden="true">15.2.2.</strong> dwm</a></li></ol></li><li class="chapter-item expanded "><a href="../tools/lf.html"><strong aria-hidden="true">15.3.</strong> LF File Manager</a></li><li class="chapter-item expanded "><a href="../tools/fzf.html"><strong aria-hidden="true">15.4.</strong> Fuzzy Finder</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">16.</strong> Riêng tư</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../privacy/blocker.html"><strong aria-hidden="true">16.1.</strong> Chặn QC & Tracker</a></li></ol></li><li class="chapter-item expanded "><a href="../social/index.html"><strong aria-hidden="true">17.</strong> Văn hóa & xã hội</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../social/eternal-september.html"><strong aria-hidden="true">17.1.</strong> Eternal September</a></li><li class="chapter-item expanded "><a href="../social/dead-internet.html"><strong aria-hidden="true">17.2.</strong> Dead Internet Theory</a></li><li class="chapter-item expanded "><a href="../social/wallgarden.html"><strong aria-hidden="true">17.3.</strong> Walled garden</a></li></ol></li><li class="chapter-item expanded "><a href="../rcm/index.html"><strong aria-hidden="true">18.</strong> Gợi ý</a></li><li class="chapter-item expanded "><a href="../cert/index.html"><strong aria-hidden="true">19.</strong> Thi cử</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cert/cka.html"><strong aria-hidden="true">19.1.</strong> CKA</a></li><li class="chapter-item expanded "><a href="../cert/gcp.html"><strong aria-hidden="true">19.2.</strong> GCP</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">20.</strong> Nháp</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../drafts/lab-otel.html"><strong aria-hidden="true">20.1.</strong> LAB - OpenTelemetry và Tempo</a></li><li class="chapter-item expanded "><a href="../drafts/backend.html"><strong aria-hidden="true">20.2.</strong> Backend</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Long Technical Documents</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="git"><a class="header" href="#git">Git</a></h1>
+<p>Version control hay source control system giúp theo dõi và điều khiển thay đổi của các file theo thời gian. Các phần mềm kiểu này thường bao gồm khả năng lưu các phiên bản của file, tạo nhánh/tách nhánh file riêng biệt và so sánh các phiên bản của file. Hữu ích trong việc xác định ai là người thay đổi code. Git là 1 trong số những công cụ kiểu này.</p>
+<h2 id="kiến-thức-cơ-bản"><a class="header" href="#kiến-thức-cơ-bản">Kiến thức cơ bản</a></h2>
+<p>Khi tạo 1 git repository, git sẽ tạo ra 1 folder ẩn tên là <code>.git</code> dùng để lưu trữ cấu hình, thông tin và các theo dõi thay đổi tại thư mục hiện tại.</p>
+<p><img src="/assets/git-stage-graph.png" alt="" /></p>
+<p>Khi có một file mới trong môi trường làm việc, git sẽ không để ý thay đổi cho tới khi dùng lệnh <code>git add</code> để thêm file đó vào một vùng để theo dõi (stage area - cái này mang tính ý niệm hơn là một folder vật lý). File đó sẽ được lưu vào vào main branch hay branch nào đó khác sau khi được <code>commit</code>.</p>
+<h3 id="trong-file-git-có-những-gì"><a class="header" href="#trong-file-git-có-những-gì">Trong file <code>.git</code> có những gì?</a></h3>
+<pre><code>$ ls .git/
+COMMIT_EDITMSG # chứa các commit message dưới dạng plain text
+
+HEAD # thông tin reference liên quan tới branch đang làm việc
+
+config # thông tin config của repo (như user name vs email)
+
+description # chứa tên của repo
+
+hooks # thư mục chứa scripts, có thể tự tạo script
+để automate một số tasks
+
+index # file theo dõi các item ở stage area và cả file đã commit
+
+info # thường bên trong có file liệt kê những file cần ignore
+
+logs # như tên gọi, thư mục chứa log
+
+objects # thư mục chứa database, các file được commit sẽ được nén và lưu dưới dạng hash trong database này
+
+refs # thư mục chứa các file reference, dùng cho branch với tag
+</code></pre>
+<h2 id="tạo-git-repo"><a class="header" href="#tạo-git-repo">Tạo git repo</a></h2>
+<p>Có 2 cách tạo mới 1 git repo, 1 là cứ tạo như bình thường và 2 là git bare. Khi tạo git thì 1 là nó sẽ chọn thư mục hiện tại hoặc tạo mới 1 thư mục khác, với git bare thì khác vì nó không tạo dựa trên 1 thư mục làm việc cụ thể vì để dành cho dự án lớn phức tạp hơn và khi tạo thì nó lấy luôn thư mục tạo git làm thư mục lưu thông tin về git repo chứ không tạo thêm <code>.git</code> nữa.</p>
+<pre><code class="language-sh">git init /path/to/directory
+git init --bare /path/to/directory
+</code></pre>
+<h2 id="thêm-sửa-config"><a class="header" href="#thêm-sửa-config">Thêm sửa config</a></h2>
+<p>Config của git được lưu dưới dạng key-value, để thêm mới hoặc sửa config thì ta có thể dùng lệnh <code>git config</code>.</p>
+<pre><code class="language-sh">git config user.name "tatsu"
+git config --global user.name "tatsu"
+# thêm --global để áp dụng config ở khắp mọi nơi
+</code></pre>
+<p>Liệt kê các config:</p>
+<pre><code class="language-sh">git config --list
+</code></pre>
+<pre><code>credential.helper=osxkeychain
+init.defaultbranch=main
+user.name=tatsu
+user.email=tatsu@mail.com
+user.username=tatsu
+init.defaultbranch=main
+core.editor=/usr/bin/vim
+</code></pre>
+<h2 id="thêm-file-và-check-status-của-repo"><a class="header" href="#thêm-file-và-check-status-của-repo">Thêm file và check status của repo</a></h2>
+<p>Khi có 1 file mới xuất hiện, git sẽ đếu quan tâm cho tới khi mình dùng <code>git add</code>. Sau khi <code>git add</code> một file nào đó thì để biết nó đang được track chưa thì dùng lệnh <code>git status</code>.</p>
+<pre><code class="language-sh">git add README.md
+git status
+</code></pre>
+<pre><code>On branch main
+Your branch is up to date with 'origin/main'.
+
+You are in a sparse checkout with xx% of tracked files present.
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+	modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+</code></pre>
+<p>Ngoài ra cũng có thêm 1 số flag hữu ích nếu muốn quan tâm:</p>
+<pre><code class="language-sh"># để hiện thị gọn hơn
+git status -s
+</code></pre>
+<pre><code>M README.md
+</code></pre>
+<pre><code class="language-sh"># để hiển thị đầy đủ (verbose) hơn
+git status -v
+</code></pre>
+<pre><code># như cái git status thường nhưng giờ có thêm cả diff
+</code></pre>
+<p>Muốn xoá file thì dùng git rm (xoá thật, real đó):</p>
+<pre><code class="language-sh">git rm &lt;file-nào-đó&gt;
+</code></pre>
+<p>Nhưng trong trường hợp không muốn xoá file, chỉ muốn git không biết đến sự tồn tại của file này:</p>
+<pre><code class="language-sh">git rm --cached &lt;file-nào-đó&gt;
+</code></pre>
+<h2 id="commit-file-vào-repo"><a class="header" href="#commit-file-vào-repo">Commit file vào repo</a></h2>
+<p>Đến lúc này bạn cảm thấy tự tin và đẹp zai với công việc của mình rồi, giờ đến lúc tạo cái snapshot cho nó trong 1 branch thôi.
+<code>git commit</code> sẽ mở file editor lên để bạn viết commit message cho những file bạn vừa add.
+Cảm thấy hơi bị lười? Hãy dùng <code>-m</code> để đỡ khỏi gọi cái editor nào ở đây:</p>
+<pre><code class="language-sh">git commit -m "đây là commit message"
+</code></pre>
+<p>Đây là cách ai cũng dùng.
+Để lười hơn nữa thì dùng <code>-a</code>, giờ bất cứ file nào thay đổi sẽ được commit luôn, đỡ khỏi add lại:</p>
+<pre><code class="language-sh">git commit -am "đây là commit message"
+</code></pre>
+<h2 id="ignore-một-số-file"><a class="header" href="#ignore-một-số-file">Ignore một số file</a></h2>
+<p>Thường sẽ có file, folder hoặc kiểu file bạn không muốn git track lại... điển hình là <code>node_modules</code>. Khi đó ta sẽ dùng file <code>.gitignore</code>.
+Uhm dù sẽ chẳng mấy khi động tới bao giờ, nhưng cũng nên để ý là file <code>.git/info/exclude</code> cũng giống <code>.gitignore</code> chỉ khác ở vị trí để file thôi.
+Ghi các pattern file mà muốn git né (chắc là regex) vào 1 trong 2 file này là git sẽ né chúng nó ra. Để kiểm tra pattern đúng không (vì mục đích debug), dùng lệnh <code>git check-ignore</code>.</p>
+<h2 id="tags"><a class="header" href="#tags">Tags</a></h2>
+<p>Chưa bao giờ dùng tới, Tag là chức năng đặt tên một cách đơn giản của Git, nó cho phép ta xác định một cách rõ ràng các phiên bản mã nguồn (code) của dự án. Ta có thể coi tag như một branch không thay đổi được. Một khi nó được tạo (gắn với 1 commit cụ thể) thì ta không thể thay đổi lịch sử commit ấy được nữa.
+Có 2 loại tag là <strong>annotated</strong> và <strong>lightweight</strong>.</p>
+<p><strong>Lightweight</strong> tag thực chất chỉ là đánh dấu (bookmark) cho một commit, vì chúng chỉ lưu trữ hash của commit mà chúng tham chiếu. <strong>Annotated</strong> thì ngoài tên còn có thể lưu trữ dữ liệu bổ sung như Tên tác giả (-s), tin nhắn (-m: message), và ngày dưới dạng các đối tượng đầy đủ trong cơ sở dữ liệu Git. Tất cả thông tin ấy quan trọng cho việc release dự án.</p>
+<pre><code class="language-sh"># tạo annotated tag
+git tag -a v1.0.0 -m "Releasing version v1.0.0"
+git tag # xem tất cả các tag
+# tạo lightweight tag
+git tag v1.0.0 -m "Releasing version v1.0.0"
+git tag -d v1.0.0 # xóa tag
+</code></pre>
+<h2 id="branch"><a class="header" href="#branch">Branch</a></h2>
+<p>Quá quen thuộc, không có gì xa lạ.</p>
+<pre><code class="language-sh">git branch # liệt kê các branch
+git branch branch-name # tạo branch mới có tên là branch-name
+git checkout branch-name # chuyển sang branch-name
+git merge # gộp thay đổi từ nhánh khác vào nhánh hiện tại
+git branch -d branch-name # xóa branch
+</code></pre>
+<p>Nếu việc merge thuận lời thì nhánh main sẽ fast-forward tới thay đổi mới nhất của nhánh dev như hình dưới:</p>
+<p><img src="/assets/git-branch.png" alt="" /></p>
+<p>Còn không thì sẽ bị dính M̵̈́͜E̵͈͒R̸͉͂G̷͈͂E̵͚͒ ̷̡͆C̶͎̆O̵̢͆N̷̺̒F̵͙̓L̵͉̀Ȋ̵̙C̵̉ͅT̸̩́. Khi dính merge conflict thì phải resolve bằng tay thôi.
+Cũng là gộp nhánh khác vào, nhưng rebase khác fast forward ở chỗ nó áp thẳng (replay) các commit từ nhánh khác thay vì fast-forward tới. <strong>Thì?:</strong> Nó sẽ lưu lại lịch sử trong log đẹp hơn, dùng rebase cho code của mình thôi, đừng dùng cho thằng khác.</p>
+<h2 id="lệnh"><a class="header" href="#lệnh">Lệnh</a></h2>
+<pre><code class="language-sh">git revert # quay về một commit nào đó
+git diff # so sánh thay đổi giữa commit/branch/etc
+git gc # Garbage Collection, để dọn dẹp database khi có object không còn được tham chiếu tới nữa trong database
+git gc --prune # như trên nhưng chỉ dọn mấy cái cũ hơn 2 tuần theo mặc định. có thể tùy chỉnh thời gian.
+git config gc.pruneexpire "30 days"
+git log # xem log
+git log # cũng xem log nhưng đẹp hơn
+git log --stat
+git log --pretty=format:
+git log --since="4 days ago"
+
+# cái này gọi là phê, đọc bớt hại mắt hẳn
+git shortlog
+git log --oneline
+git log --oneline --graph
+
+# lệnh phê nhưng hơi dài
+git log --graph --pretty="%C(bold blue)%h %Cred%s %C(Yellow)by %an"
+git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset" --abbrev-commit
+
+# đến lúc này thì nên lười và alias nó thành một lệnh nào đó
+git config --global alias.l0g 'log --color --graph --pretty="%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset" --abbrev-commit'
+
+# lệnh log thì có nhiều thứ để bàn tới lắm, nhưng cứ dùng GUI nào đó như GitLens cho nhanh thay vì nhớ đi
+
+git clone &lt;repo link&gt; # để clone
+# lưu ý chút thì ngoài khả năng clone repo trên remote, git có thể clone được cả ở local
+git clone &lt;local repo folder&gt; &lt;new repo&gt;
+git remote -v # liệt kê mấy remote server đang theo dõi thay đổi
+git fetch # lấy các commit mới từ remote về
+# để upload thay đổi lên remote, dùng git push
+git push &lt;remote&gt; &lt;local branch&gt;
+git pull &lt;remote&gt; &lt;local branch&gt; # dùng để kéo branch từ remote
+</code></pre>
+<h2 id="tham-khảo-thêm"><a class="header" href="#tham-khảo-thêm">Tham khảo thêm</a></h2>
+<ul>
+<li>Học thêm ở đây: <a href="https://killercoda.com/pawelpiwosz/course/gitFundamentals">KillerCoda - Git foundations</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../os/linux.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../git/gitlab.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../os/linux.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../git/gitlab.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
